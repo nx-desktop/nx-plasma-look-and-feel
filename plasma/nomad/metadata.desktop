@@ -1,21 +1,21 @@
 [Desktop Entry]
+Comment[es_MX]=Tema de Haze para Plasma 5
+Name[es_MX]=Nomada
 Name=Nomad
-Name[es]=Nomada
-comment=Haze Plasma them for Plasma 5
-Comment[es]=Tema de Haze para Plasma 5
 X-KDE-PluginInfo-Author=Uri Herrera
-X-KDE-PluginInfo-Email=uri_herrera@nitrux.in
-X-KDE-PluginInfo-Name=Nomad
-X-KDE-PluginInfo-Version=0.1
-X-KDE-PluginInfo-Website=
 X-KDE-PluginInfo-Category=Plasma Theme
 X-KDE-PluginInfo-Depends=plasma-desktop
-X-KDE-PluginInfo-License=CC BY-SA 4.0
+X-KDE-PluginInfo-Email=uri_herrera@nitrux.in
 X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=CC BY-SA 4.0
+X-KDE-PluginInfo-Name=Nomad
+X-KDE-PluginInfo-Version=0.1.1
+X-KDE-PluginInfo-Website=
 X-Plasma-API=5.0
+comment=Haze Plasma them for Plasma 5
 
 [Wallpaper]
-defaultWallpaperTheme=2560x1080
 defaultFileSuffix=.png
-defaultWidth=2560
 defaultHeight=1080
+defaultWallpaperTheme=2560x1080
+defaultWidth=2560
