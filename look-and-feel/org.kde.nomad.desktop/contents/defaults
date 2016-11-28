@@ -1,0 +1,14 @@
+[kdeglobals][KDE]
+widgetStyle=kvantum
+
+[kdeglobals][General]
+ColorScheme=Nomad
+
+[kdeglobals][Icons]
+Theme=Lüv
+
+[plasmarc][Theme]
+name=Nomad
+
+[kcminputrc][Mouse]
+cursorTheme=breeze_cursors
