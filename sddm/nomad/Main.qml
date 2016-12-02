@@ -42,9 +42,6 @@ Rectangle {
     Connections {
         target: sddm
 
-        onLogin: {
-
-        }
         onLoginSucceeded: {
         }
 
@@ -54,14 +51,9 @@ Rectangle {
         }
     }
 
-    Component.onCompleted:  {
-        print("SDDM")
-        for (var k in sddm)
-            print(k, sddm[k]);
-    }
-
 
     Background {
+        id: background
         anchors.fill: parent
         source: config.background
         fillMode: Image.PreserveAspectCrop
@@ -70,6 +62,21 @@ Rectangle {
                 source = config.defaultBackground
             }
         }
+    }
+
+    DirectionalBlur {
+        anchors.fill: background
+        source: background
+        angle: 90
+        length: 32
+        samples: 24
+    }
+
+    ColorOverlay {
+        anchors.fill: background
+        source: background
+        color: "#f5f5f5"
+        opacity: 0.1
     }
 
     Rectangle {
@@ -253,21 +260,13 @@ Rectangle {
                 CustomCheckBox {
                     id: rememberLastUser
                     height: 36
-                    text: i18n("Remember last User")
+                    text: qsTr("Remember last User")
 
-                    checked: config.rememberLastUser == "true"
-                    onCheckedChanged: {
-                        print(config.rememberLastUser, checked)
-                        checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
-                        print(config.rememberLastUser)
-                    }
+                    checked: config.rememberLastUser === "true"
+                    onCheckedChanged: checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
+
+
                     KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
-                    Component.onCompleted: {
-                        print("Configs !!", config)
-                        for (var k in config) {
-                            print(k, config[k])
-                        }
-                    }
                 }
 
             }
