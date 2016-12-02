@@ -23,20 +23,22 @@
 ***************************************************************************/
 
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
 
 FocusScope {
     id: container
     width: 80; height: 30
 
-    property color color: "white"
-    property color borderColor: "#ababab"
+    property color color: "#f5f5f5"
+    property color borderColor: "#c3c9d6"
     property color focusColor: "#266294"
     property color hoverColor: "#5692c4"
     property color textColor: "black"
     property font font
     property alias model: listView.model
     property int index: 0
-    property alias arrowColor: arrow.color
+    property color arrowColor: "black"
+    property alias arrowBoxColor: arrow.color
     property alias arrowIcon: arrowIcon.source
     property alias dropdownColor: dropDown.color
     property int radius
@@ -110,6 +112,13 @@ FocusScope {
             smooth: true
             fillMode: Image.PreserveAspectFit
         }
+
+        ColorOverlay {
+            anchors.fill: arrowIcon
+            source: arrowIcon
+            color: arrowColor  // make image like it lays under red glass
+        }
+
     }
 
     MouseArea {

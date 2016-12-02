@@ -28,6 +28,7 @@ CustomComboBox {
     id: combo
 
     property bool disableText: false
+    property bool disableFlag: false
 
     model: keyboard.layouts
     index: keyboard.currentLayout
@@ -54,11 +55,13 @@ CustomComboBox {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
+            visible: !disableFlag
         }
 
         Text {
-            anchors.margins: 4
-            anchors.left: img.right
+            id: txt
+            anchors.margins: disableFlag ? 9 : 4
+            anchors.left: disableFlag ? parent.left : img.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
 

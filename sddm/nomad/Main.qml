@@ -25,6 +25,7 @@
 import QtQuick 2.0
 import QtGraphicalEffects 1.0
 import SddmComponents 2.0
+import QtQuick.Layouts 1.3
 
 import "Components"
 
@@ -41,6 +42,9 @@ Rectangle {
     Connections {
         target: sddm
 
+        onLogin: {
+
+        }
         onLoginSucceeded: {
         }
 
@@ -49,6 +53,13 @@ Rectangle {
             password.text = ""
         }
     }
+
+    Component.onCompleted:  {
+        print("SDDM")
+        for (var k in sddm)
+            print(k, sddm[k]);
+    }
+
 
     Background {
         anchors.fill: parent
@@ -83,7 +94,7 @@ Rectangle {
 
                 onClicked: sddm.reboot()
 
-                KeyNavigation.backtab: password; KeyNavigation.tab: btnPoweroff
+                KeyNavigation.backtab: loginButton; KeyNavigation.tab: btnPoweroff
             }
 
             Text {
@@ -147,23 +158,31 @@ Rectangle {
                 source: config.logo
             }
             
-            Image {
-                id: space2
-                width: 100
-                height: 32
-                fillMode: Image.PreserveAspectFit
-                source: "blank_space.svg"
+//            Image {
+//                id: space2
+//                width: 100
+//                height: 32
+//                fillMode: Image.PreserveAspectFit
+//                source: "blank_space.svg"
+//            }
+
+            Text {
+                id: statusText
+                anchors.horizontalCenter: mainColumn.horizontalCenter
+                anchors.bottomMargin: 12
+                text: i18n("Hi there, Welcome back!")
             }
 
             TextBox {
                 id: name
                 width: 256
                 height: 36
-                text: userModel.lastUser
+                text: rememberLastUser.checked ? userModel.lastUser : ""
                 font.pixelSize: 12
                 radius: 3
-                color: "#F5F5F5"
-                borderColor: "#9E9E9E"
+                color: "#f5f5f5"
+                borderColor: "#c3c9d6"
+                focusColor: "#00acc1"
                 textColor: "#263238"
 
                 KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
@@ -173,9 +192,10 @@ Rectangle {
                     text: "Username"
                     color: "#90A4AE"
                     anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
+                        horizontalCenter: parent.horizontalCenter
+                        verticalCenter: parent.verticalCenter
                     }
+                    visible: name.text == "";
                     font.pointSize: 9
                 }
                 
@@ -188,7 +208,8 @@ Rectangle {
                 font.pixelSize: 12
                 radius: 3
                 color: "#F5F5F5"
-                borderColor: "#9E9E9E"
+                borderColor: "#c3c9d6"
+                focusColor: "#00acc1"
                 textColor: "#263238"
                 focus: true
                 
@@ -197,11 +218,12 @@ Rectangle {
                     text: "Password"
                     color: "#90A4AE"
                     anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
+                        horizontalCenter: parent.horizontalCenter
+                        verticalCenter: parent.verticalCenter
 
 
                     }
+                    visible: password.text == "";
                     font.pointSize: 9
                 }
                 
@@ -211,7 +233,7 @@ Rectangle {
                     onTriggered: password.forceActiveFocus()
                 }
 
-                KeyNavigation.backtab: name; KeyNavigation.tab: btnReboot
+                KeyNavigation.backtab: name; KeyNavigation.tab: rememberLastUser
 
                 Keys.onPressed: {
                     if (event.key === Qt.Key_Return || event.key ===
@@ -222,12 +244,49 @@ Rectangle {
                 }
             }
 
+
+            RowLayout {
+                LayoutMirroring.enabled: true
+                LayoutMirroring.childrenInherit: true
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                CustomCheckBox {
+                    id: rememberLastUser
+                    height: 36
+                    text: i18n("Remember last User")
+
+                    checked: config.rememberLastUser == "true"
+                    onCheckedChanged: {
+                        print(config.rememberLastUser, checked)
+                        checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
+                        print(config.rememberLastUser)
+                    }
+                    KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
+                    Component.onCompleted: {
+                        print("Configs !!", config)
+                        for (var k in config) {
+                            print(k, config[k])
+                        }
+                    }
+                }
+
+            }
+
+            CustomButton {
+                id: loginButton
+                text: textConstants.login
+                anchors.horizontalCenter:  mainColumn.horizontalCenter
+                width: 150
+                onClicked: sddm.login(name.text, password.text, session.index)
+
+                KeyNavigation.backtab: rememberLastUser; KeyNavigation.tab: btnReboot
+            }
+
             Text {
                 id: errorMessage
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: " "
                 font.pixelSize: 12
-                color: "white"
             }
         }
     }
@@ -235,7 +294,7 @@ Rectangle {
     Rectangle {
         id: actionBar
         anchors.top: parent.top;
-        color: "#1a1a1a"
+        color: "#f5f5f5"
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 34
@@ -251,12 +310,8 @@ Rectangle {
             CustomComboBox {
                 id: session
                 height: parent.height
-                color: "transparent"
-                borderColor: "transparent"
-                borderWidth: 0
-                textColor: "white"
-                dropdownColor: "#22000000"
-                hoverColor: "#77000000"
+                arrowColor: "#4D4D4D"
+                textColor: "#4D4D4D"
                 width: 120
                 anchors.verticalCenter: parent.verticalCenter
 
@@ -275,14 +330,10 @@ Rectangle {
             // Keyboard Layout
             CustomLayoutBox {
                 id: layoutBox
-                width: 50
-                disableText: true
-                color: "transparent"
-                borderColor: "transparent"
-                borderWidth: 0
-                textColor: "white"
-                dropdownColor: "#22000000"
-                hoverColor: "#77000000"
+                height: session.height
+                disableFlag: true
+                arrowColor: "#4D4D4D"
+                textColor: "#4D4D4D"
                 anchors.verticalCenter: parent.verticalCenter
 
                 arrowIcon: "angle-down.svg"
@@ -295,10 +346,12 @@ Rectangle {
         Row {
             height: parent.height
             anchors.right: parent.right
-            anchors.margins: 5
+            anchors.margins: 9
             spacing: 5
 
             InlineClock {
+                color: "#4D4D4D"
+                font.pointSize: 12
             }
         }
     }
