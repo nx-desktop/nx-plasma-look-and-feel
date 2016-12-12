@@ -82,7 +82,8 @@ PlasmaCore.ColorScope {
 
     Rectangle {
         anchors.fill: parent
-        color: PlasmaCore.ColorScope.backgroundColor
+        // color: PlasmaCore.ColorScope.backgroundColor
+        color: "#f5f5f5"
         opacity: 0.5
     }
     MouseArea {
