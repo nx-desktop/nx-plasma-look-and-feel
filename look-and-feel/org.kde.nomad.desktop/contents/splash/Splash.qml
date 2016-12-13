@@ -186,5 +186,46 @@ Rectangle {
 
     }
 
+    Item {
+        id: wellcomeMessageBox
 
+        width: 200;
+        height: wellcomeMessage.height
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: glowingBar.top
+
+        clip: true
+
+        Text {
+            id: wellcomeMessage
+            text: i18n("Welcome")
+            color: "#212121"
+            font.pointSize: 18
+            font.weight: Font.Light
+
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: wellcomeMessage.height
+
+            states: [
+                State {
+                    name: "visible"
+                    when: root.stage >= 6
+                    PropertyChanges {
+                        target: wellcomeMessage
+                        anchors.topMargin: 0
+                    }
+                }
+            ]
+
+            transitions: Transition {
+                NumberAnimation {
+                    properties: "anchors.topMargin"
+                    easing.type: Easing.InOutQuad
+                    duration: 1000
+                }
+            }
+        }
+    }
 }
