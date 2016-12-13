@@ -8,7 +8,7 @@ ColorScheme=Nomad
 Theme=Lüv
 
 [plasmarc][Theme]
-name=Nomad
+name=nomad
 
 [kcminputrc][Mouse]
 cursorTheme=breeze_cursors
