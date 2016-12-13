@@ -252,24 +252,24 @@ Rectangle {
             }
 
 
-            RowLayout {
-                LayoutMirroring.enabled: true
-                LayoutMirroring.childrenInherit: true
-                anchors.horizontalCenter: parent.horizontalCenter
+//            RowLayout {
+//                LayoutMirroring.enabled: true
+//                LayoutMirroring.childrenInherit: true
+//                anchors.horizontalCenter: parent.horizontalCenter
 
-                CustomCheckBox {
-                    id: rememberLastUser
-                    height: 36
-                    text: qsTr("Remember last User")
+//                CustomCheckBox {
+//                    id: rememberLastUser
+//                    height: 36
+//                    text: qsTr("Remember last User")
 
-                    checked: config.rememberLastUser === "true"
-                    onCheckedChanged: checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
+//                    checked: config.rememberLastUser === "true"
+//                    onCheckedChanged: checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
 
 
-                    KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
-                }
+//                    KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
+//                }
 
-            }
+//            }
 
             CustomButton {
                 id: loginButton
