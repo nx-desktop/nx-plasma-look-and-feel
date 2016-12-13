@@ -214,7 +214,7 @@ Rectangle {
                     when: root.stage >= 6
                     PropertyChanges {
                         target: wellcomeMessage
-                        anchors.topMargin: 0
+                        anchors.topMargin: - 5
                     }
                 }
             ]
