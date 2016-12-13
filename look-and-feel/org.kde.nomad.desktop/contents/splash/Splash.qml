@@ -1,5 +1,5 @@
 /*
- *   Copyright 2014 Marco Martin <mart@kde.org>
+ *   Copyright 2016 Alexis Lopez Zubieta <azubieta90@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License version 2,
@@ -18,75 +18,173 @@
  */
 
 import QtQuick 2.5
+import QtGraphicalEffects 1.0
 
 Rectangle {
     id: root
-    color: "black"
+    color: "#FAFAFA"
 
     property int stage
 
-    onStageChanged: {
-        if (stage == 2) {
-            introAnimation.running = true;
-        } else if (stage == 5) {
-            introAnimation.target = busyIndicator;
-            introAnimation.from = 1;
-            introAnimation.to = 0;
-            introAnimation.running = true;
-        }
-    }
 
     Item {
-        id: content
-        anchors.fill: parent
-        opacity: 0
-        TextMetrics {
-            id: units
-            text: "M"
-            property int gridUnit: boundingRect.height
-            property int largeSpacing: units.gridUnit
-            property int smallSpacing: Math.max(2, gridUnit/4)
-        }
+        clip: true
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.verticalCenter
+        anchors.bottomMargin: logo.size / 8
+        width: 300
+        height: 80
 
         Image {
-            id: logo
-            //match SDDM/lockscreen avatar positioning
-            property real size: units.gridUnit * 8
+            id: rocket
+            property real size: units.gridUnit * 2
 
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: -20
 
-            source: "images/kde.svgz"
+            source: "images/rocket.svg"
 
             sourceSize.width: size
             sourceSize.height: size
-        }
 
-        Image {
-            id: busyIndicator
-            //again sync from SDDM theme
-            anchors.top: logo.bottom
-            anchors.topMargin: units.largeSpacing
-            anchors.horizontalCenter: parent.horizontalCenter
-            source: "images/busywidget.svgz"
-            sourceSize.height: units.gridUnit * 2
-            sourceSize.width: units.gridUnit * 2
-            RotationAnimator on rotation {
-                id: rotationAnimator
-                from: 0
-                to: 360
-                duration: 1500
-                loops: Animation.Infinite
+            states: [
+                State {
+                    name: "1"
+                    when: root.stage >= 1 && root.stage < 6
+                    PropertyChanges {
+                        target: rocket
+                        anchors.bottomMargin: 30
+                    }
+                },
+                State {
+                    name: "4"
+                    when: root.stage >= 6
+                    PropertyChanges {
+                        target: rocket
+                        anchors.bottomMargin: 90
+                    }
+                }
+            ]
+
+            transitions: Transition {
+                NumberAnimation {
+                    properties: "anchors.bottomMargin"
+                    easing.type: Easing.InOutQuad
+                    duration: 1000
+                }
             }
         }
     }
 
-    OpacityAnimator {
-        id: introAnimation
-        running: false
-        target: content
-        from: 0
-        to: 1
-        duration: 1000
-        easing.type: Easing.InOutQuad
+    Item {
+        id: logoBox
+        clip: true
+        width: 200
+        height: 60
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.verticalCenter
+        anchors.topMargin: -15
+
+        Image {
+            id: logo
+            property real size: units.gridUnit * 8
+
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+
+            source: "images/logo.svg"
+
+            sourceSize.width: size
+            sourceSize.height: size
+
+            states: [
+                State {
+                    when: root.stage >= 1 && root.stage < 5
+                    PropertyChanges {
+                        target: logo
+                        anchors.topMargin: 15
+                    }
+                },
+                State {
+                    when: root.stage >= 5
+                    PropertyChanges {
+                        target: logo
+                        anchors.topMargin: (logo.size + 30) * -1;
+                    }
+                }
+            ]
+
+            transitions: Transition {
+                NumberAnimation {
+                    properties: "anchors.topMargin"
+                    easing.type: Easing.InOutQuad
+                    duration: 1000
+                }
+            }
+        }
+
+        states: [
+            State {
+                name: "1"
+                when: root.stage >= 1
+                PropertyChanges {
+                    target: logoBox
+                    anchors.topMargin: 15
+                }
+            }
+        ]
+
+        transitions: Transition {
+            NumberAnimation {
+                properties: "anchors.topMargin"
+                easing.type: Easing.InOutQuad
+                duration: 1000
+            }
+        }
     }
+
+
+    Rectangle {
+        id: glowingBar
+        anchors.centerIn: root
+
+        width: 200
+        height: 5
+
+        radius: 6
+        opacity: 0
+
+
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "transparent" }
+            GradientStop { position: 0.33; color: "#16BDD2" }
+            GradientStop { position: 0.66; color: "#16BDD2" }
+            GradientStop { position: 1.0; color: "transparent" }
+        }
+
+        states: [
+            State {
+                name: "3"
+                when: root.stage >= 3
+                PropertyChanges {
+                    target: glowingBar
+                    opacity: 1
+                }
+            }
+        ]
+
+        transitions: Transition {
+            NumberAnimation {
+                properties: "opacity"
+                easing.type: Easing.InOutQuad
+                duration: 1000
+            }
+        }
+
+    }
+
+
 }
