@@ -92,6 +92,7 @@ Rectangle {
             Layout.fillWidth: true
             sourceComponent: mainBlock.locked ? undefined : passwordArea
             height: 0;
+            clip: true
 
             NumberAnimation on height {
                 id: showPasswordArea
@@ -108,10 +109,10 @@ Rectangle {
 
             colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
 
+
             PlasmaComponents.Button {
                 id: loginButton
-
-
+                focus: true
                 text: !authenticator.graceLocked ? i18nd(
                                                        "plasma_lookandfeel_org.kde.lookandfeel",
                                                        "Unlock") : i18nd(
@@ -122,8 +123,17 @@ Rectangle {
                     if (mainBlock.locked) {
                         showPasswordArea.start()
                         mainBlock.locked = false
-                    }else
+                        passwordAreaLoader.item.forceActiveFocus()
+                    } else
                         authenticator.tryUnlock(passwordAreaLoader.item.password)
+                }
+
+                Keys.onPressed: {
+                    if (mainBlock.locked) {
+                        showPasswordArea.start()
+                        mainBlock.locked = false
+                        root.clearPassword()
+                    }
                 }
             }
         }
@@ -136,7 +146,6 @@ Rectangle {
             id: passwordBox
             property alias password: passwordBox.text
 
-
             // placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
             focus: true
             echoMode: TextInput.Password
@@ -144,9 +153,6 @@ Rectangle {
 
             onAccepted: authenticator.tryUnlock(passwordBox.text)
 
-            height: 0
-
-            // visible: !mainBlock.locked
             Connections {
                 target: root
                 onClearPassword: {
@@ -162,6 +168,13 @@ Rectangle {
                 color: theme.viewTextColor
                 text: i18nd("plasma_lookandfeel_org.kde.lookandfeel",
                             "Password")
+            }
+
+            Keys.onPressed: {
+                if (event.key == Qt.Key_Escape) {
+                    root.clearPassword()
+                }
+
             }
         }
     }
