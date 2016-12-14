@@ -183,7 +183,7 @@ Rectangle {
             TextBox {
                 id: name
                 width: 256
-                height: 36
+                height: 32
                 text: rememberLastUser.checked ? userModel.lastUser : ""
                 font.pixelSize: 12
                 radius: 3
@@ -211,7 +211,7 @@ Rectangle {
             PasswordBox {
                 id: password
                 width: 256
-                height: 36
+                height: 32
                 font.pixelSize: 12
                 radius: 3
                 color: "#F5F5F5"
@@ -252,30 +252,32 @@ Rectangle {
             }
 
 
-//            RowLayout {
-//                LayoutMirroring.enabled: true
-//                LayoutMirroring.childrenInherit: true
-//                anchors.horizontalCenter: parent.horizontalCenter
+            RowLayout {
+                visible: false
+                LayoutMirroring.enabled: true
+                LayoutMirroring.childrenInherit: true
+                anchors.horizontalCenter: parent.horizontalCenter
 
-//                CustomCheckBox {
-//                    id: rememberLastUser
-//                    height: 36
-//                    text: qsTr("Remember last User")
+                CustomCheckBox {
+                    id: rememberLastUser
+                    height: 36
+                    text: qsTr("Remember last User")
 
-//                    checked: config.rememberLastUser === "true"
-//                    onCheckedChanged: checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
+                    checked: config.rememberLastUser === "true"
+                    onCheckedChanged: checked ? config.rememberLastUser = "true" : config.rememberLastUser = "false"
 
 
-//                    KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
-//                }
+                    KeyNavigation.backtab: passwordNotice; KeyNavigation.tab: loginButton
+                }
 
-//            }
+            }
 
             CustomButton {
                 id: loginButton
                 text: textConstants.login
                 anchors.horizontalCenter:  mainColumn.horizontalCenter
                 width: 150
+                height: 32
                 onClicked: sddm.login(name.text, password.text, session.index)
 
                 KeyNavigation.backtab: rememberLastUser; KeyNavigation.tab: btnReboot
@@ -296,13 +298,14 @@ Rectangle {
         color: "#f5f5f5"
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width; height: 34
+        width: parent.width; height: 32
         visible: primaryScreen
 
         Row {
             anchors.left: parent.left
             anchors.margins: 5
-            height: parent.height
+            anchors.verticalCenter: parent.verticalCenter
+            height: 24
             spacing: 20
 
             // Session
@@ -343,8 +346,9 @@ Rectangle {
 
         // Clock
         Row {
-            height: parent.height
+            height: 24
             anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
             anchors.margins: 9
             spacing: 5
 
@@ -353,5 +357,16 @@ Rectangle {
                 font.pointSize: 12
             }
         }
+    }
+
+    DropShadow {
+        anchors.fill: actionBar
+        horizontalOffset: 0
+        verticalOffset: 2
+        radius: 8
+        spread: 0
+        samples: 17
+        color: "#C2C2C2"
+        source: actionBar
     }
 }
