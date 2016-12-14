@@ -32,7 +32,7 @@ FocusScope {
     property color color: "#f5f5f5"
     property color borderColor: "#c3c9d6"
     property color focusColor: "#266294"
-    property color hoverColor: "#5692c4"
+    property color hoverColor: "#26c6da"
     property color textColor: "black"
     property font font
     property alias model: listView.model

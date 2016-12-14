@@ -27,6 +27,8 @@ import QtGraphicalEffects 1.0
 import SddmComponents 2.0
 import QtQuick.Layouts 1.3
 
+import org.kde.plasma.components 2.0 as PlasmaComponents
+
 import "Components"
 
 Rectangle {
@@ -272,7 +274,7 @@ Rectangle {
 
             }
 
-            CustomButton {
+            PlasmaComponents.Button {
                 id: loginButton
                 text: textConstants.login
                 anchors.horizontalCenter:  mainColumn.horizontalCenter
@@ -294,6 +296,7 @@ Rectangle {
 
     Rectangle {
         id: actionBar
+        z: 1
         anchors.top: parent.top;
         color: "#f5f5f5"
         opacity: 0.9
