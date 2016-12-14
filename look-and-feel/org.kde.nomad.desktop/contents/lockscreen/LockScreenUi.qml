@@ -1,6 +1,7 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.1
 import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.0
 
 import QtQuick.Layouts 1.1
 
@@ -53,7 +54,7 @@ Rectangle {
         color: "#FAFAFA"
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width; height: 34
+        width: parent.width; height: 32
 
         // Clock
         Row {
@@ -64,15 +65,28 @@ Rectangle {
 
             InlineClock {
                 color: "#4D4D4D"
-                font.pointSize: 12
+                font.pointSize: 10
+                font.weight: Font.Bold
             }
         }
+        
+        DropShadow {
+            anchors.fill: actionBar
+            horizontalOffset: 0
+            verticalOffset: 2
+            cached: true
+            radius: 8.0
+            samples: 15
+            color: "#33000000"
+            source: actionBar
+        }
     }
+    
 
     Clock {
         id: clock
         anchors.bottom: parent.verticalCenter
-        anchors.bottomMargin: units.gridUnit * 2
+        anchors.bottomMargin: units.gridUnit * - 1
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
