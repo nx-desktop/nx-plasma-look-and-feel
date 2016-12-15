@@ -19,6 +19,6 @@ Text {
     text: Qt.formatTime(clock.dateTime, "hh:mm")
 
     font.family: "Noto Sans"
-    font.pointSize: 14
-    font.weight: Font.ExtraLight
+    font.pointSize: 10
+    font.weight: Font.Bold
 }
