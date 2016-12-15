@@ -1,14 +1,20 @@
-[kdeglobals][KDE]
-widgetStyle=kvantum
+[kcminputrc][Mouse]
+cursorTheme=breeze_cursors
+
+[kcminputrc][Mouse][WindowSwitcher]
+LayoutName=present_windows
+
+[kcminputrc][Mouse][WindowSwitcher][DesktopSwitcher]
+LayoutName=org.kde.breeze.desktop
 
 [kdeglobals][General]
 ColorScheme=Nomad
+
+[kdeglobals][KDE]
+widgetStyle=kvantum
 
 [kdeglobals][Icons]
 Theme=Lüv
 
 [plasmarc][Theme]
 name=nomad
-
-[kcminputrc][Mouse]
-cursorTheme=breeze_cursors
