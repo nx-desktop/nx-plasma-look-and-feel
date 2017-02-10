@@ -18,3 +18,12 @@ Theme=Lüv
 
 [plasmarc][Theme]
 name=nomad
+
+[kwinrc][WindowSwitcher]
+LayoutName=
+
+[kwinrc][DesktopSwitcher]
+LayoutName=
+
+[kwinrc][WindowDecoration]
+library=
