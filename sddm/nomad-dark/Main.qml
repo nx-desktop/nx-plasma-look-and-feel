@@ -180,6 +180,7 @@ Rectangle {
                 anchors.horizontalCenter: mainColumn.horizontalCenter
                 anchors.bottomMargin: 12
                 text: i18n("Hi there, Welcome back!")
+
             }
 
             TextBox {
@@ -191,7 +192,7 @@ Rectangle {
                 radius: 3
                 color: "#3a3f41"
                 borderColor: "#c3c9d6"
-                focusColor: "#00acc1"
+                focusColor: "#f5f5f5"
                 textColor: "#263238"
 
                 KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
@@ -218,7 +219,7 @@ Rectangle {
                 radius: 3
                 color: "#3a3f41"
                 borderColor: "#c3c9d6"
-                focusColor: "#00acc1"
+                focusColor: "#f5f5f5"
                 textColor: "#263238"
                 focus: true
                 
@@ -369,7 +370,7 @@ Rectangle {
         radius: 8
         spread: 0
         samples: 17
-        color: "#C2C2C2"
+        color: "#333333"
         source: actionBar
     }
 }
