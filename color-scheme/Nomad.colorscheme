@@ -1,0 +1,97 @@
+# --- Nomad.colorscheme --------------------------------------------------------
+# ------------------------------------------------------------------------------
+# --- generated with 4bit Terminal Color Scheme Designer -----------------------
+# ------------------------------------------------------------------------------
+# --- http://ciembor.github.com/4bit -------------------------------------------
+# ------------------------------------------------------------------------------
+
+# --- special colors ---
+
+[Background]
+Color=10,140,166
+Transparency=false
+
+[BackgroundIntense]
+color=10,140,166
+Transparency=false
+
+[Foreground]
+Color=247,245,229
+Transparency=false
+
+[ForegroundIntense]
+Color=247,245,229
+Bold=true
+Transparency=false
+
+# --- standard colors ---
+
+[Color0]
+Color=13,13,13
+Transparency=false
+
+[Color0Intense]
+Color=57,57,57
+Transparency=false
+
+[Color1]
+Color=165,80,113
+Transparency=false
+
+[Color1Intense]
+Color=235,213,222
+Transparency=false
+
+[Color2]
+Color=113,165,80
+Transparency=false
+
+[Color2Intense]
+Color=222,235,213
+Transparency=false
+
+[Color3]
+Color=165,132,80
+Transparency=false
+
+[Color3Intense]
+Color=235,227,213
+Transparency=false
+
+[Color4]
+Color=80,113,165
+Transparency=false
+
+[Color4Intense]
+Color=213,222,235
+Transparency=false
+
+[Color5]
+Color=132,80,165
+Transparency=false
+
+[Color5Intense]
+Color=227,213,235
+Transparency=false
+
+[Color6]
+Color=80,165,132
+Transparency=false
+
+[Color6Intense]
+Color=213,235,227
+Transparency=false
+
+[Color7]
+Color=201,201,201
+Transparency=false
+
+[Color7Intense]
+Color=217,217,217
+Transparency=false
+
+# --- general options ---
+
+[General]
+Description=4bit-f7f5e5-on-0a8ca6
+Opacity=1
