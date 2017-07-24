@@ -1,5 +1,5 @@
 [Desktop Entry]
-Comment=
+Comment=Nomad Dark Look and Feel for Plasma 5
 Encoding=UTF-8
 Keywords=Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;
 Name=Nomad Dark
@@ -7,11 +7,12 @@ Type=Service
 
 X-KDE-ServiceTypes=Plasma/LookAndFeel
 X-KDE-ParentApp=
-X-KDE-PluginInfo-Author=
+X-KDE-PluginInfo-Author=Uri Herrera
 X-KDE-PluginInfo-Category=
-X-KDE-PluginInfo-Email=
+X-KDE-PluginInfo-Email=uri_herrera@nitrux.in
 X-KDE-PluginInfo-License=CC BY-SA 4.0
 X-KDE-PluginInfo-Name=org.kde.nomad.dark.desktop
 X-KDE-PluginInfo-Version=1.0
-X-KDE-PluginInfo-Website=
+X-KDE-PluginInfo-Website=http://nxos.org
+X-KDE-fallbackPackage=org.kde.breeze.desktop
 X-Plasma-MainScript=defaults

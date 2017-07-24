@@ -5,7 +5,7 @@ widgetStyle=kvantum
 ColorScheme=NomadDark
 
 [kdeglobals][Icons]
-Theme=Lüv
+Theme=Luv
 
 [plasmarc][Theme]
 name=nomad-dark
@@ -14,10 +14,7 @@ name=nomad-dark
 cursorTheme=breeze_cursors
 
 [kwinrc][WindowSwitcher]
-LayoutName=
+LayoutName=org.kde.nomad.dark.desktop
 
 [kwinrc][DesktopSwitcher]
-LayoutName=org.kde.breeze.desktop
-
-[kwinrc][WindowDecoration]
-library=NomadDecoDark
+LayoutName=org.kde.nomad.dark.desktop
