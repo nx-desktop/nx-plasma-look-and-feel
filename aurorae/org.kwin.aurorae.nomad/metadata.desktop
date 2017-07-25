@@ -15,5 +15,4 @@ X-KDE-PluginInfo-EnabledByDefault=true
 
 X-KDE-ServiceTypes=KWin/Decoration
 X-KWin-Config-TranslationDomain=kwin_clients
-Type=ServiceX-KWin-Config-TranslationDomain=kwin_clients
 Type=Service
