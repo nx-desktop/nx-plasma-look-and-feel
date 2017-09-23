@@ -19,5 +19,5 @@ LayoutName=org.kde.nomad.desktop
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.nomad.desktop
 
-#[kwinrc][WindowDecoration]
-#library=org.kwin.aurorae
+[kwinrc][org.kde.kdecoration2]
+theme=__aurorae__svg__Nomad

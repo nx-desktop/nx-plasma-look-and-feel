@@ -11,7 +11,7 @@ Theme=Luv
 name=nomad-dark
 
 [kcminputrc][Mouse]
-cursorTheme=breeze_cursors
+cursorTheme=Breeze_Snow
 
 [kwinrc][WindowSwitcher]
 LayoutName=org.kde.nomad.dark.desktop
@@ -19,5 +19,5 @@ LayoutName=org.kde.nomad.dark.desktop
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.nomad.dark.desktop
 
-[kwinrc][WindowDecoration]
-library=org.kwin.aurorae.nomad.dark
+[kwinrc][org.kde.kdecoration2]
+theme=__aurorae__svg__Nomad Dark
