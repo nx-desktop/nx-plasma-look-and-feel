@@ -19,5 +19,14 @@ LayoutName=org.kde.nomad.desktop
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.nomad.desktop
 
-[kwinrc][org.kde.kdecoration2]
-theme=__aurorae__svg__Nomad
+# Bug 382731 - kcm_lookandfeel doesn't apply Aurorae theme
+# The Look and Feel KCM doesn't apply the Aurorae theme that's specified in the package config file.
+# With the configuration below Kwin doesn't give any output, however changing the theme using X-KDE-PluginInfo-Name
+# as set in the theme's metadata file kwin outputs: aurorae: Couldn't find QML Decoration "$theme" which means
+# that it won't load the theme because it "can't" find it. It does seem to load Plastik with no problem so it fallsback
+# to it. Closing and opening the KCM sort of refreshes Kwin output, otherwise it will still output that can't find the theme
+# that was previously set even after it was changed.
+#
+#[kwinrc][org.kde.kdecoration2]
+#library=org.kde.kwin.aurorae
+#theme=kwin4_decoration_qml_plastik
