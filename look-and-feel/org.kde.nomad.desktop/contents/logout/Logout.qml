@@ -83,7 +83,7 @@ PlasmaCore.ColorScope {
     Rectangle {
         anchors.fill: parent
         // color: PlasmaCore.ColorScope.backgroundColor
-        color: "#f5f5f5"
+        color: "#212121"
         opacity: 0.5
     }
     MouseArea {
@@ -98,7 +98,7 @@ PlasmaCore.ColorScope {
             bottom: parent.verticalCenter
         }
         avatarPath: kuser.faceIconUrl
-        iconSource: "images/user.svg"
+        iconSource: "user-identity"
         isCurrent: true
         name: kuser.fullName
     }
