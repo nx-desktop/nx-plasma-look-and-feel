@@ -77,7 +77,7 @@ Rectangle {
     ColorOverlay {
         anchors.fill: background
         source: background
-        color: "#f5f5f5"
+        color: "#3a3f41"
         opacity: 0.1
     }
 
@@ -180,6 +180,7 @@ Rectangle {
                 anchors.horizontalCenter: mainColumn.horizontalCenter
                 anchors.bottomMargin: 12
                 text: i18n("Hi there, Welcome back!")
+                color: "#f5f5f5"
 
             }
 
@@ -191,8 +192,9 @@ Rectangle {
                 font.pixelSize: 12
                 radius: 3
                 color: "#3a3f41"
-                borderColor: "#c3c9d6"
-                focusColor: "#f5f5f5"
+                borderColor: "#52595c"
+                focusColor: "#00BCD4"
+                hoverColor: "#00ACC1"
                 textColor: "#263238"
 
                 KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
@@ -218,8 +220,9 @@ Rectangle {
                 font.pixelSize: 12
                 radius: 3
                 color: "#3a3f41"
-                borderColor: "#c3c9d6"
-                focusColor: "#f5f5f5"
+                borderColor: "#52595c"
+                focusColor: "#00BCD4"
+                hoverColor: "#00ACC1"
                 textColor: "#263238"
                 focus: true
                 

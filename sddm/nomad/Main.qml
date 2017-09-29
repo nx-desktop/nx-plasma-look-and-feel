@@ -77,7 +77,7 @@ Rectangle {
     ColorOverlay {
         anchors.fill: background
         source: background
-        color: "#f5f5f5"
+        color: "#e2eef3"
         opacity: 0.1
     }
 
@@ -192,6 +192,7 @@ Rectangle {
                 color: "#f5f5f5"
                 borderColor: "#c3c9d6"
                 focusColor: "#00acc1"
+                hoverColor: "#00ACC1"
                 textColor: "#263238"
 
                 KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
@@ -219,6 +220,7 @@ Rectangle {
                 color: "#F5F5F5"
                 borderColor: "#c3c9d6"
                 focusColor: "#00acc1"
+                hoverColor: "#00ACC1"
                 textColor: "#263238"
                 focus: true
                 
