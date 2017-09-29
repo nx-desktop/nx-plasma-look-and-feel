@@ -195,7 +195,7 @@ Rectangle {
                 borderColor: "#52595c"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"
-                textColor: "#263238"
+                textColor: "#f5f5f5"
 
                 KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
                 
@@ -223,7 +223,7 @@ Rectangle {
                 borderColor: "#52595c"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"
-                textColor: "#263238"
+                textColor: "#f5f5f5"
                 focus: true
                 
                 Text {
