@@ -1,9 +1,17 @@
 var plasma = getApiVersion(1)
 
+var activityId = activityIds[0]
+
+var activity = desktopById(activityId)
+activity.currentConfigGroup = ["General"]
+activity.writeConfig("ToolBoxButtonState", "bottomright")
+activity.writeConfig("showToolbox", false)
+
 // Create top pannel
 panel = new Panel()
 panel.location = "top"
 panel.alignment = "center"
+panel.locked = true
 
 // Add widgets
 var menu = panel.addWidget("org.kde.plasma.nomadmenu")
