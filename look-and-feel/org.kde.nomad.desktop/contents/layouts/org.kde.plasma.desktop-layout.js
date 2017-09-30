@@ -22,6 +22,7 @@ menu.writeConfig("favoriteApps", "systemsettings.desktop,org.kde.dolphin.desktop
 menu.currentConfigGroup = ["Shortcuts"]
 menu.writeConfig("global", "Alt+F1")
 
+panel.addWidget("org.nomad-shell.panel.separator")
 
 panel.addWidget("org.kde.plasma.appmenu")
 panel.addWidget("org.kde.plasma.panelspacer")
