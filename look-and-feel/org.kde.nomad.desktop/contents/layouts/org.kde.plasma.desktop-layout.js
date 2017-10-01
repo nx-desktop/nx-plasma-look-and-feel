@@ -7,6 +7,9 @@ activity.currentConfigGroup = ["General"]
 activity.writeConfig("ToolBoxButtonState", "bottomright")
 activity.writeConfig("showToolbox", false)
 
+activity.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General')
+activity.writeConfig('Image', 'Cambridge')
+
 // Create top pannel
 panel = new plasma.Panel
 panel.location = "top"
