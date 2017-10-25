@@ -14,11 +14,15 @@ name=nomad-dark
 cursorTheme=Breeze_Snow
 
 [kwinrc][WindowSwitcher]
-LayoutName=org.kde.nomad.dark.desktop
+LayoutName=big_icons
 
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.nomad.dark.desktop
 
 [kwinrc][org.kde.kdecoration2]
+BorderSize=Normal
+ButtonsOnLeft=
+ButtonsOnRight=IAX
+CloseOnDoubleClickOnMenu=false
 library=org.kde.kwin.aurorae
 theme=__aurorae__svg__org.kwin.aurorae.nomad.dark
