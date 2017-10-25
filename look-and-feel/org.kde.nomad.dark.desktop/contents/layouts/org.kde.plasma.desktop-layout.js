@@ -37,6 +37,9 @@ var systrayContainer = desktopById(systrayContainmentId)
 systrayContainer.currentConfigGroup = ['General']
 systrayContainer.writeConfig("knownItems", "org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.volume")
 
-panel.addWidget("org.nomad.clock")
+var clock = panel.addWidget("org.nomad.clock")
+    // Configure font
+clock.currentConfigGroup = ["Appearance"]
+clock.writeConfig("fontFamily", "Homenaje")
 
 panel.locked = true
