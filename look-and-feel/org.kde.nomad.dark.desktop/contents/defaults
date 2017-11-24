@@ -11,7 +11,7 @@ Theme=Luv
 name=nomad-dark
 
 [kcminputrc][Mouse]
-cursorTheme=Breeze_Snow
+cursorTheme=nomad_snow_cursors
 
 [kwinrc][WindowSwitcher]
 LayoutName=big_icons
