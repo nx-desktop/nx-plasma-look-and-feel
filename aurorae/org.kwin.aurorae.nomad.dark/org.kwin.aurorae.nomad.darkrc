@@ -7,7 +7,6 @@ UseTextShadow=false
 Shadow=true
 Animation=1
 
-
 [Layout]
 BorderLeft=1
 BorderRight=1
@@ -17,7 +16,7 @@ TitleEdgeBottom=2
 TitleEdgeLeft=0
 TitleEdgeRight=0
 TitleEdgeBottomMaximized=0
-TitleBorderLeft=2
+TitleBorderLeft=75
 TitleBorderRight=2
 TitleHeight=30
 ButtonWidth=30
