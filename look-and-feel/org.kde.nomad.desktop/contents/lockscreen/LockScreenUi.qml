@@ -151,6 +151,14 @@ Rectangle {
                 }
             }
         }
+
+        Loader {
+            anchors.top: loginButton.bottom
+            Layout.fillWidth: parent
+            Layout.preferredHeight: item ? item.implicitHeight : 0
+            active: config.showMediaControls
+            source: "MediaControls.qml"
+        }
     }
 
     Component {
