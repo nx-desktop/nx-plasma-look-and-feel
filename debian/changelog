@@ -1,0 +1,91 @@
+nomad-plasma-look-and-feel (1.6.3-1) nxos; urgency=medium
+
+  * Bump version.
+
+ -- Uri Herrera <uri_herrera@nitrux.in>  Fri, 30 Mar 2018 20:56:00 -0500
+ 
+nomad-plasma-look-and-feel (1.6.2-1) nxos; urgency=medium
+
+  * Bump version.
+
+ -- Uri Herrera <uri_herrera@nitrux.in>  Wed, 24 Jan 2018 17:50:00 -0500
+ 
+nomad-plasma-look-and-feel (1.6-1) nxos; urgency=medium
+
+  * Bump version.
+
+ -- Uri Herrera <uri_herrera@nitrux.in>  Tue, 23 Jan 2018 15:57:29 -0500
+ 
+nomad-plasma-look-and-feel (1.5-2) nxos; urgency=medium
+
+  * Adding default wallpaper to the layout.
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Sat, 30 Sep 2017 20:11:29 -0500
+
+nomad-plasma-look-and-feel (1.5-1) nxos; urgency=medium
+
+  * Add Cambridge wallpaper theme.
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 28 Sep 2017 23:58:33 -0500
+
+nomad-plasma-look-and-feel (1.4-3) nxos; urgency=medium
+
+  * Apply layout changes for both themes. 
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 28 Sep 2017 23:46:49 -0500
+
+nomad-plasma-look-and-feel (1.4-2) nxos; urgency=medium
+
+  * Hide desktop toolbox
+  * Lock panel widgets
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 28 Sep 2017 23:23:52 -0500
+
+nomad-plasma-look-and-feel (1.4-1) nxos; urgency=medium
+
+  * Adding konsole profile.
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 28 Sep 2017 16:12:58 -0500
+
+nomad-plasma-look-and-feel (1.3-1) nxos; urgency=medium
+
+  * Fixing window decoration. 
+
+ -- Alexis López Zubieta <azubieta90@gmail.com>  Mon, 25 Sep 2017 12:05:06 -0500
+
+nomad-plasma-look-and-feel (1.2-2nxos1) nxos; urgency=medium
+
+  * Fix aurare cmake
+
+ -- Alexis López Zubieta <azubieta90@gmail.com>  Mon, 18 Sep 2017 18:31:34 -0500
+
+nomad-plasma-look-and-feel (1.2-1nxos1) nxos; urgency=medium
+
+  * Adding layout
+
+ -- Alexis López Zubieta <azubieta90@gmail.com>  Mon, 18 Sep 2017 18:23:44 -0500
+
+nomad-plasma-look-and-feel (1.1-1nxos1) nxos; urgency=medium
+
+  [ Alexis Lopez Zubieta ]
+  * Adding gbp.conf
+
+  [ Ubuntu ]
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 16 Mar 2017 06:14:52 +0000
+
+nomad-plasma-look-and-feel (1.1-1) nxos; urgency=medium
+
+  [ Alexis Lopez Zubieta ]
+  * Adding debian folder
+  * Spliting long string constant into lines to make lint happier.
+
+  [ Ubuntu ]
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Thu, 16 Mar 2017 05:58:23 +0000
+
+nomad-plasma-look-and-feel (1.0-1) nxos; urgency=medium
+
+  * Initial release
+
+ -- Alexis Lopez Zubieta <azubieta90@gmail.com>  Tue, 14 Mar 2017 02:16:46 +0000
