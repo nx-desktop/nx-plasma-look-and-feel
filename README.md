@@ -25,12 +25,12 @@ This is the Nomad Look and Feel repository. Here you will find the following ite
 
 # Installing
 - Clone this Git repository or download zip.
-- Extract Look and Feel package to `~/.local/share/plasma/look-and-feel/` or `/usr/share/plasma/look-and-feel`.
-- Extract Plasma theme to `~/.local/share/plasma/desktoptheme/` or `/usr/share/plasma/desktoptheme`.
-- Extract SDDM theme to `/usr/share/sddm/themes`.
-- Extract color schemes to `/usr/share/color-schemes`.
-- Extract Konsole profile to `/usr/share/konsole`.
-- Extract wallpapers to `/usr/share/wallpapers`.
+- Extract Look and Feel package to `~/.local/share/plasma/look-and-feel/` or `/usr/share/plasma/look-and-feel/`.
+- Extract Plasma theme to `~/.local/share/plasma/desktoptheme/` or `/usr/share/plasma/desktoptheme/`.
+- Extract SDDM theme to `/usr/share/sddm/themes/`.
+- Extract color schemes to `~/.local/share/color-schemes/` `/usr/share/color-schemes/`.
+- Extract Konsole profile to `~/.local/share/konsole/` or `/usr/share/konsole/`.
+- Extract wallpapers to `/usr/share/wallpapers/`.
 
 # Issues
 If you find problems with the contents of this repository please create an issue.
