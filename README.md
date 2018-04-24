@@ -19,6 +19,7 @@ This is the Nomad Look and Feel repository. Here you will find the following ite
 - [Nomad clock applet](https://github.com/nomad-desktop/nomad-clock-applet).
 - [Latte dock](https://github.com/psifidotos/Latte-Dock).
 - [Nomad Simplemenu](https://github.com/nomad-desktop/nomad-simplemenu).
+- [panel separator](https://github.com/nomad-desktop/panel-separator).
 
 ![](https://i.imgur.com/DnC6fwt.png)
 
