@@ -35,6 +35,6 @@ This is the Nomad Look and Feel repository. Here you will find the following ite
 # Issues
 If you find problems with the contents of this repository please create an issue.
 
-Artwork is Licensed under the [Creative Commons Attribution-Share Alike 4.0 License](https://www.deviantart.com/users/outgoing?https://creativecommons.org/licenses/by-sa/4.0/).
+Artwork is Licensed under the [Creative Commons Attribution-Share Alike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ©2018 Nitrux Latinoamericana S.C.
