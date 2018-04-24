@@ -9,7 +9,7 @@ This is the Nomad Look and Feel repository. Here you will find the following ite
 - Wallpapers.
 
 # Requirements
-- Plasma 5.8.4+
+- Plasma 5.8.4+.
 - Global menu plasmoid.
 - [Luv icon theme](https://github.com/Nitrux/luv-icon-theme).
 - [Nomad Systemtray](https://github.com/nomad-desktop/nomad-systemtray)
