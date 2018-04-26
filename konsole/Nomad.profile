@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=false
 ColorScheme=Nomad
-Font=Calling Code,9,-1,5,50,0,0,0,0,0,Regular
+Font=Calling Code,10,-1,5,50,0,0,0,0,0,Regular
 UseFontLineChararacters=true
 
 [Cursor Options]
