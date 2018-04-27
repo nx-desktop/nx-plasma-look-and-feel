@@ -1,8 +1,8 @@
-nomad-plasma-look-and-feel (1.6.5.4-1) nxos; urgency=medium
+nomad-plasma-look-and-feel (1.6.6-1) nxos; urgency=medium
 
   * New version.
 
- -- Uri Herrera <uri_herrera@nitrux.in>  Tue, 26 Apr 2018 01:52:00 -0500
+ -- Uri Herrera <uri_herrera@nitrux.in>  Fri, 27 Apr 2018 01:03:00 -0500
 
 nomad-plasma-look-and-feel (1.6.5-1) nxos; urgency=medium
 
