@@ -36,3 +36,4 @@ deploy:
 
 notifications:
   email: false
+  slack: nitrux:LgpKKPnWky7IWShmzXsyVDWu
