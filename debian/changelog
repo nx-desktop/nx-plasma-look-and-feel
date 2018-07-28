@@ -1,3 +1,9 @@
+nomad-plasma-look-and-feel (1.6.8) nxos; urgency=medium
+
+  * Updated splash.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 28 Jul 2018 00:59:00 -0500
+
 nomad-plasma-look-and-feel (1.6.7) nxos; urgency=medium
 
   * New version.
