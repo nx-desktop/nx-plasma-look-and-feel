@@ -55,7 +55,7 @@ Rectangle {
                     when: root.stage >= 1 && root.stage < 6
                     PropertyChanges {
                         target: rocket
-                        anchors.bottomMargin: 30
+                        anchors.bottomMargin: 80
                     }
                 },
                 State {
@@ -200,7 +200,7 @@ Rectangle {
         Text {
             id: wellcomeMessage
             text: i18n("Welcome")
-            color: "#F5F5F5"
+            color: "#212121"
             font.pointSize: 18
             font.weight: Font.Light
 
