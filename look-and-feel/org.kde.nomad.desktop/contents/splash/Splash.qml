@@ -200,7 +200,7 @@ Rectangle {
         Text {
             id: welcomeMessage
             text: i18n("Welcome")
-            color: "#F5F5F5"
+            color: "#212121"
             font.pointSize: 18
             font.weight: Font.Light
 

@@ -187,10 +187,10 @@ Rectangle {
     }
 
     Item {
-        id: wellcomeMessageBox
+        id: welcomeMessageBox
 
         width: 200;
-        height: wellcomeMessage.height
+        height: welcomeMessage.height
 
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: glowingBar.top
@@ -198,22 +198,22 @@ Rectangle {
         clip: true
 
         Text {
-            id: wellcomeMessage
+            id: welcomeMessage
             text: i18n("Welcome")
-            color: "#212121"
+            color: "#f5f5f5"
             font.pointSize: 18
             font.weight: Font.Light
 
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: wellcomeMessage.height
+            anchors.topMargin: welcomeMessage.height
 
             states: [
                 State {
                     name: "visible"
                     when: root.stage >= 6
                     PropertyChanges {
-                        target: wellcomeMessage
+                        target: welcomeMessage
                         anchors.topMargin: - 5
                     }
                 }
