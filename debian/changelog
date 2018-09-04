@@ -1,3 +1,9 @@
+nomad-plasma-look-and-feel (1.6.9) nxos; urgency=medium
+
+  * Remove top panel function.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 04 Sep 2018 15:48:00 -0500
+
 nomad-plasma-look-and-feel (1.6.8.1) nxos; urgency=medium
 
   * Bump version.
