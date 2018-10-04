@@ -1,4 +1,4 @@
-# Nomad Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel)
+# Nomad Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel.svg?branch=development)](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel)
 
 This is the Nomad Look and Feel repository. Here you will find the following items:
 - Plasma theme.
