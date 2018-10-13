@@ -1,3 +1,9 @@
+nomad-plasma-look-and-feel (1.6.13) nxos; urgency=medium
+
+  * Bump version.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 13 Oct 2018 18:51:00 -0500
+
 nomad-plasma-look-and-feel (1.6.12) nxos; urgency=medium
 
   * Bump version.
