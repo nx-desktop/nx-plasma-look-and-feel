@@ -1,3 +1,9 @@
+nomad-plasma-look-and-feel (1.6.16) nxos; urgency=medium
+
+  * Set new wallpaper as default.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 26 Oct 2018 21:49:00 -0500
+
 nomad-plasma-look-and-feel (1.6.15) nxos; urgency=medium
 
   * Use new wallpaper.
