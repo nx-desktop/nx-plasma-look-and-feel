@@ -1,3 +1,9 @@
+nomad-plasma-look-and-feel (1.6.14) nxos; urgency=medium
+
+  * Add new wallpaper.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 26 Oct 2018 19:54:00 -0500
+
 nomad-plasma-look-and-feel (1.6.13) nxos; urgency=medium
 
   * Bump version.
