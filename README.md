@@ -1,6 +1,6 @@
-# Nomad Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nomad-desktop/nomad-plasma-look-and-feel)
+# Nx Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel)
 
-This is the Nomad Look and Feel repository. Here you will find the following items:
+This is the Nx Look and Feel repository. Here you will find the following items:
 - Plasma theme.
 - Aurorae theme.
 - SDDM Theme.
@@ -12,14 +12,14 @@ This is the Nomad Look and Feel repository. Here you will find the following ite
 - Plasma 5.8.4+.
 - Global menu plasmoid.
 - [Luv icon theme](https://github.com/Nitrux/luv-icon-theme).
-- [Nomad Systemtray](https://github.com/nomad-desktop/nomad-systemtray)
-- [Nomad notifications applet](https://github.com/nomad-desktop/nomad-notifications-applet)
-- [Nomad networkmanagement applet](https://github.com/nomad-desktop/nomad-networkmanagement-applet).
-- [Nomad audio applet](https://github.com/nomad-desktop/nomad-audio-applet).
-- [Nomad clock applet](https://github.com/nomad-desktop/nomad-clock-applet).
+- [Nx Systemtray](https://github.com/nx-desktop/nx-systemtray)
+- [Nx notifications applet](https://github.com/nx-desktop/nx-notifications-applet)
+- [Nx networkmanagement applet](https://github.com/nx-desktop/nx-networkmanagement-applet).
+- [N audio applet](https://github.com/nx-desktop/nx-audio-applet).
+- [Nx clock applet](https://github.com/nx-desktop/nx-clock-applet).
 - [Latte dock](https://github.com/psifidotos/Latte-Dock).
-- [Nomad Simplemenu](https://github.com/nomad-desktop/nomad-simplemenu).
-- [Panel separator](https://github.com/nomad-desktop/panel-separator).
+- [Nx Simplemenu](https://github.com/nx-desktop/nx-simplemenu).
+- [Panel separator](https://github.com/nx-desktop/panel-separator).
 
 ![](https://i.imgur.com/DnC6fwt.png)
 

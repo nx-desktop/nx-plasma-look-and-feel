@@ -1,4 +1,4 @@
-Source: nomad-plasma-look-and-feel
+Source: nx-plasma-look-and-feel
 Section: main
 Priority: optional
 Maintainer: Alexis Lopez Zubieta <azubieta90@gmail.com>
@@ -8,8 +8,8 @@ Standards-Version: 3.9.6
 Vcs-Git: https://github.com/nomad-shell/nomad-plasma-look-and-feel.git
 Vcs-Browser: https://github.com/nomad-shell/nomad-plasma-look-and-feel
 
-Package: nomad-plasma-look-and-feel
+Package: nx-plasma-look-and-feel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Nomad Look and Feel package for Plasma 5.8.4+
- Nomad Look and Feel package for Plasma 5.8.4+
+Description: Nx Look and Feel package for Plasma 5.8.4+
+ Nx Look and Feel package for Plasma 5.8.4+
