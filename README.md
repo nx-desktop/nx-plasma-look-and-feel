@@ -1,6 +1,6 @@
-# Nx Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel)
+# NX Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel)
 
-This is the Nx Look and Feel repository. Here you will find the following items:
+This is the NX Look and Feel repository. Here you will find the following items:
 - Plasma theme.
 - Aurorae theme.
 - SDDM Theme.
@@ -11,15 +11,14 @@ This is the Nx Look and Feel repository. Here you will find the following items:
 # Requirements
 - Plasma 5.8.4+.
 - Global menu plasmoid.
-- [Luv icon theme](https://github.com/Nitrux/luv-icon-theme).
-- [Nx Systemtray](https://github.com/nx-desktop/nx-systemtray)
-- [Nx notifications applet](https://github.com/nx-desktop/nx-notifications-applet)
-- [Nx networkmanagement applet](https://github.com/nx-desktop/nx-networkmanagement-applet).
-- [N audio applet](https://github.com/nx-desktop/nx-audio-applet).
-- [Nx clock applet](https://github.com/nx-desktop/nx-clock-applet).
-- [Latte dock](https://github.com/psifidotos/Latte-Dock).
-- [Nx Simplemenu](https://github.com/nx-desktop/nx-simplemenu).
-- [Panel separator](https://github.com/nx-desktop/panel-separator).
+- [Luv icon theme](https://gitlab.com/nitrux/nx-desktop/luv-icon-theme).
+- [NX Systemtray](https://gitlab.com/nitrux/nx-desktop/nx-systemtray-applet)
+- [NX notifications applet](https://gitlab.com/nitrux/nx-desktop/nx-notifications-applet)
+- [NX networkmanagement applet](https://gitlab.com/nitrux/nx-desktop/nx-networkmanagement-applet).
+- [NX audio applet](https://gitlab.com/nitrux/nx-desktop/nx-audio-applet).
+- [NX clock applet](https://gitlab.com/nitrux/nx-desktop/nx-clock-applet).
+- [Latte dock](https://phabricator.kde.org/source/latte-dock/).
+- [NX Simplemenu](https://gitlab.com/nitrux/nx-desktop/x-simplemenu).
 
 ![](https://i.imgur.com/DnC6fwt.png)
 
@@ -37,4 +36,4 @@ If you find problems with the contents of this repository please create an issue
 
 Artwork is Licensed under the [Creative Commons Attribution-Share Alike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
 
-©2018 Nitrux Latinoamericana S.C.
+©2019 Nitrux Latinoamericana S.C.
