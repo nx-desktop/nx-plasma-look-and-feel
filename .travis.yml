@@ -22,11 +22,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-- provider: script
-  script: "./source/nomad-repository-util.sh upload nomad-desktop-dev *.deb"
-  skip_cleanup: true
-  on:
-    branch: development
 notifications:
   email: false
   slack:

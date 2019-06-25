@@ -1,4 +1,4 @@
-project(PlasmaTheme-Nomad)
+project(PlasmaTheme-Nitrux)
 
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
@@ -29,7 +29,7 @@ configure_file(
 add_custom_target(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 # Set up packaging
-set(CPACK_PACKAGE_NAME "nomad")
+set(CPACK_PACKAGE_NAME "nx-plasma-look-and-feel")
 set(CPACK_PACKAGE_VERSION "${THEME_VERSION_STRING}")
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_SET_DESTDIR FALSE)

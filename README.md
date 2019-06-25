@@ -4,9 +4,10 @@ This is the NX Look and Feel repository. Here you will find the following items:
 - Plasma theme.
 - Aurorae theme.
 - SDDM Theme.
-- Nomad color schemes.
+- Nitrux color schemes.
 - Konsole profile.
 - Wallpapers.
+- Cursor themes. 
 
 # Requirements
 - Plasma 5.8.4+.

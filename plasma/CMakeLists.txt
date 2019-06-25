@@ -1,2 +1,2 @@
-add_subdirectory(nomad)
-add_subdirectory(nomad-dark)
+add_subdirectory(nitrux)
+add_subdirectory(nitrux-dark)

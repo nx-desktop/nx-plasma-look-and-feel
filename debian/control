@@ -1,15 +1,15 @@
 Source: nx-plasma-look-and-feel
 Section: main
 Priority: optional
-Maintainer: Alexis Lopez Zubieta <azubieta90@gmail.com>
+Maintainer: Uri Herrera <uri_herrera@nxos.org>
 Build-Depends: debhelper (>=9), cmake (>= 3), extra-cmake-modules, libkf5plasma-dev, libkf5windowsystem-dev
 Standards-Version: 3.9.6
 # Homepage: <insert the upstream URL, if relevant>
-Vcs-Git: https://github.com/nomad-shell/nomad-plasma-look-and-feel.git
-Vcs-Browser: https://github.com/nomad-shell/nomad-plasma-look-and-feel
+Vcs-Git: https://github.com/nx-desktop/nx-plasma-look-and-feel.git
+Vcs-Browser: https://github.com/nx-desktop/nx-plasma-look-and-feel
 
 Package: nx-plasma-look-and-feel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Nx Look and Feel package for Plasma 5.8.4+
- Nx Look and Feel package for Plasma 5.8.4+
+Description: NX Look and Feel package for Plasma 5.8.4+
+ NX Look and Feel package for Plasma 5.8.4+
