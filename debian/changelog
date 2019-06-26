@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.19) nxos; urgency=medium
+
+  * Fix aurorae folder name.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 26 Jun 2019 15:34:00 -0500
+
 nx-plasma-look-and-feel (1.6.18) nxos; urgency=medium
 
   * Replace nomad branding.
