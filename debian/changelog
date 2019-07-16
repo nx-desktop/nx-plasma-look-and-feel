@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.21) nxos; urgency=medium
+
+  * Fix window decoration color scheme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 15 Jun 2019 11:25:00 -0500
+
 nx-plasma-look-and-feel (1.6.20) nxos; urgency=medium
 
   * Fix color scheme.
