@@ -21,8 +21,6 @@ This is the NX Look and Feel repository. Here you will find the following items:
 - [Latte dock](https://phabricator.kde.org/source/latte-dock/).
 - [NX Simplemenu](https://gitlab.com/nitrux/nx-desktop/x-simplemenu).
 
-![](https://i.imgur.com/DnC6fwt.png)
-
 # Installing
 - Clone this Git repository or download zip.
 - Extract Look and Feel package to `~/.local/share/plasma/look-and-feel/` or `/usr/share/plasma/look-and-feel/`.
