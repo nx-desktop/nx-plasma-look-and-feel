@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.27) nxos; urgency=medium
+
+  * Update cursor theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 29 Oct 2019 02:03:00 -0500
+
 nx-plasma-look-and-feel (1.6.26) nxos; urgency=medium
 
   * Update aurorae theme.
