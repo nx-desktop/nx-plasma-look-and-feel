@@ -12,14 +12,14 @@ This is the NX Look and Feel repository. Here you will find the following items:
 # Requirements
 - Plasma 5.8.4+.
 - Global menu plasmoid.
-- [Luv icon theme](https://gitlab.com/nitrux/nx-desktop/luv-icon-theme).
-- [NX Systemtray](https://gitlab.com/nitrux/nx-desktop/nx-systemtray-applet)
-- [NX notifications applet](https://gitlab.com/nitrux/nx-desktop/nx-notifications-applet)
-- [NX networkmanagement applet](https://gitlab.com/nitrux/nx-desktop/nx-networkmanagement-applet).
-- [NX audio applet](https://gitlab.com/nitrux/nx-desktop/nx-audio-applet).
-- [NX clock applet](https://gitlab.com/nitrux/nx-desktop/nx-clock-applet).
+- [Luv icon theme](https://github.com/Nitrux/luv-icon-theme).
+- [NX Systemtray](https://github.com/nx-desktop/nx-systemtray-applet).
+- [NX notifications applet](https://github.com/nx-desktop/nx-notifications-applet).
+- [NX networkmanagement applet](https://github.com/nx-desktop/nx-networkmanagement-applet).
+- [NX audio applet](https://github.com/nx-desktop/nx-audio-applet).
+- [NX clock applet](https://github.com/nx-desktop/nx-clock-applet).
 - [Latte dock](https://phabricator.kde.org/source/latte-dock/).
-- [NX Simplemenu](https://gitlab.com/nitrux/nx-desktop/nx-simplemenu-applet).
+- [NX Simplemenu](https://github.com/nx-desktop/nx-simplemenu-applet).
 
 # Installing
 - Clone this Git repository or download zip.
