@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.30) nxos; urgency=medium
+
+  * Transparency is cool again.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 06 Feb 2020 17:24:00 -0500
+
 nx-plasma-look-and-feel (1.6.29) nxos; urgency=medium
 
   * Transparency is cool again.
