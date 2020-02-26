@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.32) nxos; urgency=medium
+
+  * Plasma buttons match Kvantum theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 26 Feb 2020 03:48:00 -0500
+ 
 nx-plasma-look-and-feel (1.6.31) nxos; urgency=medium
 
   * Transparency is cool again.
