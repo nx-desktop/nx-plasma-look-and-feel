@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.33) nxos; urgency=medium
+
+  * Add video and window title plasmoids to package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 27 Apr 2020 14:26:00 -0500
+
 nx-plasma-look-and-feel (1.6.32) nxos; urgency=medium
 
   * Plasma buttons match Kvantum theme.

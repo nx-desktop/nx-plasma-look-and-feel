@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+	http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<kcfgfile name=""/>
+
+<group name="General">
+	<entry name="Video" type="String">
+		<label>Video file</label>
+		<default></default>
+	</entry>
+	<entry name="Folder" type="String">
+		<label>Last Folder</label>
+		<default></default>
+	</entry>
+	<entry name="Fill" type="Int">
+		<label>Fill Mode</label>
+		<default>2</default>
+	</entry>
+	<entry name="Volume" type="Double">
+		<label>Audio Volume</label>
+		<default>1.0</default>
+	</entry>
+	<entry name="Rate" type="Double">
+		<label>Playback Rate</label>
+		<default>1.0</default>
+	</entry>
+	<entry name="Shuffle" type="Bool">
+		<label>Shuffle</label>
+		<default>true</default>
+	</entry>
+</group>
+
+</kcfg>
