@@ -11,5 +11,6 @@ Vcs-Browser: https://github.com/nx-desktop/nx-plasma-look-and-feel
 Package: nx-plasma-look-and-feel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: breeze-cursor-theme
 Description: NX Look and Feel package for Plasma 5.8.4+
  NX Look and Feel package for Plasma 5.8.4+

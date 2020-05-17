@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.35) nxos; urgency=medium
+
+  * Update package to provide breeze-cursor-theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 15 May 2020 22:35:00 -0500
+
 nx-plasma-look-and-feel (1.6.34) nxos; urgency=medium
 
   * Actuall add video and window title plasmoids to their directories.
