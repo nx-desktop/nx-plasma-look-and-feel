@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.36) nitrux; urgency=medium
+
+  * Update color-scheme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 27 May 2020 19:47:00 -0500
+
 nx-plasma-look-and-feel (1.6.35) nxos; urgency=medium
 
   * Update package to provide breeze-cursor-theme.
