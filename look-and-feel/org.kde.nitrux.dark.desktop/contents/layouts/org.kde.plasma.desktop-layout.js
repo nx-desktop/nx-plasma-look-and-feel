@@ -8,7 +8,7 @@ activity.writeConfig("ToolBoxButtonState", "bottomright")
 activity.writeConfig("showToolbox", false)
 
 activity.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General')
-activity.writeConfig('Image', 'Inno')
+activity.writeConfig('Image', 'Opal')
 
 // // Create top pannel
 // panel = new plasma.Panel
