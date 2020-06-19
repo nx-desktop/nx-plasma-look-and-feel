@@ -77,7 +77,7 @@ Rectangle {
     ColorOverlay {
         anchors.fill: background
         source: background
-        color: "#3a3f41"
+        color: "#2b2c31"
         opacity: 0.1
     }
 
@@ -302,7 +302,7 @@ Rectangle {
         id: actionBar
         z: 1
         anchors.top: parent.top;
-        color: "#3a3f41"
+        color: "#2b2c31"
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 32
