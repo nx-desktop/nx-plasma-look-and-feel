@@ -29,7 +29,7 @@ FocusScope {
     id: container
     width: 80; height: 30
 
-    property color color: "#3a3f41"
+    property color color: "#505659"
     property color borderColor: "#c3c9d6"
     property color focusColor: "#266294"
     property color hoverColor: "#26c6da"

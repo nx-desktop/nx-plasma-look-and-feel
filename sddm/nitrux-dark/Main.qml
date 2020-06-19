@@ -191,7 +191,7 @@ Rectangle {
                 text: rememberLastUser.checked ? userModel.lastUser : ""
                 font.pixelSize: 12
                 radius: 3
-                color: "#3a3f41"
+                color: "#505659"
                 borderColor: "#52595c"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"
@@ -219,7 +219,7 @@ Rectangle {
                 height: 32
                 font.pixelSize: 12
                 radius: 3
-                color: "#3a3f41"
+                color: "#505659"
                 borderColor: "#52595c"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"

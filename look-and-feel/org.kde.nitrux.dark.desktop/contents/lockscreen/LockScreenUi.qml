@@ -51,7 +51,7 @@ Rectangle {
     Rectangle {
         id: actionBar
         anchors.top: parent.top;
-        color: "#3a3f41"
+        color: "#2b2c31"
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 32
