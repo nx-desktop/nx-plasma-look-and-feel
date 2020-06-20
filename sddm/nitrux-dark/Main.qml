@@ -78,7 +78,7 @@ Rectangle {
         anchors.fill: background
         source: background
         color: "#2b2c31"
-        opacity: 0.1
+        opacity: 1.0
     }
 
     Rectangle {
@@ -303,7 +303,7 @@ Rectangle {
         z: 1
         anchors.top: parent.top;
         color: "#2b2c31"
-        opacity: 0.9
+        opacity: 1.0
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 32
         visible: primaryScreen
@@ -373,7 +373,8 @@ Rectangle {
         radius: 8
         spread: 0
         samples: 17
-        color: "#333333"
+        color: "#000000"
+        opacity: 0.5
         source: actionBar
     }
 }

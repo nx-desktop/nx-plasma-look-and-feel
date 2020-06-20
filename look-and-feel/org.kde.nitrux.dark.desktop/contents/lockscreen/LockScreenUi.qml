@@ -52,7 +52,7 @@ Rectangle {
         id: actionBar
         anchors.top: parent.top;
         color: "#2b2c31"
-        opacity: 0.9
+        opacity: 1.0
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 32
 
@@ -77,7 +77,8 @@ Rectangle {
             cached: true
             radius: 8.0
             samples: 15
-            color: "#33000000"
+            color: "#000000"
+            opacity: 0.5
             source: actionBar
         }
     }

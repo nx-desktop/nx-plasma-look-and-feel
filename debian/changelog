@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.41) nitrux; urgency=medium
+
+  * Replace colors in sddm theme and look-and-feel to match color scheme, again.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 19 Jun 2020 21:21:00 -0500
+
 nx-plasma-look-and-feel (1.6.40) nitrux; urgency=medium
 
   * Replace colors in sddm theme and look-and-feel to match color scheme.
