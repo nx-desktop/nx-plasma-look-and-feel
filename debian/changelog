@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.43) nitrux; urgency=medium
+
+  * Update screnshots used in System Settings.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 20 Jun 2020 03:50:00 -0500
+
 nx-plasma-look-and-feel (1.6.42) nitrux; urgency=medium
 
   * Replace colors in sddm theme and look-and-feel to match color scheme, again.
