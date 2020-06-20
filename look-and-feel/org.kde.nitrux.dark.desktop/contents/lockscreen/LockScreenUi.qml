@@ -16,7 +16,7 @@ Rectangle {
 
     //colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
 
-    color: "#4c5256"
+    color: "#2b2c31"
     Connections {
         target: authenticator
         onFailed: {
