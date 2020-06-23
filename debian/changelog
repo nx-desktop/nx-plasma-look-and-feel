@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.47) nitrux; urgency=medium
+
+  * Add keyboard layout icon to Plasma theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 23 Jun 2020 17:24:00 -0500
+
 nx-plasma-look-and-feel (1.6.46) nitrux; urgency=medium
 
   * Update package.
