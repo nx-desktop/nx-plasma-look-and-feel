@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.48) nitrux; urgency=medium
+
+  * Fix typo in wallpaper desktop file.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 09 Jul 2020 00:45:00 -0500
+
 nx-plasma-look-and-feel (1.6.47) nitrux; urgency=medium
 
   * Add keyboard layout icon to Plasma theme.
