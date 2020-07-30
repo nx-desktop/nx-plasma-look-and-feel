@@ -1,5 +1,5 @@
 Source: nx-plasma-look-and-feel
-Section: main
+Section: kde
 Priority: optional
 Maintainer: Uri Herrera <uri_herrera@nxos.org>
 Build-Depends: debhelper (>=9), cmake (>= 3), extra-cmake-modules, libkf5plasma-dev, libkf5windowsystem-dev
@@ -13,4 +13,4 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Provides: breeze-cursor-theme
 Description: NX Look and Feel package for Plasma 5.8.4+
- NX Look and Feel package for Plasma 5.8.4+
+ Plasma look and feel package containing the artwork used in Nitrux.
