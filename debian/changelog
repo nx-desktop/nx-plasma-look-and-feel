@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.51) nitrux; urgency=medium
+
+  * Replace wallpaper files with uncompressed images.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 30 Jul 2020 20:51:00 -0500
+
 nx-plasma-look-and-feel (1.6.50) nitrux; urgency=medium
 
   * Update Debian files.
