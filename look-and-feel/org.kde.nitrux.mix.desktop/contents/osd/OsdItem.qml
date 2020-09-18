@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Martin Klapetek <mklapetek@kde.org>
+ * Copyright 2020 Uri Herrera <uri_herrera@nxos.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -21,30 +21,20 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtra
 import QtQuick.Window 2.2
 
-Item {
+Row {
     property QtObject rootItem
-    height: Math.min(units.gridUnit * 15, Screen.desktopAvailableHeight / 5)
-    width: height
 
-    //  /--------------------\
-    //  |      spacing       |
-    //  | /----------------\ |
-    //  | |                | |
-    //  | |      icon      | |
-    //  | |                | |
-    //  | |                | |
-    //  | \----------------/ |
-    //  |      spacing       |
-    //  | [progressbar/text] |
-    //  |      spacing       |
-    //  \--------------------/
+    property int iconWidth: units.iconSizes.medium
+    property int progressBarWidth: Screen.desktopAvailableWidth / 5
+
+    height: iconWidth
+    width: iconWidth + progressBarWidth
 
     PlasmaCore.IconItem {
         id: icon
 
-        height: parent.height - Math.max(progressBar.height, label.height)
-                              - ((units.smallSpacing/2) * 3) //it's an svg
-        width: parent.width
+        height: parent.height
+        width: iconWidth
 
         source: rootItem.icon
     }
@@ -52,12 +42,8 @@ Item {
     PlasmaComponents.ProgressBar {
         id: progressBar
 
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-            margins: Math.floor(units.smallSpacing / 2)
-        }
+        width: progressBarWidth
+        height: parent.height
 
         visible: rootItem.showingProgress
         minimumValue: 0
@@ -65,22 +51,19 @@ Item {
 
         value: Number(rootItem.osdValue)
     }
+
     PlasmaExtra.Heading {
         id: label
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-            margins: Math.floor(units.smallSpacing / 2)
-        }
+
+        width: progressBarWidth
+        height: parent.height
 
         visible: !rootItem.showingProgress
         text: rootItem.showingProgress ? "" : (rootItem.osdValue ? rootItem.osdValue : "")
         horizontalAlignment: Text.AlignHCenter
-        wrapMode: Text.WordWrap
-        maximumLineCount: 2
+        maximumLineCount: 1
         elide: Text.ElideLeft
         minimumPointSize: theme.defaultFont.pointSize
-        fontSizeMode: Text.HorizontalFit
+        fontSizeMode: Text.Fit
     }
 }
