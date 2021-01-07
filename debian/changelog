@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.53) nitrux; urgency=medium
+
+  * Fix icon for Kup and Wallet.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 07 Jan 2020 12:59:00 -0500
+
 nx-plasma-look-and-feel (1.6.52) nitrux; urgency=medium
 
   * Replace Plasma OSD.
