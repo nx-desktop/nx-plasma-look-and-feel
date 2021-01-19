@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.54) nitrux; urgency=medium
+
+  * Increase heigh of titlebar of window decorations.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 19 Jan 2020 16:08:00 -0500
+
 nx-plasma-look-and-feel (1.6.53) nitrux; urgency=medium
 
   * Fix icon for Kup and Wallet.
