@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.55) nitrux; urgency=medium
+
+  * Rename aurare window decorations.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 22 Feb 2021 16:13:00 -0500
+
 nx-plasma-look-and-feel (1.6.54) nitrux; urgency=medium
 
   * Increase heigh of titlebar of window decorations.
