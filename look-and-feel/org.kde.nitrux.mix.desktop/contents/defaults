@@ -21,8 +21,5 @@ LayoutName=org.kde.nitrux.mix.desktop
 
 [kwinrc][org.kde.kdecoration2]
 BorderSize=Normal
-ButtonsOnLeft=
-ButtonsOnRight=IAX
-CloseOnDoubleClickOnMenu=false
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__org.kwin.aurorae.nitrux
+library=org.kde.mauideco
+theme=Nitrux

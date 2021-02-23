@@ -1,5 +1,5 @@
 [kdeglobals][KDE]
-widgetStyle=kvantum
+widgetStyle=kvantum-dark
 
 [kdeglobals][General]
 ColorScheme=NitruxDark
@@ -21,8 +21,5 @@ LayoutName=org.kde.nitrux.dark.desktop
 
 [kwinrc][org.kde.kdecoration2]
 BorderSize=Normal
-ButtonsOnLeft=
-ButtonsOnRight=IAX
-CloseOnDoubleClickOnMenu=false
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__org.kwin.aurorae.nitrux.dark
+library=org.kde.mauideco
+theme=Nitrux

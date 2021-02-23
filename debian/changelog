@@ -1,6 +1,12 @@
+nx-plasma-look-and-feel (1.6.56) nitrux; urgency=medium
+
+  * Rename Aurorae window decorations, make look-and-feel use new window decoration.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 22 Feb 2021 20:34:00 -0500
+
 nx-plasma-look-and-feel (1.6.55) nitrux; urgency=medium
 
-  * Rename aurare window decorations.
+  * Rename Aurorae window decorations.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Mon, 22 Feb 2021 16:13:00 -0500
 
