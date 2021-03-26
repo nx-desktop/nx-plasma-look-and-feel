@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.6.59) nitrux; urgency=medium
+
+  * Actually add new new color-scheme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 26 Mar 2021 16:12:00 -0500
+
 nx-plasma-look-and-feel (1.6.58) nitrux; urgency=medium
 
   * Add new color-scheme, update look-and-feel packages.
