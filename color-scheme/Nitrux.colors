@@ -186,7 +186,7 @@ DisabledSemiTransparent[$d]
 DisabledValue[$d]
 
 [WM]
-activeBackground=238,238,238
+activeBackground=236,239,241
 activeBlend=255,255,255
 activeForeground=49,54,59
 inactiveBackground=207,216,220
