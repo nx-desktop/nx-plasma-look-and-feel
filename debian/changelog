@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.7.3) nitrux; urgency=medium
+
+  * Fix contrast in Discover's update view.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 26 Mar 2021 20:58:00 -0500
+
 nx-plasma-look-and-feel (1.7.2) nitrux; urgency=medium
 
   * Kind of fix contrast in Discover's update view.
