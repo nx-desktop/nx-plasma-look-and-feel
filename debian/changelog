@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.7.4) nitrux; urgency=medium
+
+  * Build for all archs.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 02 Apr 2021 02:29:00 -0500
+
 nx-plasma-look-and-feel (1.7.3) nitrux; urgency=medium
 
   * Fix contrast in Discover's update view.

@@ -9,7 +9,7 @@ Vcs-Git: https://github.com/nx-desktop/nx-plasma-look-and-feel.git
 Vcs-Browser: https://github.com/nx-desktop/nx-plasma-look-and-feel
 
 Package: nx-plasma-look-and-feel
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Provides: breeze-cursor-theme
 Description: NX Look and Feel package for Plasma 5.8.4+
