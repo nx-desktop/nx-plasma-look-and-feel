@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.7.5) nitrux; urgency=medium
+
+  * Change configure icon to match icon theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 22 Apr 2021 02:56:00 -0500
+
 nx-plasma-look-and-feel (1.7.4) nitrux; urgency=medium
 
   * Build for all archs.
