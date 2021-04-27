@@ -91,7 +91,7 @@ PlasmaCore.ColorScope {
         onClicked: root.cancelRequested()
     }
     UserDelegate {
-        width: units.iconSizes.enormous
+        width: units.gridUnit * 8
         height: width
         anchors {
             horizontalCenter: parent.horizontalCenter

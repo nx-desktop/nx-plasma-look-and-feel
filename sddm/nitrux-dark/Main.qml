@@ -22,12 +22,14 @@
 *
 ***************************************************************************/
 
-import QtQuick 2.0
+import QtQuick 2.12
 import QtGraphicalEffects 1.0
 import SddmComponents 2.0
 import QtQuick.Layouts 1.3
-
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
+import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls 2.12
 
 import "Components"
 
@@ -37,17 +39,19 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    property int sessionIndex: session.index
+    property string avatarPath: ''
+    property real faceSize: units.gridUnit * 10
+
 
     TextConstants { id: textConstants }
 
     Connections {
         target: sddm
 
-        onLoginSucceeded: {
+        function onLoginSucceeded() {
         }
 
-        onLoginFailed: {
+        function onLoginFailed(){
             errorMessage.text = textConstants.loginFailed
             password.text = ""
         }
@@ -66,19 +70,18 @@ Rectangle {
         }
     }
 
-    DirectionalBlur {
+    GaussianBlur {
         anchors.fill: background
         source: background
-        angle: 90
-        length: 32
-        samples: 24
+        radius: 50
+        samples: 101
     }
 
     ColorOverlay {
         anchors.fill: background
         source: background
-        color: "#2b2c31"
-        opacity: 1.0
+        color: "#000000"
+        opacity: 0.7
     }
 
     Rectangle {
@@ -99,7 +102,7 @@ Rectangle {
                 width: 64
                 source: "system-reboot.svg"
 
-//                 visible: sddm.canReboot
+                //visible: sddm.canReboot
 
                 onClicked: sddm.reboot()
 
@@ -124,11 +127,12 @@ Rectangle {
                 width: 64
                 source: "system-shutdown.svg"
 
-//                 visible: sddm.canPowerOff
+                //visible: sddm.canPowerOff
 
                 onClicked: sddm.powerOff()
 
-                KeyNavigation.backtab: btnReboot; KeyNavigation.tab: session
+                KeyNavigation.backtab: btnReboot;
+                KeyNavigation.tab: session
             }
 
             Text {
@@ -145,12 +149,13 @@ Rectangle {
         color: "transparent"
         visible: primaryScreen
 
+
         Column {
-         id: mainColumn
-         anchors.centerIn: parent
-         anchors.verticalCenterOffset: -100
-         spacing: 12
-         
+            id: mainColumn
+            anchors.centerIn: parent
+            anchors.verticalCenterOffset: -100
+            spacing: 12
+
             Image {
                 id: space1
                 width: 100
@@ -159,21 +164,35 @@ Rectangle {
                 source: "blank_space.svg"
             }
 
-            Image {
-                id: logo
-                width: 262
-                height: 128
-                fillMode: Image.PreserveAspectFit
-                source: config.logo
+            Rectangle{
+                width: faceSize
+                height: faceSize
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: "transparent"
+                Image {
+                    id: logo
+                    sourceSize: Qt.size(faceSize, faceSize)
+                    anchors.centerIn: parent
+                    fillMode: Image.PreserveAspectFit
+                    source: avatarPath
+                    NumberAnimation {
+                        id: animation
+                        target: logo
+                        property: "opacity"
+                        from: 0
+                        to: 1.0
+                        duration: 750
+                    }
+                }
+
+                Image {
+                    sourceSize: Qt.size(faceSize, faceSize)
+                    anchors.centerIn: parent
+                    visible: (logo.status == Image.Error || logo.status == Image.Null)
+                    fillMode: Image.PreserveAspectFit
+                    source: 'logo.png'
+                }
             }
-            
-//            Image {
-//                id: space2
-//                width: 100
-//                height: 32
-//                fillMode: Image.PreserveAspectFit
-//                source: "blank_space.svg"
-//            }
 
             Text {
                 id: statusText
@@ -181,7 +200,6 @@ Rectangle {
                 anchors.bottomMargin: 12
                 text: i18n("Hi there, Welcome back!")
                 color: "#f5f5f5"
-
             }
 
             TextBox {
@@ -192,13 +210,35 @@ Rectangle {
                 font.pixelSize: 12
                 radius: 3
                 color: "#505659"
-                borderColor: "#52595c"
+                borderColor: "#808b90"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"
                 textColor: "#f5f5f5"
 
-                KeyNavigation.backtab: layoutBox; KeyNavigation.tab: password
+                KeyNavigation.tab: password
                 
+                onTextChanged: {
+                    var localAvatarPath = ''
+                    for (var row = 0; row < userModel.rowCount() ; row++){
+                        for (var col = 0; col < userModel.columnCount() ; col++){
+                            // 257  NameRole
+                            // 260  IconRole
+                            if(text === userModel.data(userModel.index(row,col),257)){
+                                localAvatarPath = userModel.data(userModel.index(row,col),260)
+                                if(!localAvatarPath.includes('/usr/share/sddm/')){
+                                    avatarPath = localAvatarPath
+                                    animation.start()
+                                    return
+                                }
+                            }
+                        }
+                    }
+                    if(avatarPath !== 'logo.png'){
+                        avatarPath = 'logo.png'
+                        animation.start()
+                    }
+                }
+
                 Text {
                     id: userNotice
                     text: "Username"
@@ -220,7 +260,7 @@ Rectangle {
                 font.pixelSize: 12
                 radius: 3
                 color: "#505659"
-                borderColor: "#52595c"
+                borderColor: "#808b90"
                 focusColor: "#00BCD4"
                 hoverColor: "#00ACC1"
                 textColor: "#f5f5f5"
@@ -246,13 +286,13 @@ Rectangle {
                     onTriggered: password.forceActiveFocus()
                 }
 
-                KeyNavigation.backtab: name; KeyNavigation.tab: rememberLastUser
+                KeyNavigation.backtab: name; KeyNavigation.tab: loginButton
 
                 Keys.onPressed: {
                     if (event.key === Qt.Key_Return || event.key ===
                             Qt.Key_Enter) {
-                            sddm.login(name.text, password.text, session.index)
-                            event.accepted = true
+                        sddm.login(name.text, password.text, session.currentIndex)
+                        event.accepted = true
                     }
                 }
             }
@@ -278,15 +318,37 @@ Rectangle {
 
             }
 
-            PlasmaComponents.Button {
+            Button {
                 id: loginButton
                 text: textConstants.login
                 anchors.horizontalCenter:  mainColumn.horizontalCenter
                 width: 150
                 height: 32
-                onClicked: sddm.login(name.text, password.text, session.index)
+                onClicked: sddm.login(name.text, password.text, session.currentIndex)
+                KeyNavigation.backtab: password;
+                KeyNavigation.tab: btnReboot
 
-                KeyNavigation.backtab: rememberLastUser; KeyNavigation.tab: btnReboot
+
+                background: Rectangle {
+                    anchors.fill: loginButton
+                    border.color: loginButton.hovered || loginButton.focus ?  "#00acc1" : "#808b90"
+                    border.width: 1
+                    radius: 3
+                    color: loginButton.down ? '#00acc1' : '#31363b'
+                }
+
+                contentItem: Text {
+                    text: loginButton.text
+                    color: loginButton.down ? '#f9f9fb' : '#f9f9fb'
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                }
+                MouseArea {
+                    hoverEnabled: true
+                    anchors.fill: parent
+                    cursorShape: containsMouse ? Qt.PointingHandCursor : Qt.ArrowCursor
+                }
             }
 
             Text {
@@ -298,83 +360,58 @@ Rectangle {
         }
     }
 
-    Rectangle {
-        id: actionBar
-        z: 1
-        anchors.top: parent.top;
+    //Action bar
+    Rectangle{
+        id: actionBarBackground
+        anchors.fill: actionBar
         color: "#2b2c31"
-        opacity: 1.0
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width; height: 32
-        visible: primaryScreen
-
-        Row {
-            anchors.left: parent.left
-            anchors.margins: 5
-            anchors.verticalCenter: parent.verticalCenter
-            height: 24
-            spacing: 20
-
-            // Session
-            CustomComboBox {
-                id: session
-                height: parent.height
-                arrowColor: "#F5F5F5"
-                textColor: "#F5F5F5"
-                width: 120
-                anchors.verticalCenter: parent.verticalCenter
-
-                arrowIcon: "angle-down.svg"
-
-                model: sessionModel
-                index: sessionModel.lastIndex
-
-                font.family: "Noto Sans"
-                font.pointSize: 10
-                font.weight: Font.ExtraLight
-
-                KeyNavigation.backtab: btnPoweroff; KeyNavigation.tab: layoutBox
-            }
-
-            // Keyboard Layout
-            CustomLayoutBox {
-                id: layoutBox
-                height: session.height
-                disableFlag: true
-                arrowColor: "#F5F5F5"
-                textColor: "#F5F5F5"
-                anchors.verticalCenter: parent.verticalCenter
-
-                arrowIcon: "angle-down.svg"
-
-                KeyNavigation.backtab: session; KeyNavigation.tab: name
-            }
-        }
-
-        // Clock
-        Row {
-            height: 24
-            anchors.right: parent.right
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.margins: 9
-            spacing: 5
-
-            InlineClock {
-                color: "#F5F5F5"
-                font.pointSize: 12
-            }
-        }
+        opacity: 0.9
     }
 
     DropShadow {
-        anchors.fill: actionBar
+        anchors.fill: actionBarBackground
         horizontalOffset: 0
-        verticalOffset: 2
+        verticalOffset: 1
         radius: 8
-        spread: 0
         samples: 17
-        color: "#000000"
-        opacity: 0.5
-        source: actionBar
+        color: "#101010"
+        source: actionBarBackground
+    }
+
+    RowLayout {
+        id: actionBar
+        spacing: 8
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+        Item {
+            Layout.preferredWidth: 2
+        }
+
+        SessionButton {
+            id: session
+            KeyNavigation.backtab: btnPoweroff;
+            KeyNavigation.tab: keyboardButton
+        }
+
+        KeyboardButton {
+            id: keyboardButton
+            KeyNavigation.backtab: session;
+            KeyNavigation.tab: name
+        }
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        InlineClock {
+            color: "#F5F5F5"
+            font.pointSize: 12
+        }
+        Item {
+            Layout.preferredWidth: 2
+        }
     }
 }

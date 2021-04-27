@@ -7,7 +7,7 @@ import QtQuick.Layouts 1.1
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.private.sessions 2.0
 import "../components"
 
@@ -16,7 +16,20 @@ Rectangle {
 
     //colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
 
-    color: "#E2EEF3"
+    color: "transparent"
+
+    FastBlur {
+        anchors.fill: parent
+        source: wallpaper
+        radius: 50
+    }
+
+    Rectangle{
+        anchors.fill: parent
+        color: "#ffffff"
+        opacity: 0.7
+    }
+
     Connections {
         target: authenticator
         onFailed: {
@@ -48,6 +61,7 @@ Rectangle {
         connectedSources: "Caps Lock"
     }
 
+
     Rectangle {
         id: actionBar
         anchors.top: parent.top;
@@ -55,6 +69,16 @@ Rectangle {
         opacity: 0.9
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width; height: 32
+
+
+        PlasmaComponents3.ToolButton {
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
+            text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+            // icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+            onClicked: inputPanel.showHide()
+            visible: inputPanel.status == Loader.Ready
+        }
 
         // Clock
         Row {
@@ -64,8 +88,8 @@ Rectangle {
             spacing: 5
 
             InlineClock {
-                color: "#4D4D4D"
-                font.pointSize: 10
+                color: "#31363b"
+                font.pointSize: 12
                 font.weight: Font.Bold
             }
         }
@@ -74,14 +98,21 @@ Rectangle {
             anchors.fill: actionBar
             horizontalOffset: 0
             verticalOffset: 2
+            radius: 8
+            samples: 17
+            color: "#707070"
             cached: true
-            radius: 8.0
-            samples: 15
-            color: "#33000000"
             source: actionBar
         }
     }
-    
+
+    // Image {
+    //     source: "blur.png"
+    //     anchors.centerIn: parent
+    //     width:  parent.width / 3
+    //     height: width
+    // }
+
 
     Clock {
         id: clock
@@ -93,17 +124,16 @@ Rectangle {
     ColumnLayout {
         id: mainBlock
         spacing: 18
-        width: 200
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: clock.bottom
         anchors.topMargin: 18
 
         property bool locked: true
 
-
         Loader {
             id: passwordAreaLoader
-            Layout.fillWidth: true
+            Layout.preferredWidth: 200
+            Layout.alignment: Qt.AlignHCenter
             sourceComponent: mainBlock.locked ? undefined : passwordArea
             height: 0;
             clip: true
@@ -153,13 +183,128 @@ Rectangle {
         }
 
         Loader {
-            anchors.top: loginButton.bottom
-            Layout.fillWidth: parent
+            Layout.alignment: Qt.AlignHCenter
+            Layout.fillWidth: true
             Layout.preferredHeight: item ? item.implicitHeight : 0
             active: config.showMediaControls
             source: "MediaControls.qml"
         }
+
     }
+
+
+    Loader {
+        id: inputPanel
+        state: "hidden"
+        readonly property bool keyboardActive: item ? item.active : false
+        Layout.fillWidth: true
+        function showHide() {
+            state = state == "hidden" ? "visible" : "hidden";
+        }
+        Component.onCompleted: inputPanel.source = "../components/VirtualKeyboard.qml"
+
+        onKeyboardActiveChanged: {
+            if (keyboardActive) {
+                state = "visible";
+                // Otherwise the password field loses focus and virtual keyboard
+                // keystrokes get eaten
+                //mainBlock.mainPasswordBox.forceActiveFocus();
+                if (mainBlock.locked) {
+                    showPasswordArea.start()
+                    mainBlock.locked = false
+                    root.clearPassword()
+                }else{
+                    root.clearPassword()
+                }
+            } else {
+                state = "hidden";
+            }
+        }
+
+        states: [
+            State {
+                name: "visible"
+                PropertyChanges {
+                    target: mainBlock
+                    y: Math.min(0, lockScreenRoot.height - inputPanel.height - mainBlock.visibleBoundary)
+                }
+                PropertyChanges {
+                    target: inputPanel
+                    y: lockScreenRoot.height - inputPanel.height
+                }
+            },
+            State {
+                name: "hidden"
+                PropertyChanges {
+                    target: mainBlock
+                    y: 0
+                }
+                PropertyChanges {
+                    target: inputPanel
+                    y: lockScreenRoot.height - lockScreenRoot.height/4
+                }
+            }
+        ]
+        transitions: [
+            Transition {
+                from: "hidden"
+                to: "visible"
+                SequentialAnimation {
+                    ScriptAction {
+                        script: {
+                            inputPanel.item.activated = true;
+                            Qt.inputMethod.show();
+                        }
+                    }
+                    ParallelAnimation {
+                        NumberAnimation {
+                            target: mainBlock
+                            property: "y"
+                            duration: units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                        NumberAnimation {
+                            target: inputPanel
+                            property: "y"
+                            duration: units.longDuration
+                            easing.type: Easing.OutQuad
+                        }
+                    }
+                }
+            },
+            Transition {
+                from: "visible"
+                to: "hidden"
+                SequentialAnimation {
+                    ParallelAnimation {
+                        NumberAnimation {
+                            target: mainBlock
+                            property: "y"
+                            duration: units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                        NumberAnimation {
+                            target: inputPanel
+                            property: "y"
+                            duration: units.longDuration
+                            easing.type: Easing.InQuad
+                        }
+                        OpacityAnimator {
+                            target: inputPanel
+                            duration: units.longDuration
+                            easing.type: Easing.InQuad
+                        }
+                    }
+                    ScriptAction {
+                        script: {
+                            Qt.inputMethod.hide();
+                        }
+                    }
+                }
+            }
+        ]
+    }
+
 
     Component {
         id: passwordArea
@@ -200,7 +345,6 @@ Rectangle {
             }
         }
     }
-
 
     Component.onCompleted: {
         // version support checks

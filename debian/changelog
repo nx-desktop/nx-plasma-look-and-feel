@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.7.6) nitrux; urgency=medium
+
+  * Update look and feel and sddm themes.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 27 Apr 2021 16:46:00 -0500
+
 nx-plasma-look-and-feel (1.7.5) nitrux; urgency=medium
 
   * Change configure icon to match icon theme.

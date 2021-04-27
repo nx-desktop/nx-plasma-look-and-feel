@@ -26,7 +26,9 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
     visible: mpris2Source.hasPlayer
-    implicitHeight: controlsRow.height + controlsRow.y
+    implicitHeight: PlasmaCore.Units.gridUnit * 3
+    implicitWidth: PlasmaCore.Units.gridUnit * 16
+
 
     RowLayout {
         id: controlsRow
@@ -98,8 +100,9 @@ Item {
             Layout.preferredWidth: height
             Layout.fillHeight: true
             asynchronous: true
+            fillMode: Image.PreserveAspectFit
             source: mpris2Source.albumArt
-            sourceSize: Qt.size(width, height)
+            sourceSize.height: height
             visible: status === Image.Loading || status === Image.Ready
         }
 
@@ -134,6 +137,8 @@ Item {
 
         PlasmaComponents.ToolButton {
             enabled: mpris2Source.canGoBack
+            Layout.preferredHeight: PlasmaCore.Units.gridUnit*2
+            Layout.preferredWidth: Layout.preferredHeight
             iconName: LayoutMirroring.enabled ? "media-skip-forward" : "media-skip-backward"
             onClicked: mpris2Source.goPrevious()
             visible: mpris2Source.canGoBack || mpris2Source.canGoNext
@@ -150,6 +155,8 @@ Item {
 
         PlasmaComponents.ToolButton {
             enabled: mpris2Source.canGoNext
+            Layout.preferredHeight: PlasmaCore.Units.gridUnit*2
+            Layout.preferredWidth: Layout.preferredHeight
             iconName: LayoutMirroring.enabled ? "media-skip-backward" : "media-skip-forward"
             onClicked: mpris2Source.goNext()
             visible: mpris2Source.canGoBack || mpris2Source.canGoNext
