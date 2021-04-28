@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.7.7) nitrux; urgency=medium
+
+  * Add icon telegram, fix wrong color for icons in plasma theme.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 27 Apr 2021 21:36:00 -0500
+
 nx-plasma-look-and-feel (1.7.6) nitrux; urgency=medium
 
   * Update look and feel and sddm themes.
