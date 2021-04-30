@@ -88,6 +88,8 @@ ForegroundNormal=244,245,246
 ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
+############## KWin  Settings Part 1 #############
+
 [Colors:Window]
 BackgroundAlternate=43,44,49
 BackgroundNormal=43,44,49
@@ -213,6 +215,8 @@ DisabledEffect[$d]
 DisabledSemiTransparent[$d]
 DisabledValue[$d]
 
+############## KWin  Settings Part 2 #############
+
 [WM]
 activeBackground=43,44,49
 activeBlend=43,44,49
@@ -220,3 +224,4 @@ activeForeground=249,249,249
 inactiveBackground=55,56,63
 inactiveBlend=75,71,67
 inactiveForeground=155,172,187
+
