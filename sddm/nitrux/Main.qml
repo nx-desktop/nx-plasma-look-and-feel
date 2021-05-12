@@ -287,6 +287,11 @@ Rectangle {
 
                 KeyNavigation.backtab: name; KeyNavigation.tab: loginButton
 
+                onTextChanged:{
+                    if(text.length === 1)
+                        errorMessage.text = '-'
+                }
+
                 Keys.onPressed: {
                     if (event.key === Qt.Key_Return || event.key ===
                             Qt.Key_Enter) {
@@ -323,7 +328,7 @@ Rectangle {
                 anchors.horizontalCenter:  mainColumn.horizontalCenter
                 width: 150
                 height: 32
-                onClicked: sddm.login(name.text, password.text, session.currentIndex)
+
                 KeyNavigation.backtab: password;
                 KeyNavigation.tab: btnReboot
 
@@ -347,14 +352,18 @@ Rectangle {
                     hoverEnabled: true
                     anchors.fill: parent
                     cursorShape: containsMouse ? Qt.PointingHandCursor : Qt.ArrowCursor
+                    onClicked: sddm.login(name.text, password.text, session.currentIndex)
                 }
             }
 
             Text {
                 id: errorMessage
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: " "
+                text: '-'
                 font.pixelSize: 12
+                color: "#31363b"
+                // avoid layout movements
+                opacity: errorMessage.text === '-' ? 0.01 : 1
             }
         }
     }
