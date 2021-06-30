@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.8.2) nitrux; urgency=medium
+
+  * Fix filename.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 30 Jun 2021 04:06:00 -0500
+
 nx-plasma-look-and-feel (1.8.1) nitrux; urgency=medium
 
   * Update sddm themes and previews.
