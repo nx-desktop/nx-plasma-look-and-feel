@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.8.3) nitrux; urgency=medium
+
+  * Update color schemes.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 02 Sep 2021 04:31:00 -0500
+
 nx-plasma-look-and-feel (1.8.2) nitrux; urgency=medium
 
   * Fix filename.
