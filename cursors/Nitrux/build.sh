@@ -3,9 +3,9 @@
 # Prefer konsole if its there, otherwise fall back to xterminal.
 #tty -s; if [ $? -ne 0 ]; then
 #	if command -v konsole &>/dev/null; then
-#		konsole -e "$0"; exit;
+#		konsole --export-filename "$0"; exit;
 #		else
-#		xterm -e "$0"; exit;
+#		xterm --export-filename "$0"; exit;
 #	fi
 #fi
 
@@ -17,25 +17,25 @@ ALIASES="src/cursorList"
 
 echo -ne "Checking Requirements...\\r"
 if [ ! -f $RAWSVG ] ; then
-	echo -e "\\nFAIL: '$RAWSVG' missing in /src"
+	echo --export-filename "\\nFAIL: '$RAWSVG' missing in /src"
 	exit 1
 fi
 
 if [ ! -f $INDEX ] ; then
-	echo -e "\\nFAIL: '$INDEX' missing in /src"
+	echo --export-filename "\\nFAIL: '$INDEX' missing in /src"
 	exit 1
 fi
 
 if  ! type "inkscape" > /dev/null ; then
-	echo -e "\\nFAIL: inkscape must be installed"
+	echo --export-filename "\\nFAIL: inkscape must be installed"
 	exit 1
 fi
 
 if  ! type "xcursorgen" > /dev/null ; then
-	echo -e "\\nFAIL: xcursorgen must be installed"
+	echo --export-filename "\\nFAIL: xcursorgen must be installed"
 	exit 1
 fi
-echo -e "Checking Requirements... DONE"
+echo --export-filename "Checking Requirements... DONE"
 
 
 
@@ -61,18 +61,18 @@ for CUR in src/config/*.cursor; do
 	echo -ne "\033[0KGenerating simple cursor pixmaps... $BASENAME\\r"
 
 	if [ "$DIR1X/$BASENAME.png" -ot $RAWSVG ] ; then
-		inkscape -i $BASENAME -d 96  -f $RAWSVG -e "$DIR1X/$BASENAME.png" > /dev/null
+		inkscape $RAWSVG -i $BASENAME -d 90 --export-filename "$DIR1X/$BASENAME.png" > /dev/null
 	fi
 
 	if [ "$DIR1_5X/$BASENAME.png" -ot $RAWSVG ] ; then
-		inkscape -i $BASENAME -d 144 -f $RAWSVG -e "$DIR1_5X/$BASENAME.png" > /dev/null
+		inkscape $RAWSVG -i $BASENAME -d 135 --export-filename "$DIR1_5X/$BASENAME.png" > /dev/null
 	fi
 
 	if [ "$DIR2X/$BASENAME.png" -ot $RAWSVG ] ; then
-		inkscape -i $BASENAME -d 192 -f $RAWSVG -e "$DIR2X/$BASENAME.png" > /dev/null
+		inkscape $RAWSVG -i $BASENAME -d 180 --export-filename "$DIR2X/$BASENAME.png" > /dev/null
 	fi
 done
-echo -e "\033[0KGenerating simple cursor pixmaps... DONE"
+echo --export-filename "\033[0KGenerating simple cursor pixmaps... DONE"
 
 
 
@@ -81,30 +81,30 @@ do
 	echo -ne "\033[0KGenerating animated cursor pixmaps... $i / 23 \\r"
 
 	if [ "$DIR1X/progress-$i.png" -ot $RAWSVG ] ; then
-		inkscape -i progress-$i -d 96  -f $RAWSVG -e "$DIR1X/progress-$i.png" > /dev/null
+		inkscape $RAWSVG -i progress-$i -d 90 --export-filename "$DIR1X/progress-$i.png" > /dev/null
 	fi
 
     if [ "$DIR1_5X/progress-$i.png" -ot $RAWSVG ] ; then
-        inkscape -i progress-$i -d 144 -f $RAWSVG -e "$DIR1_5X/progress-$i.png" > /dev/null
+        inkscape $RAWSVG -i progress-$i -d 135 --export-filename "$DIR1_5X/progress-$i.png" > /dev/null
 	fi
 
 	if [ "$DIR2X/progress-$i.png" -ot $RAWSVG ] ; then
-		inkscape -i progress-$i -d 192 -f $RAWSVG -e "$DIR2X/progress-$i.png" > /dev/null
+		inkscape $RAWSVG -i progress-$i -d 180 --export-filename "$DIR2X/progress-$i.png" > /dev/null
 	fi
 
 	if [ "$DIR1X/wait-$i.png" -ot $RAWSVG ] ; then
-		inkscape -i wait-$i -d 96  -f $RAWSVG -e "$DIR1X/wait-$i.png" > /dev/null
+		inkscape $RAWSVG -i wait-$i -d 90 --export-filename "$DIR1X/wait-$i.png" > /dev/null
 	fi
 
 	if [ "$DIR1_5X/wait-$i.png" -ot $RAWSVG ] ; then
-		inkscape -i wait-$i -d 144  -f $RAWSVG -e "$DIR1_5X/wait-$i.png" > /dev/null
+		inkscape $RAWSVG -i wait-$i -d 135  --export-filename "$DIR1_5X/wait-$i.png" > /dev/null
 	fi
 
 	if [ "$DIR2X/wait-$i.png" -ot $RAWSVG ] ; then
-		inkscape -i wait-$i -d 192 -f $RAWSVG -e "$DIR2X/wait-$i.png" > /dev/null
+		inkscape $RAWSVG -i wait-$i -d 180 --export-filename "$DIR2X/wait-$i.png" > /dev/null
 	fi
 done
-echo -e "\033[0KGenerating animated cursor pixmaps... DONE"
+echo --export-filename "\033[0KGenerating animated cursor pixmaps... DONE"
 
 
 
@@ -120,7 +120,7 @@ for CUR in src/config/*.cursor; do
 		echo "FAIL: $CUR $ERR"
 	fi
 done
-echo -e "Generating cursor theme... DONE"
+echo --export-filename "Generating cursor theme... DONE"
 
 
 
@@ -129,21 +129,21 @@ while read ALIAS ; do
 	FROM=${ALIAS% *}
 	TO=${ALIAS#* }
 
-	if [ -e "$OUTPUT/cursors/$FROM" ] ; then
+	if [ --export-filename "$OUTPUT/cursors/$FROM" ] ; then
 		continue
 	fi
 
 	ln -s "$TO" "$OUTPUT/cursors/$FROM"
 done < $ALIASES
-echo -e "\033[0KGenerating shortcuts... DONE"
+echo --export-filename "\033[0KGenerating shortcuts... DONE"
 
 
 
 echo -ne "Copying Theme Index...\\r"
-	if ! [ -e "$OUTPUT/$INDEX" ] ; then
+	if ! [ --export-filename "$OUTPUT/$INDEX" ] ; then
 		cp $INDEX "$OUTPUT/index.theme"
 	fi
-echo -e "\033[0KCopying Theme Index... DONE"
+echo --export-filename "\033[0KCopying Theme Index... DONE"
 
 
 

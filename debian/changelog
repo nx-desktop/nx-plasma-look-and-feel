@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.8.5) nitrux; urgency=medium
+
+  * Update cursors and export script.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 15 Dec 2021 15:35:00 -0500
+
 nx-plasma-look-and-feel (1.8.4) nitrux; urgency=medium
 
   * Add video lockscreen plugin.
