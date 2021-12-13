@@ -17,25 +17,25 @@ ALIASES="src/cursorList"
 
 echo -ne "Checking Requirements...\\r"
 if [ ! -f $RAWSVG ] ; then
-	echo --export-filename "\\nFAIL: '$RAWSVG' missing in /src"
+	echo -e "\\nFAIL: '$RAWSVG' missing in /src"
 	exit 1
 fi
 
 if [ ! -f $INDEX ] ; then
-	echo --export-filename "\\nFAIL: '$INDEX' missing in /src"
+	echo -e "\\nFAIL: '$INDEX' missing in /src"
 	exit 1
 fi
 
 if  ! type "inkscape" > /dev/null ; then
-	echo --export-filename "\\nFAIL: inkscape must be installed"
+	echo -e "\\nFAIL: inkscape must be installed"
 	exit 1
 fi
 
 if  ! type "xcursorgen" > /dev/null ; then
-	echo --export-filename "\\nFAIL: xcursorgen must be installed"
+	echo -e "\\nFAIL: xcursorgen must be installed"
 	exit 1
 fi
-echo --export-filename "Checking Requirements... DONE"
+echo -e "Checking Requirements... DONE"
 
 
 
@@ -72,7 +72,7 @@ for CUR in src/config/*.cursor; do
 		inkscape $RAWSVG -i $BASENAME -d 180 --export-filename "$DIR2X/$BASENAME.png" > /dev/null
 	fi
 done
-echo --export-filename "\033[0KGenerating simple cursor pixmaps... DONE"
+echo -e "\033[0KGenerating simple cursor pixmaps... DONE"
 
 
 
@@ -104,7 +104,7 @@ do
 		inkscape $RAWSVG -i wait-$i -d 180 --export-filename "$DIR2X/wait-$i.png" > /dev/null
 	fi
 done
-echo --export-filename "\033[0KGenerating animated cursor pixmaps... DONE"
+echo -e "\033[0KGenerating animated cursor pixmaps... DONE"
 
 
 
@@ -120,7 +120,7 @@ for CUR in src/config/*.cursor; do
 		echo "FAIL: $CUR $ERR"
 	fi
 done
-echo --export-filename "Generating cursor theme... DONE"
+echo -e "Generating cursor theme... DONE"
 
 
 
@@ -135,7 +135,7 @@ while read ALIAS ; do
 
 	ln -s "$TO" "$OUTPUT/cursors/$FROM"
 done < $ALIASES
-echo --export-filename "\033[0KGenerating shortcuts... DONE"
+echo -e "\033[0KGenerating shortcuts... DONE"
 
 
 
@@ -143,7 +143,7 @@ echo -ne "Copying Theme Index...\\r"
 	if ! [ --export-filename "$OUTPUT/$INDEX" ] ; then
 		cp $INDEX "$OUTPUT/index.theme"
 	fi
-echo --export-filename "\033[0KCopying Theme Index... DONE"
+echo -e "\033[0KCopying Theme Index... DONE"
 
 
 
