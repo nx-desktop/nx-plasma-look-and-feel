@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.8.8) nitrux; urgency=medium
+
+  * Fix cursors.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 31 Dec 2021 23:06:00 -0500
+
 nx-plasma-look-and-feel (1.8.7) nitrux; urgency=medium
 
   * Add new wallpapers.
