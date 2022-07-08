@@ -19,7 +19,7 @@ jobs:
 
       - name: Build.
         run: |
-          ./gh-build.sh
+          sudo ./gh-build.sh
 
       - name: Push package.
         env:
