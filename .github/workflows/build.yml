@@ -25,6 +25,4 @@ jobs:
         env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
         run: |
-          echo $PWD
-          ls -alt
           package_cloud push nitrux/testing/debian/trixie $(pwd)/*.deb
