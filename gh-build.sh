@@ -1,15 +1,16 @@
-#!/bin/bash
+#! /bin/bash
 
-apt -qq update
-apt -qq -yy install equivs curl git
+set -x
+
+### Basic Packages
+apt -qq -yy install equivs git devscripts lintian --no-install-recommends
 
 ### Install Dependencies
-apt -qq -yy dist-upgrade
-apt -qq -yy install devscripts lintian build-essential automake autotools-dev equivs
 mk-build-deps -i -t "apt-get --yes" -r
 
 ### Build Deb
-mkdir source
-mv ./* source/ # Hack for debuild
-cd source
 debuild -b -uc -us
+
+### Move Deb to current directory because debuild decided
+### that it was a GREAT IDEA TO PUT THE FILE ONE LEVEL ABOVE
+mv ../*.deb .

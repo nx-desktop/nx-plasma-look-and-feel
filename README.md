@@ -1,4 +1,4 @@
-# NX Look and Feel for Plasma 5 [![Build Status](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel.svg?branch=master)](https://travis-ci.org/nx-desktop/nx-plasma-look-and-feel)
+# NX Look and Feel for Plasma 5
 
 This is the NX Look and Feel repository. Here you will find the following items:
 - Plasma theme.
