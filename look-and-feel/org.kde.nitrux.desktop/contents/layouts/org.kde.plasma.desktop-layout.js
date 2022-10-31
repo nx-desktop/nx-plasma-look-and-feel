@@ -7,8 +7,10 @@ activity.currentConfigGroup = ["General"]
 activity.writeConfig("ToolBoxButtonState", "bottomright")
 activity.writeConfig("showToolbox", false)
 
-activity.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General')
-activity.writeConfig('Image', 'Cask')
+var desktopsArray = desktopsForActivity(currentActivity());
+for( var j = 0; j < desktopsArray.length; j++) {
+    desktopsArray[j].wallpaperPlugin = 'org.kde.image';
+}
 
 // // Create top pannel
 // panel = new plasma.Panel

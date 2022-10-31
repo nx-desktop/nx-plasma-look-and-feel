@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.8.9) nitrux; urgency=medium
+
+  * Update function to set wallpaper by look and feel package in layout.js as introduced by Plasma 5.26
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 31 Oct 2021 00:04:00 -0500
+
 nx-plasma-look-and-feel (1.8.8) nitrux; urgency=medium
 
   * Fix cursors.
