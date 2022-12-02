@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.9.0) nitrux; urgency=medium
+
+  * Rename OUR wallpaper because PLASMA decided to use the same damn name.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 01 Dec 2022 21:48:00 -0500
+
 nx-plasma-look-and-feel (1.8.9) nitrux; urgency=medium
 
   * Update function to set wallpaper by look and feel package in layout.js as introduced by Plasma 5.26.
