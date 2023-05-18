@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.9.1) nitrux; urgency=medium
+
+  * Add color scheme for Station.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 18 Dec 2023 00:44:00 -0500
+
 nx-plasma-look-and-feel (1.9.0) nitrux; urgency=medium
 
   * Rename OUR wallpaper because PLASMA decided to use the same damn name.
