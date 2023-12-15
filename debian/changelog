@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.9.4) nitrux; urgency=medium
+
+  * Fix wrong color contrast in inactive text.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 15 Dec 2023 14:01:00 -0500
+
 nx-plasma-look-and-feel (1.9.3) nitrux; urgency=medium
 
   * Add new wallpapers.

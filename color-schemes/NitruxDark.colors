@@ -8,12 +8,12 @@ IntensityAmount=0.1
 IntensityEffect=0
 
 [ColorEffects:Inactive]
-ChangeSelectionColor=false
+ChangeSelectionColor=true
 Color=112,111,110
 ColorAmount=-0.5
 ColorEffect=1
 ContrastAmount=0.4
-ContrastEffect=2
+ContrastEffect=0
 Enable=true
 IntensityAmount=0.2
 IntensityEffect=0
