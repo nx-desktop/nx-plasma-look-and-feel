@@ -47,7 +47,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma)
 
 # Subdirectories
 add_subdirectory(aurorae)
-add_subdirectory(color-scheme)
+add_subdirectory(color-schemes)
 add_subdirectory(cursors)
 add_subdirectory(konsole)
 add_subdirectory(look-and-feel)
