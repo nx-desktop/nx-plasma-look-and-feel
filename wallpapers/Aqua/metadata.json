@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "uri_herrera@nxos.org",
+                "Name": "Uri Herrera",
+                "Name[es]": "Uri Herrera",
+                "Name[x-test]": "xxUri Herreraxx"
+            }
+        ],
+        "Id": "Aqua",
+        "License": "CC-BY-SA-4.0",
+        "Name": "Aqua",
+        "Name[es]": "Aqua",
+        "Name[x-test]": "xxAquaxx"
+    },
+    "X-KDE-PlasmaImageWallpaper-AccentColor": {
+        "Dark": "#1e6978",
+        "Light": "#36b6ba"
+    }
+}
