@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (1.9.5) nitrux; urgency=medium
+
+  * Split packages because the logic of Plasma is that images are used with light themes and images_dark are used with dark themes.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 15 Dec 2023 14:05:00 -0500
+
 nx-plasma-look-and-feel (1.9.4) nitrux; urgency=medium
 
   * Fix wrong color contrast in inactive text.
