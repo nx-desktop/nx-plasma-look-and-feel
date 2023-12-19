@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=MACsimize
+Comment=Automatically move maximized window to a new virtual desktop.
+Icon=preferences-system-windows-script-test
+Type=Service
+
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
+
+X-KDE-PluginInfo-Author=Yuri Braga
+X-KDE-PluginInfo-Email=yuricancelabraga@gmail.com
+X-KDE-PluginInfo-Name=macsimize
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-EnabledByDefault=true
+
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=MIT
+X-KDE-ServiceTypes=KWin/Script
+X-KDE-PluginKeyword=macsimize

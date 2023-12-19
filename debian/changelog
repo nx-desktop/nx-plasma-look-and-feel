@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.0.2) nitrux; urgency=medium
+
+  *Move plasmoids from nx-desktop-settings to this package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 18 Dec 2023 22:01:00 -0500
+
 nx-plasma-look-and-feel (2.0.1) nitrux; urgency=medium
 
   * Update Aqua wallpapers in SDDM themes.

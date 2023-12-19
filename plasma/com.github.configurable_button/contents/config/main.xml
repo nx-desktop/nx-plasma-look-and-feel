@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="commandName" type="String">
+      <label>Plasmoid label</label>
+      <default></default>
+    </entry>
+    <entry name="onScript" type="String">
+      <label>Script to execute when toggled on</label>
+      <default>sleep 2; exit 0</default>
+    </entry>
+    <entry name="onScriptEnabled" type="Bool">
+      <label>Enable to run the onScript upon toggling on</label>
+      <default>true</default>
+    </entry>
+    <entry name="offScript" type="String">
+      <label>Script to execute when toggled off</label>
+      <default>sleep 1; exit 0</default>
+    </entry>
+    <entry name="iconOff" type="String">
+      <label>Icon off</label>
+      <default>emblem-error</default>
+    </entry>
+    <entry name="iconOn" type="String">
+      <label>Icon on</label>
+      <default>emblem-checked</default>
+    </entry>
+    <entry name="offScriptEnabled" type="Bool">
+      <label>Enable to run the offScript upon toggling off</label>
+      <default>true</default>
+    </entry>
+    <entry name="statusScriptEnabled" type="Bool">
+      <label>Check to enable script checking status</label>
+      <default>false</default>
+    </entry>
+    <entry name="statusScript" type="String">
+      <label>Script to execute to check status</label>
+      <default>/bin/status_script.sh</default>
+    </entry>
+    <entry name="runStatusOnStart" type="Bool">
+      <label>Run status script on start</label>
+      <default>false</default>
+    </entry>
+    <entry name="updateInterval" type="Int">
+      <label>Interval to run status script</label>
+      <default>2</default>
+    </entry>
+    <entry name="updateIntervalUnit" type="Int">
+        <label>Unit to run status script</label>
+        <default>1</default>
+    </entry>
+    <entry name="interval" type="Int">
+        <label>Used internally - interval 2 minutes</label>
+        <default>120</default>
+    </entry>
+  </group>
+</kcfg>

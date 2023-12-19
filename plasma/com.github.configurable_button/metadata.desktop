@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Configurable Button
+Name[en_GB]=Configurable Button
+Comment=Configurable button to launch scripts and monitor statuses
+Comment[en_GB]=Configurable button to launch scripts and monitor statuses
+
+Icon=emblem-checked
+Type=Service
+X-KDE-ServiceTypes=Plasma/Applet
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+
+X-KDE-PluginInfo-Author=Piotr Markiewicz
+X-KDE-PluginInfo-Email=p.marki@wp.pl
+X-KDE-PluginInfo-Name=com.github.configurable_button
+X-KDE-PluginInfo-Version=0.2.0
+X-KDE-PluginInfo-Website=https://github.com/pmarki/plasmoid-button
+X-KDE-PluginInfo-Category=Utilities
+X-KDE-PluginInfo-License=GPL
