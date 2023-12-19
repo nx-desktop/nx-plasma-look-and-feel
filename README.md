@@ -23,8 +23,8 @@ This is the NX Look and Feel repository. Here you will find the following items:
 - Extract SDDM themes to `/usr/share/sddm/themes/`.
 - Extract color schemes to `~/.local/share/color-schemes/` `/usr/share/color-schemes/`.
 - Extract Konsole profile to `~/.local/share/konsole/` or `/usr/share/konsole/`.
-- Extract wallpapers to `/usr/share/wallpapers/`.
-- Extract KWin scripts to `/usr/share/kwin/`
+- Extract wallpapers to `~/.local/share/wallpapers/` or `/usr/share/wallpapers/`.
+- Extract KWin scripts to `~/.local/share/kwin/scripts` or `/usr/share/kwin/scripts`.
 
 # Issues
 If you find problems with the contents of this repository please create an issue.
