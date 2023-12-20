@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.0.4) nitrux; urgency=medium
+
+  * Add Active Blur wallpaper plugin and Plasma Drawer plasmoid.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 20 Dec 2023 16:20:00 -0500
+
 nx-plasma-look-and-feel (2.0.3) nitrux; urgency=medium
 
   * Include directory of KWin scripts.
