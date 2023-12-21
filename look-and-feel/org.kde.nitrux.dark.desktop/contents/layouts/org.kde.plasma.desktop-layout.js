@@ -3,7 +3,7 @@
 //   The license used for this file and its contents is: BSD-3-Clause                                                                                                        /
 //                                                                                                                                                                           /
 //   Copyright <2023> <Uri Herrera <uri_herrera@nxos.org>>                                                                                                                   /
-//                                                                                                                                                                          /
+//                                                                                                                                                                           /
 //   Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:                          /
 //                                                                                                                                                                           /
 //    1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.                                        /
@@ -19,7 +19,7 @@
 //    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE                 /
 //    GOODS OR SERVICES; LOSS OF USE, DATA,   OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,                      /
 //    STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.   /
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Set Plasma Desktop Scripting API.
 var plasma = getApiVersion(1)
@@ -108,21 +108,21 @@ bottomPanel.location = "bottom"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
-bottomPanel.alignment = "center"
-bottomPanel.minimumLength = 1000
-bottomPanel.maximumLength = 250
+// bottomPanel.alignment = "center"
+// bottomPanel.minimumLength = 1000
+// bottomPanel.maximumLength = 1440
 
-// // Restrict horizontal bottom panel to a maximum size of a 21:9 monitor.
-// if (bottomPanel.formFactor === "horizontal") {
-//     const geo = screenGeometry(bottomPanelScreen);
-//     const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+// Restrict horizontal bottom panel to a maximum size of a 21:9 monitor.
+if (bottomPanel.formFactor === "horizontal") {
+    const geo = screenGeometry(bottomPanelScreen);
+    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
 
-//     if (geo.width > maximumWidth) {
-//         bottomPanel.alignment = "center";
-//         bottomPanel.minimumLength = 1000;
-//         bottomPanel.maximumLength = 250;
-//     }
-// }
+    if (geo.width > maximumWidth) {
+        bottomPanel.alignment = "center";
+        bottomPanel.minimumLength = 1000;
+        bottomPanel.maximumLength = 1440;
+    }
+}
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
