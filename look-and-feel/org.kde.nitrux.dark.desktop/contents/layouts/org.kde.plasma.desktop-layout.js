@@ -92,6 +92,20 @@ latteSeparatorTop3.writeConfig("thickMargin", "6")
 
 menuPanel.addWidget("org.kde.plasma.systemtray")
 
+var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
+latteSeparatorTop4.currentConfigGroup = ["Configuration", "General"]
+latteSeparatorTop4.writeConfig("lengthMargin", "10")
+latteSeparatorTop4.writeConfig("thickMargin", "6")
+
+var digitalClock = menuPanel.addWidget("org.kde.plasma.digitalclock")
+digitalClock.currentConfigGroup = ["Configuration", "General"]
+digitalClock.writeConfig("autoFontAndSize", false)
+digitalClock.writeConfig("enabledCalendarPlugins", "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasmacalendarplugins/holidaysevents.so")
+digitalClock.writeConfig("fontFamily", "Homenaje")
+digitalClock.writeConfig("fontSize", "14")
+digitalClock.writeConfig("showDate", false)
+digitalClock.writeConfig("showSeconds", true)
+
 // Bottom panel (Dock).
 var bottomPanel = new Panel
 bottomPanel.location = "bottom"
