@@ -113,6 +113,7 @@ var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "bottom"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.8 / 2)
 bottomPanel.hiding = "windowscover"
+bottomPanel.floatingPanel = true
 
 // Restrict horizontal bottom panel to a maximum size of a 21:9 monitor
 if (bottomPanel.formFactor === "horizontal") {
@@ -125,10 +126,6 @@ if (bottomPanel.formFactor === "horizontal") {
         bottomPanel.maximumLength = 250;
     }
 }
-
-// Make the bottom panel float.
-bottomPanel.currentConfigGroup = ["Defaults"]
-bottomPanel.writeConfig("floating", true)
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
@@ -150,6 +147,9 @@ plasmaDrawer.writeConfig("showSystemActions", false)
 plasmaDrawer.writeConfig("spaceHeight", "20")
 plasmaDrawer.writeConfig("spaceWidth", "20")
 plasmaDrawer.writeConfig("useCustomSizeGrid", true)
+
+plasmaDrawer.currentConfigGroup = ["Shortcuts"]
+plasmaDrawer.writeConfig("global", "Alt+F1")
 
 var latteSeparatorBottom1 = bottomPanel.addWidget("org.kde.latte.separator")
 latteSeparatorBottom1.currentConfigGroup = ["Configuration", "General"]
