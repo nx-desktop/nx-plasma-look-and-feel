@@ -113,7 +113,6 @@ var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "bottom"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.8 / 2)
 bottomPanel.hiding = "windowscover"
-bottomPanel.floatingPanel = true
 
 // Restrict horizontal bottom panel to a maximum size of a 21:9 monitor
 if (bottomPanel.formFactor === "horizontal") {
@@ -174,7 +173,7 @@ dockTaskManager.writeConfig("fill", false)
 dockTaskManager.writeConfig("iconSpacing", 2)
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
-dockTaskManager.writeConfig("launchers", "applications:org.kde.index.desktop,applications:org.nx.softwarecenter.desktop,applications:firefox.desktop,applications:org.kde.nota.desktop,applications:org.kde.vvave.desktop,applications:org.kde.clip.desktop,applications:org.kde.station.desktop")
+dockTaskManager.writeConfig("launchers", ["applications:org.kde.index.desktop", "applications:org.nx.softwarecenter.desktop", "applications:firefox.desktop", "applications:org.kde.nota.desktop", "applications:org.kde.vvave.desktop", "applications:org.kde.clip.desktop", "applications:org.kde.station.desktop"]);
 dockTaskManager.writeConfig("maxStripes", 1)
 dockTaskManager.writeConfig("showOnlyCurrentDesktop", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
