@@ -108,7 +108,7 @@ bottomPanel.location = "floating"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
-// bottomPanel.alignment = "center"
+bottomPanel.alignment = "center"
 bottomPanel.minimumLength = 1440
 bottomPanel.maximumLength = 1440
 
