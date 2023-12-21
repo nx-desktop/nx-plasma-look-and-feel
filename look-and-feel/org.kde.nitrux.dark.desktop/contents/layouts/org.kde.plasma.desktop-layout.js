@@ -117,24 +117,24 @@ plasmaDrawer.writeConfig("spaceHeight", "20")
 plasmaDrawer.writeConfig("spaceWidth", "20")
 plasmaDrawer.writeConfig("useCustomSizeGrid", true)
 
-var latteSeparatorBottom1 = menuPanel.addWidget("org.kde.latte.separator")
+var latteSeparatorBottom1 = bottomPanel.addWidget("org.kde.latte.separator")
 latteSeparatorBottom1.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorBottom1.writeConfig("lengthMargin", "16")
 latteSeparatorBottom1.writeConfig("thickMargin", "12")
 
-var configurableButton = menuPanel.addWidget("com.github.configurable_button")
+var configurableButton = bottomPanel.addWidget("com.github.configurable_button")
 configurableButton.currentConfigGroup = ["Configuration", "General"]
 configurableButton.writeConfig("iconOff", "view-file-columns")
 configurableButton.writeConfig("iconOn", "view-file-columns")
 configurableButton.writeConfig("offScript", "qdbus org.kde.kglobalaccel /component/kwin invokeShortcut 'Overview'")
 configurableButton.writeConfig("onScript", "qdbus org.kde.kglobalaccel /component/kwin invokeShortcut 'Overview'")
 
-var latteSeparatorBottom2 = menuPanel.addWidget("org.kde.latte.separator")
+var latteSeparatorBottom2 = bottomPanel.addWidget("org.kde.latte.separator")
 latteSeparatorBottom2.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorBottom2.writeConfig("lengthMargin", "16")
 latteSeparatorBottom2.writeConfig("thickMargin", "12")
 
-var dockTaskManager = menuPanel.addWidget("org.kde.plasma.icontasks")
+var dockTaskManager = bottomPanel.addWidget("org.kde.plasma.icontasks")
 dockTaskManager.currentConfigGroup = ["Configuration", "General"]
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
@@ -142,19 +142,19 @@ dockTaskManager.writeConfig("launchers", "preferred://filemanager,applications:o
 dockTaskManager.writeConfig("showOnlyCurrentScreen", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
 
-var latteSeparatorBottom3 = menuPanel.addWidget("org.kde.latte.separator")
+var latteSeparatorBottom3 = bottomPanel.addWidget("org.kde.latte.separator")
 latteSeparatorBottom3.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorBottom3.writeConfig("lengthMargin", "16")
 latteSeparatorBottom3.writeConfig("thickMargin", "12")
 
-menuPanel.addWidget("org.kde.plasma.trash")
+bottomPanel.addWidget("org.kde.plasma.trash")
 
-var latteSeparatorBottom4 = menuPanel.addWidget("org.kde.latte.separator")
+var latteSeparatorBottom4 = bottomPanel.addWidget("org.kde.latte.separator")
 latteSeparatorBottom4.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorBottom4.writeConfig("lengthMargin", "16")
 latteSeparatorBottom4.writeConfig("thickMargin", "12")
 
-var sessionControlsButton = menuPanel.addWidget("org.kde.plasma.lock_logout")
+var sessionControlsButton = bottomPanel.addWidget("org.kde.plasma.lock_logout")
 sessionControlsButton.currentConfigGroup = ["Configuration", "General"]
 sessionControlsButton.writeConfig("show_lockScreen", false)
 
