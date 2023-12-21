@@ -127,7 +127,9 @@ if (bottomPanel.formFactor === "horizontal") {
 }
 
 // Add and configure bottom panel widgets in order of placement.
-bottomPanel.addWidget("org.kde.plasma.panelspacer")
+var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
+bottomPanelSeparatorLeft.writeConfig("expanding", false)
+bottomPanelSeparatorLeft.writeConfig("length", "10")
 
 var plasmaDrawer = bottomPanel.addWidget("P-Connor.PlasmaDrawer")
 plasmaDrawer.currentConfigGroup = ["Configuration", "General"]
@@ -189,4 +191,6 @@ var sessionControlsButton = bottomPanel.addWidget("org.kde.plasma.lock_logout")
 sessionControlsButton.currentConfigGroup = ["Configuration", "General"]
 sessionControlsButton.writeConfig("show_lockScreen", false)
 
-bottomPanel.addWidget("org.kde.plasma.panelspacer")
+var bottomPanelSeparatorRight = bottomPanel.addWidget("org.kde.plasma.panelspacer")
+bottomPanelSeparatorRight.writeConfig("expanding", false)
+bottomPanelSeparatorRight.writeConfig("length", "10")
