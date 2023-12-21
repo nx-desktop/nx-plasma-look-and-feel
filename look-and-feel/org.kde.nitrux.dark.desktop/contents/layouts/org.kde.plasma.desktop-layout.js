@@ -126,6 +126,10 @@ if (bottomPanel.formFactor === "horizontal") {
     }
 }
 
+// Make the bottom panel float.
+bottomPanel.currentConfigGroup = ["Defaults"]
+bottomPanel.writeConfig("floating", "1")
+
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
 bottomPanelSeparatorLeft.writeConfig("expanding", false)
@@ -170,7 +174,7 @@ dockTaskManager.writeConfig("fill", false)
 dockTaskManager.writeConfig("iconSpacing", 2)
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
-dockTaskManager.writeConfig("launchers", "preferred://filemanager,preferred://browser")
+dockTaskManager.writeConfig("launchers", "applications:org.kde.index.desktop,applications:org.nx.softwarecenter.desktop,applications:firefox.desktop,applications:org.kde.nota.desktop,applications:org.kde.vvave.desktop,applications:org.kde.clip.desktop,applications:org.kde.station.desktop")
 dockTaskManager.writeConfig("maxStripes", 1)
 dockTaskManager.writeConfig("showOnlyCurrentDesktop", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
