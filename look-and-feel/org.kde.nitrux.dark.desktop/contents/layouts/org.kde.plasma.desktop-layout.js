@@ -125,7 +125,6 @@ if (menuPanel.formFactor === "horizontal") {
     }
 }
 
-
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
 bottomPanelSeparatorLeft.writeConfig("expanding", false)
