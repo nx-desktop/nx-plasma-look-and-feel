@@ -120,7 +120,7 @@ if (menuPanel.formFactor === "horizontal") {
 
     if (geo.width > maximumWidth) {
         bottomPanel.alignment = "center";
-        bottomPanel.minimumLength = 1440;
+        bottomPanel.minimumLength = maximumWidth;
         bottomPanel.maximumLength = maximumWidth;
     }
 }
