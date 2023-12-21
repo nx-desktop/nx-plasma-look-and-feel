@@ -38,7 +38,7 @@ var menuPanelScreen = menuPanel.screen
 menuPanel.location = "top"
 menuPanel.height = Math.round(gridUnit * 1.5)
 
-// Restrict horizontal top panel to a maximum size of a 21:9 monitor
+// Restrict horizontal top panel to a maximum size of a 21:9 monitor.
 const maximumAspectRatio = 21/9;
 if (menuPanel.formFactor === "horizontal") {
     const geo = screenGeometry(menuPanelScreen);
