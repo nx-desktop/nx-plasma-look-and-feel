@@ -109,8 +109,8 @@ bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
 bottomPanel.alignment = "center"
-bottomPanel.minimumLength = 1440
-bottomPanel.maximumLength = 1440
+bottomPanel.minimumLength = 1000
+bottomPanel.maximumLength = 2160
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor
 // var bottomPanelScreen = bottomPanel.screen
