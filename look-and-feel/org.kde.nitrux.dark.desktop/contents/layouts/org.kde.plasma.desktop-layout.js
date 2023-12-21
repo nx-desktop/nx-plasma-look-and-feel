@@ -34,11 +34,12 @@ for (i=0;i<allDesktops.length;i++){
 
 // Top panel.
 const menuPanel = new Panel
-var menuPanelScreen = menuPanel.screen
 menuPanel.location = "top"
 menuPanel.height = Math.round(gridUnit * 1.5)
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor.
+var menuPanelScreen = menuPanel.screen
+
 const maximumAspectRatio = 21/9;
 if (menuPanel.formFactor === "horizontal") {
     const geo = screenGeometry(menuPanelScreen);
@@ -108,22 +109,22 @@ bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
 // bottomPanel.alignment = "center"
-// bottomPanel.minimumLength = 1440
-// bottomPanel.maximumLength = 1440
-
-var bottomPanelScreen = bottomPanel.screen
+bottomPanel.minimumLength = 1440
+bottomPanel.maximumLength = 1440
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor
-if (menuPanel.formFactor === "horizontal") {
-    const geo = screenGeometry(bottomPanelScreen);
-    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+// var bottomPanelScreen = bottomPanel.screen
 
-    if (geo.width > maximumWidth) {
-        bottomPanel.alignment = "center";
-        bottomPanel.minimumLength = maximumWidth;
-        bottomPanel.maximumLength = maximumWidth;
-    }
-}
+// if (menuPanel.formFactor === "horizontal") {
+//     const geo = screenGeometry(bottomPanelScreen);
+//     const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+
+//     if (geo.width > maximumWidth) {
+//         bottomPanel.alignment = "center";
+//         bottomPanel.minimumLength = maximumWidth;
+//         bottomPanel.maximumLength = maximumWidth;
+//     }
+// }
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
