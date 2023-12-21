@@ -128,7 +128,7 @@ if (bottomPanel.formFactor === "horizontal") {
 
 // Make the bottom panel float.
 bottomPanel.currentConfigGroup = ["Defaults"]
-bottomPanel.writeConfig("floating", "1")
+bottomPanel.writeConfig("floating", true)
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
