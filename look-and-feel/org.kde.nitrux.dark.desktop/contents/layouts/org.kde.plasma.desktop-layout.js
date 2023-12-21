@@ -31,16 +31,17 @@ activity.currentConfigGroup = ["General"]
 activity.writeConfig("showToolbox", false)
 
 // Set wallpaper plugin.
-var desktopsArray = desktopsForActivity(currentActivity());
-for( var j = 0; j < desktopsArray.length; j++) {
-    desktopsArray[j].wallpaperPlugin = 'a2n.blur';
+var allDesktops = desktops();
+for (i=0;i<allDesktops.length;i++){
+  d = allDesktops[i];
+  d.wallpaperPlugin = "a2n.blur";
+  d.currentConfigGroup = Array("Wallpaper", "a2n.blur", "General");
 }
 
 // Top panel.
 const menuPanel = new Panel
 var menuPanelScreen = menuPanel.screen
 menuPanel.location = "top"
-menuPanel.alignment = "center"
 menuPanel.height = Math.round(gridUnit * 1.5)
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor
@@ -108,9 +109,25 @@ digitalClock.writeConfig("showSeconds", true)
 
 // Bottom panel (Dock).
 var bottomPanel = new Panel
+var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "bottom"
 bottomPanel.alignment = "center"
-bottomPanel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
+bottomPanel.height = 2 * Math.floor(gridUnit * 2.8 / 2)
+bottomPanel.hiding = "windowscover"
+bottomPanel.maximumLenth = 1000
+bottomPanel.minimumLength = 250
+
+// Restrict horizontal bottom panel to a maximum size of a 21:9 monitor
+if (bottomPanel.formFactor === "horizontal") {
+    const geo = screenGeometry(bottomPanelScreen);
+    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+
+    if (geo.width > maximumWidth) {
+        bottomPanel.alignment = "center";
+        bottomPanel.minimumLength = maximumWidth;
+        bottomPanel.maximumLength = maximumWidth;
+    }
+}
 
 // Add and configure bottom panel widgets in order of placement.
 bottomPanel.addWidget("org.kde.plasma.panelspacer")
@@ -152,7 +169,7 @@ var dockTaskManager = bottomPanel.addWidget("org.kde.plasma.icontasks")
 dockTaskManager.currentConfigGroup = ["Configuration", "General"]
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
-dockTaskManager.writeConfig("launchers", "preferred://filemanager,applications:org.nx.softwarecenter.desktop,preferred://browser,applications:org.kde.nota.desktop,applications:org.kde.vvave.desktop,applications:org.kde.clip.desktop,applications:org.kde.station.desktop")
+dockTaskManager.writeConfig("launchers", "applications:org.kde.index.desktop,applications:org.nx.softwarecenter.desktop,applications:firefox.desktop,applications:org.kde.nota.desktop,applications:org.kde.vvave.desktop,applications:org.kde.clip.desktop,applications:org.kde.station.desktop")
 dockTaskManager.writeConfig("showOnlyCurrentScreen", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
 
