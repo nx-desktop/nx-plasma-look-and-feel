@@ -24,12 +24,6 @@
 // Set Plasma Desktop Scripting API.
 var plasma = getApiVersion(1)
 
-// Remove desktop toolbox.
-var activityId = activityId[0]
-var activity = desktopById(activityId)
-activity.currentConfigGroup = ["General"]
-activity.writeConfig("showToolbox", false)
-
 // Set wallpaper plugin.
 var allDesktops = desktops();
 for (i=0;i<allDesktops.length;i++){
@@ -114,18 +108,21 @@ bottomPanel.location = "bottom"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
+bottomPanel.alignment = "center"
+bottomPanel.minimumLength = 1000
+bottomPanel.maximumLength = 250
 
-// Restrict horizontal bottom panel to a maximum size of a 21:9 monitor
-if (bottomPanel.formFactor === "horizontal") {
-    const geo = screenGeometry(bottomPanelScreen);
-    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+// // Restrict horizontal bottom panel to a maximum size of a 21:9 monitor.
+// if (bottomPanel.formFactor === "horizontal") {
+//     const geo = screenGeometry(bottomPanelScreen);
+//     const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
 
-    if (geo.width > maximumWidth) {
-        bottomPanel.alignment = "center";
-        bottomPanel.minimumLength = 1000;
-        bottomPanel.maximumLength = 250;
-    }
-}
+//     if (geo.width > maximumWidth) {
+//         bottomPanel.alignment = "center";
+//         bottomPanel.minimumLength = 1000;
+//         bottomPanel.maximumLength = 250;
+//     }
+// }
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
