@@ -25,7 +25,7 @@
 var plasma = getApiVersion(1)
 
 // Remove desktop toolbox.
-var activityId = activityIds[0]
+var activityId = activityId[0]
 var activity = desktopById(activityId)
 activity.currentConfigGroup = ["General"]
 activity.writeConfig("showToolbox", false)
