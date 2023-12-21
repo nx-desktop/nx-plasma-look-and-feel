@@ -24,10 +24,9 @@
 // Set Plasma Desktop Scripting API.
 var plasma = getApiVersion(1)
 
-// Set desktop activities.
-var activity = desktopById(activityId)
-
 // Remove desktop toolbox.
+var activityId = activityIds[0]
+var activity = desktopById(activityId)
 activity.currentConfigGroup = ["General"]
 activity.writeConfig("showToolbox", false)
 
@@ -38,7 +37,7 @@ for( var j = 0; j < desktopsArray.length; j++) {
 }
 
 // Top panel.
-menuPanel = new plasma.Panel
+const menuPanel = new Panel
 var menuPanelScreen = menuPanel.screen
 menuPanel.location = "top"
 menuPanel.alignment = "center"
@@ -58,11 +57,11 @@ if (menuPanel.formFactor === "horizontal") {
 }
 
 // Add and configure top panel widgets in order of placement.
-var windowButtons = menuPanel.addWidget("org.kde.windowButtons")
+var windowButtons = menuPanel.addWidget("org.kde.windowbuttons")
 windowButtons.currentConfigGroup = ["Configuration", "General"]
 windowButtons.writeConfig("buttonSizePercentage", "75")
 windowButtons.writeConfig("hiddenState", "EmptySpace")
-windowButtons.writeConfig("inactiveStateEnabled", "EmptySpace")
+windowButtons.writeConfig("inactiveStateEnabled", true)
 windowButtons.writeConfig("lengthFirstMargin", "4")
 windowButtons.writeConfig("lengthLastMargin", "4")
 windowButtons.writeConfig("visibility", "3")
@@ -72,7 +71,7 @@ latteSeparatorTop1.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorTop1.writeConfig("lengthMargin", "10")
 latteSeparatorTop1.writeConfig("thickMargin", "6")
 
-var windowTitle = menuPanel.addWidget("org.kde.windowTitle")
+var windowTitle = menuPanel.addWidget("org.kde.windowtitle")
 windowTitle.currentConfigGroup = ["Configuration", "General"]
 windowTitle.writeConfig("capitalFont", false)
 windowTitle.writeConfig("showIcon", false)
@@ -94,8 +93,69 @@ latteSeparatorTop3.writeConfig("thickMargin", "6")
 menuPanel.addWidget("org.kde.plasma.systemtray")
 
 // Bottom panel (Dock).
-var bottomPanel = new plasma.Panel
+var bottomPanel = new Panel
 bottomPanel.location = "bottom"
 bottomPanel.alignment = "center"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
 
+// Add and configure bottom panel widgets in order of placement.
+bottomPanel.addWidget("org.kde.plasma.panelspacer")
+
+var plasmaDrawer = bottomPanel.addWidget("P-Connor.PlasmaDrawer")
+plasmaDrawer.currentConfigGroup = ["Configuration", "General"]
+plasmaDrawer.writeConfig("animationSpeedMultiplier", "1.3000000000000003")
+plasmaDrawer.writeConfig("appIconSize", "128")
+plasmaDrawer.writeConfig("backgroundOpacity", "90")
+plasmaDrawer.writeConfig("hiddenApplications", "appimagekit_e00131cdaf6606b58dc63e02f6f9667a-appimage-cli-tool.desktop,appimagekit_691afdd8254cdd6210cad9fe09dc3c0c-appimage-cli-tool.desktop,appimagekit_c622bf8ce674464048e56ad7b1c9c3ec-AppImageUpdate.desktop,appimagekit_33264d7382d4da20e2058b56c70584b3-Firefox.desktop,appimagekit_13e096f2a11dd27115677128a912dbba-Firefox.desktop,org.kde.kmenuedit.desktop,appimagekit_cc22cf1990cbd4ea25c2cd3f9236c9d9-appimage-cli-tool.desktop,org.maui.settings.desktop,org.kde.fiery.desktop,org.kde.latte-dock.desktop,org.kde.agenda.desktop,org.kde.communicator.desktop,appimagekit_654a6860494c0adba861ecb314e23fe4-Firefox.desktop,org.kde.booth.desktop,org.fcitx.Fcitx5.desktop,setup-mozc.desktop,im-config.desktop,appimagekit_89688fd275690f87364cb0aa03793f66-Hardware_Probe.desktop,appimagekit_18fdaa3ea99118c7b9bee6bc187e2d70-Hardware_Probe.desktop,org.kde.kwalletmanager5.desktop")
+plasmaDrawer.writeConfig("numberColumns", "6")
+plasmaDrawer.writeConfig("numberRows", "4")
+plasmaDrawer.writeConfig("searchIconSize", "250")
+plasmaDrawer.writeConfig("scrollAnimationDuration", "250")
+plasmaDrawer.writeConfig("showFavorites", false)
+plasmaDrawer.writeConfig("showSystemActions", false)
+plasmaDrawer.writeConfig("spaceHeight", "20")
+plasmaDrawer.writeConfig("spaceWidth", "20")
+plasmaDrawer.writeConfig("useCustomSizeGrid", true)
+
+var latteSeparatorBottom1 = menuPanel.addWidget("org.kde.latte.separator")
+latteSeparatorBottom1.currentConfigGroup = ["Configuration", "General"]
+latteSeparatorBottom1.writeConfig("lengthMargin", "16")
+latteSeparatorBottom1.writeConfig("thickMargin", "12")
+
+var configurableButton = menuPanel.addWidget("com.github.configurable_button")
+configurableButton.currentConfigGroup = ["Configuration", "General"]
+configurableButton.writeConfig("iconOff", "view-file-columns")
+configurableButton.writeConfig("iconOn", "view-file-columns")
+configurableButton.writeConfig("offScript", "qdbus org.kde.kglobalaccel /component/kwin invokeShortcut 'Overview'")
+configurableButton.writeConfig("onScript", "qdbus org.kde.kglobalaccel /component/kwin invokeShortcut 'Overview'")
+
+var latteSeparatorBottom2 = menuPanel.addWidget("org.kde.latte.separator")
+latteSeparatorBottom2.currentConfigGroup = ["Configuration", "General"]
+latteSeparatorBottom2.writeConfig("lengthMargin", "16")
+latteSeparatorBottom2.writeConfig("thickMargin", "12")
+
+var dockTaskManager = menuPanel.addWidget("org.kde.plasma.icontasks")
+dockTaskManager.currentConfigGroup = ["Configuration", "General"]
+dockTaskManager.writeConfig("groupPopups", false)
+dockTaskManager.writeConfig("highlightWindows", false)
+dockTaskManager.writeConfig("launchers", "preferred://filemanager,applications:org.nx.softwarecenter.desktop,preferred://browser,applications:org.kde.nota.desktop,applications:org.kde.vvave.desktop,applications:org.kde.clip.desktop,applications:org.kde.station.desktop")
+dockTaskManager.writeConfig("showOnlyCurrentScreen", true)
+dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
+
+var latteSeparatorBottom3 = menuPanel.addWidget("org.kde.latte.separator")
+latteSeparatorBottom3.currentConfigGroup = ["Configuration", "General"]
+latteSeparatorBottom3.writeConfig("lengthMargin", "16")
+latteSeparatorBottom3.writeConfig("thickMargin", "12")
+
+menuPanel.addWidget("org.kde.plasma.trash")
+
+var latteSeparatorBottom4 = menuPanel.addWidget("org.kde.latte.separator")
+latteSeparatorBottom4.currentConfigGroup = ["Configuration", "General"]
+latteSeparatorBottom4.writeConfig("lengthMargin", "16")
+latteSeparatorBottom4.writeConfig("thickMargin", "12")
+
+var sessionControlsButton = menuPanel.addWidget("org.kde.plasma.lock_logout")
+sessionControlsButton.currentConfigGroup = ["Configuration", "General"]
+sessionControlsButton.writeConfig("show_lockScreen", false)
+
+bottomPanel.addWidget("org.kde.plasma.panelspacer")
