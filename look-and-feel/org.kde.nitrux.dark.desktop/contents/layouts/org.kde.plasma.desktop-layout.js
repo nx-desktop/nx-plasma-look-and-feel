@@ -103,14 +103,28 @@ digitalClock.writeConfig("showSeconds", true)
 
 // Bottom panel (Dock).
 var bottomPanel = new Panel
-var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "floating"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
-bottomPanel.alignment = "center"
-bottomPanel.minimumLength = 1000
-bottomPanel.maximumLength = 1440
+// bottomPanel.alignment = "center"
+// bottomPanel.minimumLength = 1440
+// bottomPanel.maximumLength = 1440
+
+var bottomPanelScreen = bottomPanel.screen
+
+// Restrict horizontal top panel to a maximum size of a 21:9 monitor
+if (menuPanel.formFactor === "horizontal") {
+    const geo = screenGeometry(bottomPanelScreen);
+    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+
+    if (geo.width > maximumWidth) {
+        bottomPanel.alignment = "center";
+        bottomPanel.minimumLength = 1440;
+        bottomPanel.maximumLength = maximumWidth;
+    }
+}
+
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
