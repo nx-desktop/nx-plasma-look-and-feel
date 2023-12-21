@@ -164,10 +164,13 @@ latteSeparatorBottom2.writeConfig("thickMargin", "12")
 
 var dockTaskManager = bottomPanel.addWidget("org.kde.plasma.icontasks")
 dockTaskManager.currentConfigGroup = ["Configuration", "General"]
+dockTaskManager.writeConfig("fill", false)
+dockTaskManager.writeConfig("iconSpacing", 2)
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
 dockTaskManager.writeConfig("launchers", "preferred://filemanager,preferred://browser")
-dockTaskManager.writeConfig("showOnlyCurrentScreen", true)
+dockTaskManager.writeConfig("maxStripes", 1)
+dockTaskManager.writeConfig("showOnlyCurrentDesktop", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)
 
 var latteSeparatorBottom3 = bottomPanel.addWidget("org.kde.latte.separator")
