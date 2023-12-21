@@ -111,7 +111,7 @@ digitalClock.writeConfig("showSeconds", true)
 var bottomPanel = new Panel
 var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "bottom"
-bottomPanel.height = 2 * Math.floor(gridUnit * 2.8 / 2)
+bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
 
