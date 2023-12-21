@@ -14,7 +14,7 @@ name=nitrux
 cursorTheme=nitrux_cursors
 
 [kwinrc][WindowSwitcher]
-LayoutName=big_icons
+LayoutName=coverswitch
 
 [kwinrc][DesktopSwitcher]
 LayoutName=org.kde.nitrux.desktop

@@ -9,7 +9,7 @@ activity.writeConfig("showToolbox", false)
 
 var desktopsArray = desktopsForActivity(currentActivity());
 for( var j = 0; j < desktopsArray.length; j++) {
-    desktopsArray[j].wallpaperPlugin = 'org.kde.image';
+    desktopsArray[j].wallpaperPlugin = 'a2n.blur';
 }
 
 // // Create top pannel
