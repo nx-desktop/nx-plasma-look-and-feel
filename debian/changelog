@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.0.5) nitrux; urgency=medium
+
+  * Use correct directory name for Plasma Drawer.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 20 Dec 2023 18:11:00 -0500
+
 nx-plasma-look-and-feel (2.0.4) nitrux; urgency=medium
 
   * Add Active Blur wallpaper plugin and Plasma Drawer plasmoid.
