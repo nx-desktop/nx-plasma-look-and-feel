@@ -113,6 +113,7 @@ var bottomPanelScreen = bottomPanel.screen
 bottomPanel.location = "bottom"
 bottomPanel.height = 2 * Math.floor(gridUnit * 2.8 / 2)
 bottomPanel.hiding = "windowscover"
+//bottomPanel.offset = 1
 
 // Restrict horizontal bottom panel to a maximum size of a 21:9 monitor
 if (bottomPanel.formFactor === "horizontal") {
