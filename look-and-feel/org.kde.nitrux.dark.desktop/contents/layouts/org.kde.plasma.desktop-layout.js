@@ -1,5 +1,5 @@
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   The license used for this file and its contents is: BSD-3-Clause                                                                                                        /
 //                                                                                                                                                                           /
 //   Copyright <2023> <Uri Herrera <uri_herrera@nxos.org>>                                                                                                                   /
@@ -136,7 +136,7 @@ plasmaDrawer.currentConfigGroup = ["Configuration", "General"]
 plasmaDrawer.writeConfig("animationSpeedMultiplier", "1.3000000000000003")
 plasmaDrawer.writeConfig("appIconSize", "128")
 plasmaDrawer.writeConfig("backgroundOpacity", "90")
-plasmaDrawer.writeConfig("hiddenApplications", "appimagekit_e00131cdaf6606b58dc63e02f6f9667a-appimage-cli-tool.desktop,appimagekit_691afdd8254cdd6210cad9fe09dc3c0c-appimage-cli-tool.desktop,appimagekit_c622bf8ce674464048e56ad7b1c9c3ec-AppImageUpdate.desktop,appimagekit_33264d7382d4da20e2058b56c70584b3-Firefox.desktop,appimagekit_13e096f2a11dd27115677128a912dbba-Firefox.desktop,org.kde.kmenuedit.desktop,appimagekit_cc22cf1990cbd4ea25c2cd3f9236c9d9-appimage-cli-tool.desktop,org.maui.settings.desktop,org.kde.fiery.desktop,org.kde.latte-dock.desktop,org.kde.agenda.desktop,org.kde.communicator.desktop,appimagekit_654a6860494c0adba861ecb314e23fe4-Firefox.desktop,org.kde.booth.desktop,org.fcitx.Fcitx5.desktop,setup-mozc.desktop,im-config.desktop,appimagekit_89688fd275690f87364cb0aa03793f66-Hardware_Probe.desktop,appimagekit_18fdaa3ea99118c7b9bee6bc187e2d70-Hardware_Probe.desktop,org.kde.kwalletmanager5.desktop")
+plasmaDrawer.writeConfig("hiddenApplications", ["appimagekit_e00131cdaf6606b58dc63e02f6f9667a-appimage-cli-tool.desktop","appimagekit_691afdd8254cdd6210cad9fe09dc3c0c-appimage-cli-tool.desktop","appimagekit_c622bf8ce674464048e56ad7b1c9c3ec-AppImageUpdate.desktop","appimagekit_33264d7382d4da20e2058b56c70584b3-Firefox.desktop","appimagekit_13e096f2a11dd27115677128a912dbba-Firefox.desktop","org.kde.kmenuedit.desktop","appimagekit_cc22cf1990cbd4ea25c2cd3f9236c9d9-appimage-cli-tool.desktop","org.maui.settings.desktop","org.kde.fiery.desktop","org.kde.latte-dock.desktop","org.kde.agenda.desktop","org.kde.communicator.desktop","appimagekit_654a6860494c0adba861ecb314e23fe4-Firefox.desktop","org.kde.booth.desktop","org.fcitx.Fcitx5.desktop","setup-mozc.desktop","im-config.desktop","appimagekit_89688fd275690f87364cb0aa03793f66-Hardware_Probe.desktop","appimagekit_18fdaa3ea99118c7b9bee6bc187e2d70-Hardware_Probe.desktop","org.kde.kwalletmanager5.desktop"]);
 plasmaDrawer.writeConfig("numberColumns", "6")
 plasmaDrawer.writeConfig("numberRows", "4")
 plasmaDrawer.writeConfig("searchIconSize", "250")
