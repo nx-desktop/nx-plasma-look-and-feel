@@ -113,28 +113,8 @@ bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
 bottomPanel.alignment = "center"
-// bottomPanel.minimumLength = 1000
-// bottomPanel.maximumLength = 2160
-
-bottomPanel.panelVisibility = "2"
-if (width === 1920){
-  bottomPanel.maximumLength = 1728
- } else
-{
-  if (width === 1440){
-    bottomPanel.maximumLength = 1296
-  } else
-  {
-  if (width === 1280){
-    bottomPanel.maximumLength = 1152
-  } else
-    {
-      bottomPanel.maximumLength = Number((width)*(.90))
-    }
-  }
-}
-
-bottomPanel.minimumLength = 120
+bottomPanel.minimumLength = 1000
+bottomPanel.maximumLength = 2160
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
