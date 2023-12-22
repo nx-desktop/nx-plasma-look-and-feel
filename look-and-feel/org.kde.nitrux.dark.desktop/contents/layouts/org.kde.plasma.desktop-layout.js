@@ -106,6 +106,7 @@ let extraItemsArray = [
   "org.kde.plasma.vault",
   "org.nx.networkmanagement",
   "org.nx.audio",
+  "org.nx.notifications",
   "org.kde.plasma.gamemode"
 ];
 
