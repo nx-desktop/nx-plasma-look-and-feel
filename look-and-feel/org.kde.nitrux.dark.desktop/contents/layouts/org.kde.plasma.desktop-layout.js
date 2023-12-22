@@ -111,6 +111,10 @@ bottomPanel.hiding = "windowscover"
 bottomPanel.alignment = "center"
 bottomPanel.minimumLength = 1000
 bottomPanel.maximumLength = 2160
+const config = ConfigFile('plasmashellrc')
+config.group = 'PlasmaViews'
+const config2 = ConfigFile(config, IDPanel)
+config2.writeEntry('floating', 1)
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor
 // var bottomPanelScreen = bottomPanel.screen
