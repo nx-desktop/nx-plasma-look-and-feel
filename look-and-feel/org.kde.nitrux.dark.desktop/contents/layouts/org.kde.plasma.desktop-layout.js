@@ -85,7 +85,6 @@ latteSeparatorTop3.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorTop3.writeConfig("lengthMargin", "10")
 latteSeparatorTop3.writeConfig("thickMargin", "6")
 
-menuPanel.addWidget("org.kde.plasma.systemtray")
 var systraprev = menuPanel.addWidget("org.kde.plasma.systemtray")
 var SystrayContainmentId = systraprev.readConfig("SystrayContainmentId")
 const systray = desktopById(SystrayContainmentId)
