@@ -113,7 +113,7 @@ bottomPanel.height = 2 * Math.floor(gridUnit * 2.9 / 2)
 bottomPanel.hiding = "windowscover"
 //bottomPanel.offset = 1
 bottomPanel.alignment = "center"
-bottomPanel.minimumLength = 1000
+bottomPanel.minimumLength = 800
 bottomPanel.maximumLength = 2160
 
 // Add and configure bottom panel widgets in order of placement.
