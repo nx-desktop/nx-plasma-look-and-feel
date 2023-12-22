@@ -90,7 +90,7 @@ var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
 const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
-// Define arrays for extraItems (hides to sub-menu), hiddenItems (hidden), and knownItems (visible).
+// Define arrays for extraItems (shows in submenu), hiddenItems (hidden), and knownItems (visible).
 let extraItemsArray = [
   "org.kde.kdeconnect",
   "org.kde.kscreen",
@@ -101,7 +101,10 @@ let extraItemsArray = [
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
   "org.kde.plasma.manage-inputmethod",
+  "org.kde.plasma.nightcolorcontrol",
   "org.kde.plasma.printmanager",
+  "org.kde.plasma.vault",
+  "org.nx.networkmanagement",
   "org.nx.audio",
   "org.kde.plasma.gamemode"
 ];
@@ -134,7 +137,7 @@ let knownItemsArray = [
   "org.kde.plasma.gamemode"
 ];
 
-// This code puts items in the system tray sub-menu.
+// This code shows items in the system tray sub-menu.
 if (applicationExists("org.kde.plasmashell.desktop")) {
   systray.writeConfig("extraItems", extraItemsArray);
 }
