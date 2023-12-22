@@ -99,8 +99,6 @@ if (applicationExists("org.kde.plasmashell.desktop")) {
     systray.writeConfig("extraItems", ListTrays4);
 }
 
-systray.writeConfig("iconSpacing", separatorsTray());
-
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
 latteSeparatorTop4.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorTop4.writeConfig("lengthMargin", "10")
