@@ -102,6 +102,7 @@ digitalClock.writeConfig("showDate", false)
 digitalClock.writeConfig("showSeconds", true)
 
 // Bottom panel (Dock).
+bottomPanel = new Panel
 let IDPanel = "Panel"+" "+bottomPanel.id
 const config = ConfigFile('plasmashellrc')
 config.group = 'PlasmaViews'
