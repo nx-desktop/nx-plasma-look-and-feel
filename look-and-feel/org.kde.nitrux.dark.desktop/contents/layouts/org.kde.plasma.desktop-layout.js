@@ -85,21 +85,21 @@ latteSeparatorTop3.currentConfigGroup = ["Configuration", "General"]
 latteSeparatorTop3.writeConfig("lengthMargin", "10")
 latteSeparatorTop3.writeConfig("thickMargin", "6")
 
-var systraprev = menuPanel.addWidget("org.kde.plasma.systemtray")
-var SystrayContainmentId = systraprev.readConfig("SystrayContainmentId")
-const systray = desktopById(SystrayContainmentId)
-systray.currentConfigGroup = ["General"]
-let ListTrays = systray.readConfig("extraItems")
-if (applicationExists("kcm_kdeconnect.desktop")){
-let ListTrays2 = ListTrays.replace(",org.kde.plasma.mediacontroller", "")
-let ListTrays3 = ListTrays2.replace(",org.kde.plasma.battery", "")
-systray.writeConfig("extraItems", ListTrays3)
-} else
-{
-let ListTrays3 = ListTrays.replace(",org.kde.plasma.battery", "")
-systray.writeConfig("extraItems", ListTrays3)
+var topPanelSystray = menuPanel.addWidget("org.kde.plasma.systemtray");
+var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
+const systray = desktopById(SystrayContainmentId);
+systray.currentConfigGroup = ["General"];
+
+let ListTrays = systray.readConfig("extraItems");
+
+if (applicationExists("org.kde.plasmashell.desktop")) {
+    let ListTrays2 = ListTrays.replace(",org.kde.plasma.notifications", "");
+    let ListTrays3 = ListTrays2.replace(",org.kde.plasma.devicenotifier", "");
+    let ListTrays4 = ListTrays3.replace(",org.kde.plasma.networkmanagement", "");
+    systray.writeConfig("extraItems", ListTrays4);
 }
-systray.writeConfig("iconSpacing", separatorsTray())
+
+systray.writeConfig("iconSpacing", separatorsTray());
 
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
 latteSeparatorTop4.currentConfigGroup = ["Configuration", "General"]
