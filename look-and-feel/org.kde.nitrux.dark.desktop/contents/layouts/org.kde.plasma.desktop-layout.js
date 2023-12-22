@@ -90,15 +90,70 @@ var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
 const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
-let ListTrays = systray.readConfig("extraItems");
+// Define arrays for extraItems, hiddenItems, and knownItems
+let extraItemsArray = [
+  "org.kde.kdeconnect",
+  "org.kde.kscreen",
+  "org.kde.kupapplet",
+  "org.kde.plasma.battery",
+  "org.kde.plasma.bluetooth",
+  "org.kde.plasma.clipboard",
+  "org.kde.plasma.keyboardindicator",
+  "org.kde.plasma.keyboardlayout",
+  "org.kde.plasma.manage-inputmethod",
+  "org.kde.plasma.nightcolorcontrol",
+  "org.kde.plasma.printmanager",
+  "org.kde.plasma.vault",
+  "org.nx.networkmanagement",
+  "org.nx.notifications",
+  "org.nx.audio",
+  "org.kde.plasma.gamemode"
+];
 
+let hiddenItemsArray = [
+  "org.kde.plasma.manage-inputmethod"
+];
+
+let knownItemsArray = [
+  "org.kde.kdeconnect",
+  "org.kde.kscreen",
+  "org.kde.kupapplet",
+  "org.kde.plasma.battery",
+  "org.kde.plasma.bluetooth",
+  "org.kde.plasma.clipboard",
+  "org.kde.plasma.devicenotifier",
+  "org.kde.plasma.keyboardindicator",
+  "org.kde.plasma.keyboardlayout",
+  "org.kde.plasma.manage-inputmethod",
+  "org.kde.plasma.mediacontroller",
+  "org.kde.plasma.networkmanagement",
+  "org.kde.plasma.nightcolorcontrol",
+  "org.kde.plasma.notifications",
+  "org.kde.plasma.printmanager",
+  "org.kde.plasma.vault",
+  "org.kde.plasma.volume",
+  "org.nx.audio",
+  "org.nx.networkmanagement",
+  "org.nx.notifications",
+  "org.kde.plasma.gamemode"
+];
+
+// This code disables items in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
-    let ListTrays2 = ListTrays.replace(",org.kde.plasma.notifications", "");
-    let ListTrays3 = ListTrays2.replace(",org.kde.plasma.devicenotifier", "");
-    let ListTrays4 = ListTrays3.replace(",org.kde.plasma.networkmanagement", "");
-    let ListTrays5 = ListTrays4.replace(",org.nx.networkmanagement", "");
-    let ListTrays6 = ListTrays5.replace(",org.kde.plasma.bluetooth", "");
-    systray.writeConfig("extraItems", ListTrays6);
+  extraItemsArray = extraItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
+  systray.writeConfig("extraItems", extraItemsArray.join(','));
+}
+
+// This code hides items in the system tray.
+if (applicationExists("org.kde.plasmashell.desktop")) {
+  hiddenItemsArray = hiddenItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
+  systray.writeConfig("knownItems", hiddenItemsArray.join(','));
+}
+
+// This code makes items visible in the system tray.
+if (applicationExists("org.kde.plasmashell.desktop")) {
+  knownItemsArray = knownItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
+  systray.writeConfig("knownItems", knownItemsArray.join(','));
 }
 
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
