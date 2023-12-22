@@ -96,7 +96,9 @@ if (applicationExists("org.kde.plasmashell.desktop")) {
     let ListTrays2 = ListTrays.replace(",org.kde.plasma.notifications", "");
     let ListTrays3 = ListTrays2.replace(",org.kde.plasma.devicenotifier", "");
     let ListTrays4 = ListTrays3.replace(",org.kde.plasma.networkmanagement", "");
-    systray.writeConfig("extraItems", ListTrays4);
+    let ListTrays5 = ListTrays4.replace(",org.nx.networkmanagement", "");
+    let ListTrays6 = ListTrays5.replace(",org.kde.plasma.bluetooth", "");
+    systray.writeConfig("extraItems", ListTrays6);
 }
 
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
