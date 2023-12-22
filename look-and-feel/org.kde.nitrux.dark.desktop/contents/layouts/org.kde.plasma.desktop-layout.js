@@ -115,38 +115,20 @@ bottomPanel.hiding = "windowscover"
 bottomPanel.alignment = "center"
 // bottomPanel.minimumLength = 1000
 // bottomPanel.maximumLength = 2160
-bottomPanel.panelVisibility = "2"
-if (width === 1920){
-bottomPanel.maximumLength = 1728
-} else
-{
-if (width === 1440){
-bottomPanel.maximumLength = 1296
-} else
-{
-if (width === 1280){
-bottomPanel.maximumLength = 1152
-} else
-{
-bottomPanel.maximumLength = Number((width)*(.90))
-}
-}
-}
-bottomPanel.minimumLength = 120
 
 // Restrict horizontal top panel to a maximum size of a 21:9 monitor
-// var bottomPanelScreen = bottomPanel.screen
+var bottomPanelScreen = bottomPanel.screen
 
-// if (menuPanel.formFactor === "horizontal") {
-//     const geo = screenGeometry(bottomPanelScreen);
-//     const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
+if (menuPanel.formFactor === "horizontal") {
+    const geo = screenGeometry(bottomPanelScreen);
+    const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
 
-//     if (geo.width > maximumWidth) {
-//         bottomPanel.alignment = "center";
-//         bottomPanel.minimumLength = maximumWidth;
-//         bottomPanel.maximumLength = maximumWidth;
-//     }
-// }
+    if (geo.width > maximumWidth) {
+        bottomPanel.alignment = "center";
+        bottomPanel.minimumLength = maximumWidth;
+        bottomPanel.maximumLength = maximumWidth;
+    }
+}
 
 // Add and configure bottom panel widgets in order of placement.
 var bottomPanelSeparatorLeft = bottomPanel.addWidget("org.kde.plasma.panelspacer")
