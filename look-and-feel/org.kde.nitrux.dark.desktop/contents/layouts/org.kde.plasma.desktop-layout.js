@@ -90,7 +90,7 @@ var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
 const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
-// Define arrays for extraItems, hiddenItems, and knownItems
+// Define arrays for extraItems (disable), hiddenItems (hidden), and knownItems (visible).
 let extraItemsArray = [
   "org.kde.kdeconnect",
   "org.kde.kscreen",
@@ -140,20 +140,17 @@ let knownItemsArray = [
 
 // This code disables items in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
-  extraItemsArray = extraItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
-  systray.writeConfig("extraItems", extraItemsArray.join(','));
+  systray.writeConfig("extraItems", extraItemsArray);
 }
 
 // This code hides items in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
-  hiddenItemsArray = hiddenItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
-  systray.writeConfig("knownItems", hiddenItemsArray.join(','));
+  systray.writeConfig("knownItems", hiddenItemsArray);
 }
 
 // This code makes items visible in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
-  knownItemsArray = knownItemsArray.filter(item => item !== "org.kde.plasma.notifications" && item !== "org.kde.plasma.devicenotifier" && item !== "org.kde.plasma.networkmanagement");
-  systray.writeConfig("knownItems", knownItemsArray.join(','));
+  systray.writeConfig("knownItems", knownItemsArray);
 }
 
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
