@@ -91,6 +91,7 @@ const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
 // Define arrays for extraItems (shows in submenu), hiddenItems (hidden), and knownItems (visible).
+// If an item is not in extraItems or knownItems it will be disabled.
 let extraItemsArray = [
   "org.kde.kdeconnect",
   "org.kde.kscreen",

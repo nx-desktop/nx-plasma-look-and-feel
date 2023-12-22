@@ -1,3 +1,10 @@
+nx-plasma-look-and-feel (2.0.8) nitrux; urgency=medium
+
+  * Fix layout.js files in look-and-feel packages to create the panels porperly.
+  * Remove unused QML stuff.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 22 Dec 2023 05:51:00 -0500
+
 nx-plasma-look-and-feel (2.0.7) nitrux; urgency=medium
 
   * Update layout.js files in look-and-feel packages to create the panels.
