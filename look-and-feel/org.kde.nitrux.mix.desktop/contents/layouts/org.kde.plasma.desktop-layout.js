@@ -90,7 +90,7 @@ var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
 const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
-// Define arrays for extraItems (shows in submenu), hiddenItems (hidden), and knownItems (visible).
+// Define arrays for extraItems (shows in submenu), hiddenItems (hidden), knownItems (visible when necessary), shownItems (always visible).
 // If an item is not in extraItems or knownItems it will be disabled.
 let extraItemsArray = [
   "org.kde.kdeconnect",
@@ -99,16 +99,16 @@ let extraItemsArray = [
   "org.kde.plasma.battery",
   "org.kde.plasma.bluetooth",
   "org.kde.plasma.clipboard",
+  "org.kde.plasma.gamemode",
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
   "org.kde.plasma.manage-inputmethod",
   "org.kde.plasma.nightcolorcontrol",
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
+  "org.kde.plasma.volume",
   "org.nx.networkmanagement",
-  "org.nx.audio",
-  "org.nx.notifications",
-  "org.kde.plasma.gamemode"
+  "org.nx.notifications"
 ];
 
 let hiddenItemsArray = [
@@ -123,6 +123,7 @@ let knownItemsArray = [
   "org.kde.plasma.bluetooth",
   "org.kde.plasma.clipboard",
   "org.kde.plasma.devicenotifier",
+  "org.kde.plasma.gamemode",
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
   "org.kde.plasma.manage-inputmethod",
@@ -133,10 +134,15 @@ let knownItemsArray = [
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
+  "org.nx.networkmanagement",
+  "org.nx.notifications"
+];
+
+let shownItemsArray = [
+  "org.kde.plasma.volume",
   "org.nx.audio",
   "org.nx.networkmanagement",
-  "org.nx.notifications",
-  "org.kde.plasma.gamemode"
+  "org.nx.notifications"
 ];
 
 // This code shows items in the system tray sub-menu.
@@ -146,12 +152,17 @@ if (applicationExists("org.kde.plasmashell.desktop")) {
 
 // This code hides items in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
-  systray.writeConfig("knownItems", hiddenItemsArray);
+  systray.writeConfig("hiddenItems", hiddenItemsArray);
 }
 
-// This code makes items visible in the system tray.
+// This code makes items visible when necessary in the system tray.
 if (applicationExists("org.kde.plasmashell.desktop")) {
   systray.writeConfig("knownItems", knownItemsArray);
+}
+
+// This code makes items always visible in the system tray.
+if (applicationExists("org.kde.plasmashell.desktop")) {
+  systray.writeConfig("shownItems", shownItemsArray);
 }
 
 var latteSeparatorTop4 = menuPanel.addWidget("org.kde.latte.separator")
