@@ -99,16 +99,17 @@ let extraItemsArray = [
   "org.kde.plasma.battery",
   "org.kde.plasma.bluetooth",
   "org.kde.plasma.clipboard",
+  "org.kde.plasma.devicenotifier",
   "org.kde.plasma.gamemode",
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
   "org.kde.plasma.manage-inputmethod",
   "org.kde.plasma.nightcolorcontrol",
+  "org.kde.plasma.notifications",
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
-  "org.nx.networkmanagement",
-  "org.nx.notifications"
+  "org.nx.networkmanagement"
 ];
 
 let hiddenItemsArray = [
@@ -123,6 +124,7 @@ let knownItemsArray = [
   "org.kde.plasma.bluetooth",
   "org.kde.plasma.clipboard",
   "org.kde.plasma.devicenotifier",
+  "org.kde.plasma.devicenotifier",
   "org.kde.plasma.gamemode",
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
@@ -131,18 +133,17 @@ let knownItemsArray = [
   "org.kde.plasma.networkmanagement",
   "org.kde.plasma.nightcolorcontrol",
   "org.kde.plasma.notifications",
+  "org.kde.plasma.notifications",
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
-  "org.nx.networkmanagement",
-  "org.nx.notifications"
+  "org.nx.networkmanagement"
 ];
 
 let shownItemsArray = [
+  "org.kde.plasma.notifications",
   "org.kde.plasma.volume",
-  "org.nx.audio",
-  "org.nx.networkmanagement",
-  "org.nx.notifications"
+  "org.nx.networkmanagement"
 ];
 
 // This code shows items in the system tray sub-menu.

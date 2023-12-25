@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.1.0) nitrux; urgency=medium
+
+  * Update arrays in layout.js files in look-and-feel packages.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 25 Dec 2023 16:39:00 -0500
+
 nx-plasma-look-and-feel (2.0.9) nitrux; urgency=medium
 
   * Fix arrays in layout.js files in look-and-feel packages.
