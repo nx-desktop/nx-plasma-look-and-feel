@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.1.2) nitrux; urgency=medium
+
+  * Update layout.js to remove duplicated entries in arrays.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 01 Jan 2024 22:21:00 -0500
+
 nx-plasma-look-and-feel (2.1.1) nitrux; urgency=medium
 
   * Update plasma themes.

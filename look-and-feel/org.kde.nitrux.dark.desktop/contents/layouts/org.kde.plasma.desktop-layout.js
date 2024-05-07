@@ -90,7 +90,7 @@ var SystrayContainmentId = topPanelSystray.readConfig("SystrayContainmentId");
 const systray = desktopById(SystrayContainmentId);
 systray.currentConfigGroup = ["General"];
 
-// Define arrays for extraItems (shows in submenu), hiddenItems (hidden), knownItems (visible when necessary), shownItems (always visible).
+// Define arrays for system tray items: extraItems (shows in systray submenu when inactive), hiddenItems (always hidden), knownItems (visible when necessary), shownItems (always visible).
 // If an item is not in extraItems or knownItems it will be disabled.
 let extraItemsArray = [
   "org.kde.kdeconnect",
@@ -105,7 +105,6 @@ let extraItemsArray = [
   "org.kde.plasma.keyboardlayout",
   "org.kde.plasma.manage-inputmethod",
   "org.kde.plasma.nightcolorcontrol",
-  "org.kde.plasma.notifications",
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
@@ -124,7 +123,6 @@ let knownItemsArray = [
   "org.kde.plasma.bluetooth",
   "org.kde.plasma.clipboard",
   "org.kde.plasma.devicenotifier",
-  "org.kde.plasma.devicenotifier",
   "org.kde.plasma.gamemode",
   "org.kde.plasma.keyboardindicator",
   "org.kde.plasma.keyboardlayout",
@@ -132,8 +130,6 @@ let knownItemsArray = [
   "org.kde.plasma.mediacontroller",
   "org.kde.plasma.networkmanagement",
   "org.kde.plasma.nightcolorcontrol",
-  "org.kde.plasma.notifications",
-  "org.kde.plasma.notifications",
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
