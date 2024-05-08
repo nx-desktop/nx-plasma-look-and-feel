@@ -29,7 +29,7 @@ for (i=0;i<allDesktops.length;i++){
   d = allDesktops[i];
   d.wallpaperPlugin = "a2n.blur";
   d.currentConfigGroup = Array("Wallpaper", "a2n.blur", "General");
-  d.writeConfig("SlidePaths", "/sr/share/wallpapers")
+  d.writeConfig("SlidePaths", "/usr/share/wallpapers")
 }
 
 // Top panel.
