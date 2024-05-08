@@ -1,8 +1,14 @@
+nx-plasma-look-and-feel (2.1.3) nitrux; urgency=medium
+
+  * Update layout.js to hide launchers.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 08 May 2024 02:45:00 -0500
+
 nx-plasma-look-and-feel (2.1.2) nitrux; urgency=medium
 
   * Update layout.js to remove duplicated entries in arrays.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Mon, 01 Jan 2024 22:21:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 07 May 2024 16:27:00 -0500
 
 nx-plasma-look-and-feel (2.1.1) nitrux; urgency=medium
 
