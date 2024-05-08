@@ -1,3 +1,10 @@
+
+nx-plasma-look-and-feel (2.1.5) nitrux; urgency=medium
+
+  * Update layout.js to hide launchers.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 08 May 2024 06:48:00 -0500
+
 nx-plasma-look-and-feel (2.1.4) nitrux; urgency=medium
 
   * Configure wallpaper plugin.
