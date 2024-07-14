@@ -90,7 +90,6 @@ Rectangle {
         width: 200
         height: 120
         color: "transparent"
-        visible: primaryScreen
 
         Column {
             id: rebootColumn
@@ -147,7 +146,6 @@ Rectangle {
         id: loginArea
         anchors.fill: parent
         color: "transparent"
-        visible: primaryScreen
 
 
         Column {
