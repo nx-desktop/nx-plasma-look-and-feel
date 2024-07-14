@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   The license used for this file and its contents is: BSD-3-Clause                                                                                                        /
 //                                                                                                                                                                           /
-//   Copyright <2023> <Uri Herrera <uri_herrera@nxos.org>>                                                                                                                   /
+//   Copyright <2023-2024> <Uri Herrera <uri_herrera@nxos.org>>                                                                                                              /
 //                                                                                                                                                                           /
 //   Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:                          /
 //                                                                                                                                                                           /
@@ -109,7 +109,7 @@ let extraItemsArray = [
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
-  "org.nx.networkmanagement"
+  "org.kde.plasma.networkmanagement"
 ];
 
 let hiddenItemsArray = [
@@ -134,13 +134,12 @@ let knownItemsArray = [
   "org.kde.plasma.printmanager",
   "org.kde.plasma.vault",
   "org.kde.plasma.volume",
-  "org.nx.networkmanagement"
 ];
 
 let shownItemsArray = [
   "org.kde.plasma.notifications",
   "org.kde.plasma.volume",
-  "org.nx.networkmanagement"
+  "org.kde.plasma.networkmanagement"
 ];
 
 // This code shows items in the system tray sub-menu.
