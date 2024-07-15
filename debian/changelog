@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.3.1) nitrux; urgency=medium
+
+  * Add icon for vpn connection and ethernet and vpn connections.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 15 Jul 2024 16:15:00 -0500
+
 nx-plasma-look-and-feel (2.3.0) nitrux; urgency=medium
 
   * Allow the sddm theme to be visible in all screen sin multi-monitor setups.
