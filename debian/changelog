@@ -1,8 +1,14 @@
+nx-plasma-look-and-feel (2.3.3) nitrux; urgency=medium
+
+  * Update KZones KWin script.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 25 Oct 2024 16:15:00 -0500
+
 nx-plasma-look-and-feel (2.3.2) nitrux; urgency=medium
 
   * Add KZones KWin script.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Mon, 15 Jul 2024 16:15:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 24 Oct 2024 16:15:00 -0500
 
 nx-plasma-look-and-feel (2.3.1) nitrux; urgency=medium
 
