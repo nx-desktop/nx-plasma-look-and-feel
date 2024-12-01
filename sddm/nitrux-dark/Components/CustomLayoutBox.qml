@@ -46,7 +46,6 @@ CustomComboBox {
 
         Image {
             id: img
-            // source: "${DATA_INSTALL_DIR}/flags/%1.png".arg(modelItem ? modelItem.modelData.shortName : "zz")
             source: "/usr/share/sddm/flags/%1.png".arg(modelItem ? modelItem.modelData.shortName : "zz")
 
             anchors.margins: 9
