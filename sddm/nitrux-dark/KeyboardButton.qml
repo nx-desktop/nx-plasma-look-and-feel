@@ -10,12 +10,18 @@ PlasmaComponents.ToolButton {
 
     property int currentIndex: -1
 
-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", instantiator.objectAt(currentIndex).shortName)
+    text: currentIndex >= 0 && instantiator.objectAt(currentIndex) 
+        ? i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", instantiator.objectAt(currentIndex).shortName)
+        : i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: Unknown")
+
     implicitWidth: minimumWidth
 
-    visible: menu.items.length > 1
+    visible: keyboard.layouts.length > 1
 
-    Component.onCompleted: currentIndex = Qt.binding(function() {return keyboard.currentLayout});
+    Component.onCompleted: {
+        currentIndex = Qt.binding(function() { return keyboard.currentLayout; });
+        console.log("Initialized currentIndex:", currentIndex);
+    }
 
     style: NitruxToolButtonStyle{}
 
@@ -25,13 +31,20 @@ PlasmaComponents.ToolButton {
         Instantiator {
             id: instantiator
             model: keyboard.layouts
-            onObjectAdded: keyboardMenu.insertItem(index, object)
-            onObjectRemoved: keyboardMenu.removeItem( object )
+            onObjectAdded: {
+                console.log("Object added at index:", index, "Object:", object);
+                keyboardMenu.insertItem(index, object);
+            }
+            onObjectRemoved: {
+                console.log("Object removed:", object);
+                keyboardMenu.removeItem(object);
+            }
             delegate: QQC.MenuItem {
-                text: modelData.longName
-                property string shortName: modelData.shortName
+                text: modelData.longName || "Unknown"
+                property string shortName: modelData.shortName || "Unknown"
                 onTriggered: {
-                    keyboard.currentLayout = model.index
+                    console.log("Selected layout index:", model.index, "Short name:", shortName);
+                    keyboard.currentLayout = model.index;
                 }
             }
         }
