@@ -1,0 +1,32 @@
+# TODO
+# Spanish translations for PACKAGE package
+# Traducciones al espa�ol para el paquete PACKAGE.
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Eniel Rodríguez Machado <eniel160990@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-19 20:28+0200\n"
+"PO-Revision-Date: 2023-06-19 22:40+0200\n"
+"Last-Translator: Eniel Rodríguez Machado <eniel160990@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+msgstr ""
+
+#: contents/ui/main.qml
+msgid ""
+msgstr ""
+
+#: contents/config/config.qml
+msgid ""
+msgstr ""
