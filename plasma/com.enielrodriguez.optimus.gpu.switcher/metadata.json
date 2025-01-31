@@ -11,7 +11,7 @@
         "Description[es]": "Interfaz gráfica para la herrmienta EnvyControl, destinada a cambiar entre los modos de GPU en los sistemas Nvidia Optimus.",
         "EnabledByDefault": true,
         "Icon": "nvidia",
-        "Id": "optimus-gpu-switcher",
+        "Id": "com.enielrodriguez.optimus.gpu.switcher",
         "License": "GPL3",
         "Name": "Optimus GPU Switcher",
         "ServiceTypes": [
