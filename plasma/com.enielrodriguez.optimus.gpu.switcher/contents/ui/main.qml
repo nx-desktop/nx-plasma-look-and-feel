@@ -192,18 +192,19 @@ Item {
             root.loading = false
 
             if (exitCode !== 0) {
-                showNotification(const_IMAGE_ERROR, i18n("Error: Root privileges are required or command execution failed."))
-                root.desiredGPUMode = root.currentGPUMode
+                showNotification(const_IMAGE_ERROR, i18n("Error: GPU mode change failed.\n%1", stderr || stdout));
+                root.desiredGPUMode = root.currentGPUMode;
             } else {
-                showNotification(root.icons[root.desiredGPUMode], i18n("Successfully switched to %1 mode.", root.desiredGPUMode.toUpperCase()))
-                queryMode()
+                showNotification(root.icons[root.desiredGPUMode], i18n("Successfully switched to %1 mode.", root.desiredGPUMode.toUpperCase()));
+
+                queryMode(); /* Update current mode */
 
                 if (root.desiredGPUMode !== root.currentGPUMode) {
-                    root.pendingRebootGPUMode = root.desiredGPUMode
-                    showNotification(root.icons[root.desiredGPUMode], i18n("Switched to %1. Please reboot to apply changes.", root.pendingRebootGPUMode.toUpperCase()))
+                    root.pendingRebootGPUMode = root.desiredGPUMode;
+                    showNotification(root.icons[root.desiredGPUMode], i18n("Switched to %1 mode.\nA reboot is required.", root.desiredGPUMode.toUpperCase()));
                 } else {
-                    root.pendingRebootGPUMode = ""
-                    showNotification(root.icons[root.desiredGPUMode], i18n("You have switched back to the current mode."))
+                    root.pendingRebootGPUMode = "";
+                    showNotification(root.icons[root.desiredGPUMode], i18n("You have switched back to the current mode."));
                 }
             }
         }

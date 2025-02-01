@@ -1,3 +1,12 @@
+nx-plasma-look-and-feel (2.3.9) nitrux; urgency=medium
+
+  * Optimus GPU Switcher: Only "Successfully switched to Hybrid mode." is shown instead of full output.
+  * Optimus GPU Switcher: If overlay-envycontrol fails, stderr is shown for debugging.
+  * Optimus GPU Switcher: Calls queryMode() after switching modes.
+  * Optimus GPU Switcher: Only one reboot message is shown when needed.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 01 Jan 2025 01:11:00 -0500
+
 nx-plasma-look-and-feel (2.3.8) nitrux; urgency=medium
 
   * Optimus GPU Switcher: Honor envyControlSetCommand string set in main.xml.
