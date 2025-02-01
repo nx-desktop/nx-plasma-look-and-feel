@@ -112,10 +112,11 @@ Item {
     CustomDataSource {
         id: envyControlSetModeDataSource
 
-        // Dynamically set in switchMode(). Set a default value to avoid errors at startup.
+        /* Dynamically set in switchMode(). Set a default value to avoid errors at startup. */
         property string mode: "integrated"
-        
-        property string baseCommand: "overlay-envycontrol"
+
+        /* Use plasmoid.configuration.envyControlSetCommand instead of hardcoding */
+        property string baseCommand: plasmoid.configuration.envyControlSetCommand
         property var cmds: {
             "integrated": `${baseCommand} integrated`,
             "nvidia": `${baseCommand} nvidia ${plasmoid.configuration.envyControlSetNvidiaOptions}`,
@@ -187,19 +188,19 @@ Item {
 
     Connections {
         target: envyControlSetModeDataSource
-        function onExited(exitCode, exitStatus, stdout, stderr){
+        function onExited(exitCode, exitStatus, stdout, stderr) {
             root.loading = false
 
-            if(exitCode !== 0){
+            if (exitCode !== 0) {
                 showNotification(const_IMAGE_ERROR, i18n("Error: Root privileges are required or command execution failed."))
                 root.desiredGPUMode = root.currentGPUMode
             } else {
-                showNotification(root.icons[root.desiredGPUMode], stdout)
+                showNotification(root.icons[root.desiredGPUMode], i18n("Successfully switched to %1 mode.", root.desiredGPUMode.toUpperCase()))
                 queryMode()
 
-                if(root.desiredGPUMode !== root.currentGPUMode){
+                if (root.desiredGPUMode !== root.currentGPUMode) {
                     root.pendingRebootGPUMode = root.desiredGPUMode
-                    showNotification(root.icons[root.desiredGPUMode], stdout)
+                    showNotification(root.icons[root.desiredGPUMode], i18n("Switched to %1. Please reboot to apply changes.", root.pendingRebootGPUMode.toUpperCase()))
                 } else {
                     root.pendingRebootGPUMode = ""
                     showNotification(root.icons[root.desiredGPUMode], i18n("You have switched back to the current mode."))

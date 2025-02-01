@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.3.8) nitrux; urgency=medium
+
+  * Optimus GPU Switcher: Honor envyControlSetCommand string set in main.xml.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 01 Jan 2025 00:31:00 -0500
+
 nx-plasma-look-and-feel (2.3.7) nitrux; urgency=medium
 
   * Optimus GPU Switcher: Remove kdesu dependency—all privilege escalation is handled via overlay-envycontrol.
