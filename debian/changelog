@@ -17,7 +17,7 @@ nx-plasma-look-and-feel (2.3.7) nitrux; urgency=medium
 
   * Optimus GPU Switcher: Remove kdesu dependency—all privilege escalation is handled via overlay-envycontrol.
   * Optimus GPU Switcher: Prevents redundant GPU mode switching in ComboBox selection.
-  * Optimus GPU Switcher: orrectly detects and processes errors.
+  * Optimus GPU Switcher: Correctly detects and processes errors.
   * Optimus GPU Switcher: Ensures proper notification handling with notify-send or zenity.
   * Optimus GPU Switcher: Dynamically sets the correct CPU manufacturer icons.
   * Optimus GPU Switcher: Prevents duplicate notifications when switching modes.
