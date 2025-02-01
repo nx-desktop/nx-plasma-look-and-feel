@@ -14,7 +14,7 @@ nx-plasma-look-and-feel (2.3.7) nitrux; urgency=medium
 
 nx-plasma-look-and-feel (2.3.6) nitrux; urgency=medium
 
-  * Fix optimus gpu switcher use of notify-send.
+  * Fix Optimus GPU Switcher use of notify-send.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Fri, 31 Jan 2025 17:45:00 -0500
 
