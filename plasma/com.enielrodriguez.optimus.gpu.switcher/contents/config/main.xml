@@ -3,10 +3,10 @@
     <kcfgfile name="configGeneral"/>
     <group name="General">
         <entry name="envyControlQueryCommand" type="String">
-            <default>/usr/bin/envycontrol -q</default>
+            <default>envycontrol -q</default>
         </entry>
         <entry name="envyControlSetCommand" type="String">
-            <default>/usr/bin/envycontrol -s</default>
+            <default>overlay-envycontrol -s</default>
         </entry>
         <entry name="envyControlSetHybridOptions" type="String">
             <default>--rtd3 2</default>

@@ -13,10 +13,8 @@ import org.kde.plasma.plasmoid 2.0
 * this happens, EnvyControl automatically switches to hybrid mode without warning, so all that remains is to restart.
 * I don't know if this behavior occurs on all platforms.
 *
-* The "envycontrol -s nvidia" command must be executed with "kdesu" because with "pkexec" it does not have access to an environment variable
-* and causes an error, which apparently does not prevent changing the mode, but it does break the execution of the widget's code.
-* I used "kdesu" on the rest of the "envycontrol" commands to keep output handling unified.
-*
+* The "envycontrol -s nvidia" command is executed using a wrapper script "overlay-envycontrol", which ensures proper
+* privilege escalation and execution within "overlayroot-chroot". This avoids issues with "pkexec" losing environment variables.
 *
 */
 
@@ -31,9 +29,6 @@ Item {
 
     // GPU modes available for the EnvyControl tool.
     property var const_GPU_MODES: ["integrated", "nvidia", "hybrid"]
-
-    // Defined in findKdesuDataSource Connection.
-    property string kdesuPath: ""
 
     // Defined in findNotificationTool Connection. Possible values are "zenity" and "notify-send"
     property string notificationTool: ""
@@ -67,7 +62,6 @@ Item {
 
     Component.onCompleted: {
         findNotificationTool()
-        findKdesu()
         setupCPUManufacturer()
         queryMode()
     }
@@ -105,11 +99,6 @@ Item {
         sendNotification.exec()
     }
 
-    function findKdesu() {
-        findKdesuDataSource.exec()
-    }
-
-
     function findNotificationTool() {
         findNotificationToolDataSource.exec()
     }
@@ -126,11 +115,11 @@ Item {
         // Dynamically set in switchMode(). Set a default value to avoid errors at startup.
         property string mode: "integrated"
         
-        property string baseCommand: `${root.kdesuPath} -t -i ${Qt.resolvedUrl("./image/icon.png").substring(7)} -c "${plasmoid.configuration.envyControlSetCommand} %1"`
+        property string baseCommand: "overlay-envycontrol"
         property var cmds: {
-            "integrated": baseCommand.replace(/%1/g, "integrated"),
-            "nvidia": baseCommand.replace(/%1/g, "nvidia " + plasmoid.configuration.envyControlSetNvidiaOptions),
-            "hybrid": baseCommand.replace(/%1/g, "hybrid " + plasmoid.configuration.envyControlSetHybridOptions)
+            "integrated": `${baseCommand} integrated`,
+            "nvidia": `${baseCommand} nvidia ${plasmoid.configuration.envyControlSetNvidiaOptions}`,
+            "hybrid": `${baseCommand} hybrid ${plasmoid.configuration.envyControlSetHybridOptions}`
         }
 
         command: cmds[mode]
@@ -139,12 +128,6 @@ Item {
     CustomDataSource {
         id: cpuManufacturerDataSource
         command: "lscpu | grep \"GenuineIntel\\|AuthenticAMD\""
-    }
-
-    CustomDataSource {
-        id: findKdesuDataSource 
-        // stderr output was suppressed to avoid handling "permission denied" errors
-        command: "find /usr -type f -name \"kdesu\" -executable 2>/dev/null"
     }
 
     CustomDataSource {
@@ -207,35 +190,17 @@ Item {
         function onExited(exitCode, exitStatus, stdout, stderr){
             root.loading = false
 
-            // kdesu uses stdout for all types of output (including errors), so stderr is useless.
-            
-            if(exitCode === 1){
-
-                // root privileges not granted should be exitCode 127 but not for kdesu, and the "error" output is in stdout in a form of kdesu help
-                if(stdout.includes("kdesu")){
-                    showNotification(const_IMAGE_ERROR, i18n("Error: Root privileges are required."))
-
-                    // restore desiredGPUMode variable
-                    root.desiredGPUMode = root.currentGPUMode
-                    
-                } else {
-                    showNotification(const_IMAGE_ERROR, stdout)
-
-                    // Check the current state in case EnvyControl made changes without warning.
-                    queryMode()
-                }
-
+            if(exitCode !== 0){
+                showNotification(const_IMAGE_ERROR, i18n("Error: Root privileges are required or command execution failed."))
+                root.desiredGPUMode = root.currentGPUMode
             } else {
-                /*
-                * You can switch to a mode, and then switch back to the current mode, all without restarting your computer.
-                * In this scenario, do the changes that EnvyControl can make really require a reboot? In the end without a reboot,
-                * the current mode is always the one that will continue to run.
-                * I am going to assume that in this case there is no point in restarting the computer, and therefore displaying the message "restart required".
-                */
+                showNotification(root.icons[root.desiredGPUMode], stdout)
+                queryMode()
+
                 if(root.desiredGPUMode !== root.currentGPUMode){
                     root.pendingRebootGPUMode = root.desiredGPUMode
                     showNotification(root.icons[root.desiredGPUMode], stdout)
-                }else{
+                } else {
                     root.pendingRebootGPUMode = ""
                     showNotification(root.icons[root.desiredGPUMode], i18n("You have switched back to the current mode."))
                 }
@@ -262,17 +227,6 @@ Item {
                     root.imageHybrid = Qt.resolvedUrl("./image/hybrid-intel.png")
                     root.imageIntegrated = Qt.resolvedUrl("./image/integrated-intel.png")
                 }
-            }
-        }
-    }
-
-
-    Connections {
-        target: findKdesuDataSource
-        function onExited(exitCode, exitStatus, stdout, stderr){
-
-            if(stdout){
-                root.kdesuPath = stdout.trim()
             }
         }
     }
@@ -372,7 +326,8 @@ Item {
                 currentIndex: model.indexOf(root.desiredGPUMode)
 
                 onCurrentIndexChanged: {
-                    if (currentIndex !== model.indexOf(root.desiredGPUMode)) {
+                    // Avoid redundant execution if the user selects the current mode.
+                    if (model[currentIndex] !== root.currentGPUMode) {
                         switchMode(model[currentIndex])
                     }
                 }
