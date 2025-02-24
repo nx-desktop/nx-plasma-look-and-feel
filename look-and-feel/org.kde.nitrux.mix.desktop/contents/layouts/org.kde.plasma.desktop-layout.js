@@ -238,7 +238,7 @@ dockTaskManager.writeConfig("fill", false)
 dockTaskManager.writeConfig("iconSpacing", 2)
 dockTaskManager.writeConfig("groupPopups", false)
 dockTaskManager.writeConfig("highlightWindows", false)
-dockTaskManager.writeConfig("launchers", ["applications:org.kde.index.desktop", "applications:org.nx.softwarecenter.desktop", "applications:firefox.desktop", "applications:org.kde.nota.desktop", "applications:org.kde.vvave.desktop", "applications:org.kde.clip.desktop", "applications:org.kde.station.desktop"]);
+dockTaskManager.writeConfig("launchers", ["applications:org.kde.index.desktop", "applications:firefox.desktop", "applications:org.kde.nota.desktop", "applications:org.kde.vvave.desktop", "applications:org.kde.clip.desktop", "applications:org.kde.station.desktop"]);
 dockTaskManager.writeConfig("maxStripes", 1)
 dockTaskManager.writeConfig("showOnlyCurrentDesktop", true)
 dockTaskManager.writeConfig("showOnlyCurrentScreen", false)

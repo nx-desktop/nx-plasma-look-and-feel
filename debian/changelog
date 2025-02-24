@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.4.0) nitrux; urgency=medium
+
+  * Remove NXSC launcher from the icons-only task manager widget.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 25 Feb 2025 11:49:00 -0500
+
 nx-plasma-look-and-feel (2.3.9) nitrux; urgency=medium
 
   * Optimus GPU Switcher: Only "Successfully switched to Hybrid mode." is shown instead of full output.
