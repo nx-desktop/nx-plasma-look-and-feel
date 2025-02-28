@@ -1,4 +1,4 @@
-nx-plasma-look-and-feel (2.4.0) nitrux; urgency=medium
+nx-plasma-look-and-feel (2.4.1) nitrux; urgency=medium
 
   * Remove Firefox launcher from the icons-only task manager widget.
 
