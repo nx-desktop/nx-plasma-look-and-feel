@@ -1,3 +1,10 @@
+nx-plasma-look-and-feel (2.4.2) nitrux; urgency=medium
+
+  * Unhide Fiery launcher from the applications menu.
+  * Add Fiery launcher to bottom panel.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 21 Mar 2025 00:23:00 -0500
+
 nx-plasma-look-and-feel (2.4.1) nitrux; urgency=medium
 
   * Remove Firefox launcher from the icons-only task manager widget.
