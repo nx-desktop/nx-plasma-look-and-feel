@@ -148,7 +148,7 @@ Item {
         property string options: ""
 
         property var cmds: {
-            "notify-send": `notify-send -a '${title}' -i ${iconURL} '${message}' ${options}`,
+            "notify-send": `notify-send -a '${title}' -i ${iconURL} ${options} '${title}' '${message}'`,
             "zenity": `zenity --notification --text='${title}\\n${message}'`
         }
 
