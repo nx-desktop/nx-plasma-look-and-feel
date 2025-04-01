@@ -1,3 +1,9 @@
+nx-plasma-look-and-feel (2.4.3) nitrux; urgency=medium
+
+  * Optimus GPU Switcher: Fix the syntax when callign notify-send.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Mon, 31 Mar 2025 20:54:00 -0500
+
 nx-plasma-look-and-feel (2.4.2) nitrux; urgency=medium
 
   * Unhide Fiery launcher from the applications menu.
